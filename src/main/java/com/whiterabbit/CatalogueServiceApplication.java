@@ -35,12 +35,16 @@ public class CatalogueServiceApplication {
 			Category category = categoryRepository.findById("C1").get();
 			articleRepository.deleteAll();
 			Stream.of("a1","a2","a3","a4","a5","a6").forEach(name->{
-				articleRepository.save(new Article(null,name,"bennj53", null, null, "resume", "contenu", category));
+				Article article = articleRepository.save(new Article(null,name,"bennj53", null, null, "resume", "contenu", category));
+				category.getArticles().add(article);
+				categoryRepository.save(category);
 			});
 
 			Category category2 = categoryRepository.findById("C2").get();
 			Stream.of("a7","a8","a9","a10","a11","a12").forEach(name->{
-				articleRepository.save(new Article(null,name,"bennj53", null, null, "resume", "contenu", category2));
+				Article article = articleRepository.save(new Article(null,name,"bennj53", null, null, "resume", "contenu", category2));
+				category2.getArticles().add(article);
+				categoryRepository.save(category2);
 			});
 
 			articleRepository.findAll().forEach(System.out::println);

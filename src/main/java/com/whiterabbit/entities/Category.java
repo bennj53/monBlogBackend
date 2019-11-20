@@ -13,11 +13,19 @@ import java.util.Collection;
 
 @Document
 @Data
-@AllArgsConstructor @NoArgsConstructor @ToString
+@AllArgsConstructor @NoArgsConstructor
 public class Category {
     @Id
     private String id;
     private String name;
     @DBRef
     private Collection<Article> articles = new ArrayList<>();
+
+    @Override
+    public String toString() {
+        return "Category{" +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                '}';
+    }
 }
