@@ -28,28 +28,32 @@ public class JWTAuthorisationFilter extends OncePerRequestFilter {
         response.addHeader("Access-Control-Allow-Headers", "Origin, Accept, X-Request-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers, authorization");
         response.addHeader("Access-Control-Allow-Expose-Headers", "Access-Control-Allow-Origin, Access-Control-Allow-Credentials, authorization");
         //si requete envoyé avec OPTION pas de recherche de token on repond OK car pas encore de token
-        if(request.getMethod().equals("OPTION")){
+        if(request.getMethod().equals("OPTIONS")){
             response.setStatus(HttpServletResponse.SC_OK);
             //pas de recherche tokken non plus car accès page pour s'autentifier pas encore de token
         }
         //sinon recherche du token
-        else {
+       else {
 
-            //recup token JWT passé dans la requette client
-            String jwt = request.getHeader(SecurityParams.JWT_HEADER_NAME);
-            if (jwt == null || !jwt.startsWith(SecurityParams.HEADER_PREFIX)) {
+             //recup token JWT passé dans la requette client
+            String jwtToken = request.getHeader(SecurityParams.JWT_HEADER_NAME);
+            System.out.println("Token JWT : " + jwtToken);
+            if (jwtToken == null || !jwtToken.startsWith(SecurityParams.HEADER_PREFIX)) {
                 //passage au filtre suivant
+                System.out.println("*****Passage dans JWTFilter 0*****");
                 filterChain.doFilter(request, response);
                 return;
             }
 
             //vérifier la signature du token (sans le prefix)
             JWTVerifier jwtVerifier = JWT.require(Algorithm.HMAC256(SecurityParams.SECRET)).build();
-            DecodedJWT decodedJWT = jwtVerifier.verify(jwt.substring(SecurityParams.HEADER_PREFIX.length()));
+            DecodedJWT decodedJWT = jwtVerifier.verify(jwtToken.substring(SecurityParams.HEADER_PREFIX.length()));
 
             //recup user et roles dans le token (pas besoin accès base les roles sont dans le token dans notre cas)
             String username = decodedJWT.getSubject();
             List<String> roles = decodedJWT.getClaims().get("roles").asList(String.class);
+            System.out.print("username : " + username);
+            System.out.print("roles : " + roles);
             Collection<GrantedAuthority> authorities = new ArrayList<>();
             roles.forEach(roleName -> {
                 authorities.add(new SimpleGrantedAuthority(roleName));
@@ -60,6 +64,7 @@ public class JWTAuthorisationFilter extends OncePerRequestFilter {
             SecurityContextHolder.getContext().setAuthentication(user);
 
             //passer au filtre suivant
+            System.out.println("*****Passage dans JWTFilter*****");
             filterChain.doFilter(request, response);
         }
     }
