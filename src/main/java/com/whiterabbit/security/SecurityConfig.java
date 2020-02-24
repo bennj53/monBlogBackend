@@ -15,10 +15,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
+        System.out.println("springSecurity");
         //désactiver spring security//////////
         //http.authorizeRequests().antMatchers("/").permitAll();
-        //désactive le securité csrf -> échange de tokken
-        http.csrf().disable();
+        //désactiver token csrf et autoriser requetes CORS
+        http.cors().and().csrf().disable();
         //spring n'utilisera plus les sessions
         http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
         /////////////////////////////////////////

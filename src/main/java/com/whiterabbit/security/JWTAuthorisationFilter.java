@@ -23,12 +23,16 @@ public class JWTAuthorisationFilter extends OncePerRequestFilter {
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response,
                                     FilterChain filterChain) throws ServletException, IOException {
-        //autoriser requettes cros-domain et ajout token dans header via authorisation
-        response.addHeader("Access-Control-Allow-Origin", "*");
+        //ajout token dans header via authorisation
+        //response.addHeader("Access-Control-Allow-Origin", "*");
         response.addHeader("Access-Control-Allow-Headers", "Origin, Accept, X-Request-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers, authorization");
         response.addHeader("Access-Control-Allow-Expose-Headers", "Access-Control-Allow-Origin, Access-Control-Allow-Credentials, authorization");
+        //autoriser request cors put, delete
+        response.addHeader("Access-Control-Allow-Methods", "GET,POST,PUT,DELETE,PATCH,OPTIONS");
+
         //si requete envoyé avec OPTION pas de recherche de token on repond OK car pas encore de token
         if(request.getMethod().equals("OPTIONS")){
+            System.out.println("OPTIONS : ");
             response.setStatus(HttpServletResponse.SC_OK);
             //pas de recherche tokken non plus car accès page pour s'autentifier pas encore de token
         }
