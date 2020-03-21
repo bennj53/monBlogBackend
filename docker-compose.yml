@@ -2,17 +2,34 @@ version: "3"
 services:
   mongodb:
     image: mongo:3.2.4
+    networks:
+      catalogue_mango:
+        aliases:
+          - mongodb
     restart: always
     container_name: "mongodb"
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: example
     ports:
-    - 27017:27017
+     - "27017:27017"
     command: --smallfiles
-  app:
-    image: springio
+
+  catalogue-service:
+    image: catalogue-service
+    networks:
+      catalogue_mango:
+        aliases:
+          - catalogue-service
     ports: 
-    - 8080:8080
-    links:
-    - mongodb
+     - "8087:8087"
+    environment:
+      - SPRING_DATASOURCE_URL=mongodb://mongodb:27017/Catal
+      - SPRING_DATASOURCE_USERNAME=root
+      - SPRING_DATASOURCE_PASSWORD=admin
+      - spring.data.mongodb.host=api-database
+    depends_on:
+     - mongodb
+
+networks:
+  catalogue_mango:
