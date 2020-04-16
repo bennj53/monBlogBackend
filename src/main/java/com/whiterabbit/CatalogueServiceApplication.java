@@ -29,7 +29,7 @@ public class CatalogueServiceApplication {
 		return new WebMvcConfigurer() {
 			@Override
 			public void addCorsMappings(CorsRegistry registry) {
-				registry.addMapping("/articles/add").allowedOrigins("http://localhost:4200/*");
+				registry.addMapping("/articles/add").allowedOrigins("*");
 			}
 		};
 	}
@@ -74,6 +74,7 @@ public class CatalogueServiceApplication {
 			articleService.startScraping("LESNUMS");
 			articleService.startScraping("01NET");
 			articleService.startScraping("MAC4EVER");
+			articleService.startScraping("FRANDROID");
 		};
 
 		articleRepository.findAll().forEach(System.out::println);

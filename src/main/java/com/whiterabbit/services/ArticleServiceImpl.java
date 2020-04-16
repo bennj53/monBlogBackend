@@ -20,6 +20,7 @@ public class ArticleServiceImpl implements ArticleService {
     public static final String LESNUMS = "LesNumériques.com";
     public static final String ZERO1NET = "01net.com";
     public static final String MAC4EVER = "mac4ever.com";
+    public static final String FRANDROID = "frandroid.com";
 
 
     @Autowired
@@ -39,6 +40,9 @@ public class ArticleServiceImpl implements ArticleService {
                 break;
             case "MAC4EVER" :
                 scrapingMac4Ever();
+                break;
+            case "FRANDROID" :
+                scrapingFrAndroid();
                 break;
             default:
                 throw new IllegalStateException("Unexpected value: " + webSite);
@@ -360,7 +364,66 @@ public class ArticleServiceImpl implements ArticleService {
     }
 
     public void scrapingFrAndroid(){
+        WebClient client = new WebClient();
+        client.getOptions().setCssEnabled(false);
+        client.getOptions().setJavaScriptEnabled(false);
 
+        try{
+            String searchUrl = "https://www.frandroid.com/actualites";
+            HtmlPage page = client.getPage(searchUrl);
+
+            List<HtmlDivision> divisions = page.getByXPath("//div[@class='columns is-vcentered is-mobile is-relative']");
+            if(divisions.isEmpty()){
+                System.out.println("frandroid - No division found ! ");
+            }else {
+                int cpt = 0;
+                String articleCategory, articleCategoryUrl, articleTitle, articleUrl, pathImg, articleDate = null;
+
+                for (HtmlDivision division : divisions) {
+                    //get article category and category link
+                    List<HtmlAnchor> anchorCategory = division.getByXPath(".//a[@class='post-card__category is-uppercase has-text-weight-semibold']");
+                    articleCategory = anchorCategory != null && anchorCategory.size()>=1 ? anchorCategory.get(0).getTextContent():null;
+                    articleCategoryUrl = anchorCategory != null && anchorCategory.size()>=1 ? anchorCategory.get(0).getHrefAttribute():null;
+                    //get article title and link
+                    List<HtmlAnchor> anchorArticle = division.getByXPath(".//a[@class='post-card__title-link']");
+                    articleTitle = anchorArticle != null && anchorArticle.size()>=1 ? anchorArticle.get(0).getTextContent():null;
+                    articleUrl = anchorArticle != null && anchorArticle.size()>=1 ? anchorArticle.get(0).getHrefAttribute():null;
+                    //get article img
+                    List<HtmlImage> img = division.getByXPath(".//img");
+                    pathImg = img != null && img.size()>=1 ? img.get(0).getAttribute("data-srcset") : null;
+                    if(pathImg != null && pathImg.split(",").length>1){
+                        pathImg = pathImg.split(",")[1];
+                    }
+                    //get article date
+                    List<HtmlParagraph> paragraphsDateArticle = division.getByXPath(".//p[@class='post-card__date has-text-right-mobile']");
+                    articleDate = paragraphsDateArticle != null && paragraphsDateArticle.size()>=1 ? paragraphsDateArticle.get(0).getTextContent() : null;
+
+                    //debug data
+                    System.out.println(String.format("frandroid - Article %s --> Category : %s // Url Category : %s", ++cpt, articleCategory, articleCategoryUrl));
+                    System.out.println(String.format("frandroid - Article %s --> Titre : %s // Url : %s", cpt, articleTitle, articleUrl));
+                    System.out.println(String.format("frandroid - Article %s --> Date : %s",  cpt,articleDate));
+                    System.out.println(String.format("frandroid - Article %s --> Img : %s%n",  cpt,pathImg));
+                    //System.out.println(String.format("frandroid - Article %s --> Resume : %s%n",  cpt,resume));
+
+                    //create article
+                    Article articl = new Article();
+                    articl.setTitre(articleTitle);
+                    articl.setImg(pathImg);
+                    articl.setUrl(articleUrl);
+                    articl.setDatePublication(articleDate);
+                    articl.setAuteur(FRANDROID);
+                    //add resume article
+                    //articl.setResume(resume);
+
+                    //save article
+                    articleRepository.save(articl);
+
+                }
+            }
+        }catch(Exception e){
+            e.printStackTrace();
+            client.close();
+        }
     }
 
     public void scrapingFrAndroidArticleDetails(String articleUrl, WebClient client, Article article) throws IOException {
