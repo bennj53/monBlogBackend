@@ -402,8 +402,8 @@ public class ArticleServiceImpl implements ArticleService {
                     System.out.println(String.format("frandroid - Article %s --> Category : %s // Url Category : %s", ++cpt, articleCategory, articleCategoryUrl));
                     System.out.println(String.format("frandroid - Article %s --> Titre : %s // Url : %s", cpt, articleTitle, articleUrl));
                     System.out.println(String.format("frandroid - Article %s --> Date : %s",  cpt,articleDate));
-                    System.out.println(String.format("frandroid - Article %s --> Img : %s%n",  cpt,pathImg));
-                    //System.out.println(String.format("frandroid - Article %s --> Resume : %s%n",  cpt,resume));
+                    System.out.println(String.format("frandroid - Article %s --> Img : %s",  cpt,pathImg));
+
 
                     //create article
                     Article articl = new Article();
@@ -413,7 +413,8 @@ public class ArticleServiceImpl implements ArticleService {
                     articl.setDatePublication(articleDate);
                     articl.setAuteur(FRANDROID);
                     //add resume article
-                    //articl.setResume(resume);
+                    this.scrapingFrAndroidArticleDetails(articleUrl, client, articl);
+                    System.out.println(String.format("frandroid - Article %s --> Resume : %s%n",  cpt, articl.getResume()));
 
                     //save article
                     articleRepository.save(articl);
@@ -427,7 +428,16 @@ public class ArticleServiceImpl implements ArticleService {
     }
 
     public void scrapingFrAndroidArticleDetails(String articleUrl, WebClient client, Article article) throws IOException {
+        HtmlPage page = client.getPage(articleUrl);
 
+        List<HtmlParagraph> paragraphArticleResume = page.getByXPath(".//p[@class='chapo']");
+        String articleResume = paragraphArticleResume != null && paragraphArticleResume.size()>=1 ? paragraphArticleResume.get(0).getTextContent() : null;
+
+        if(articleResume == null){
+            System.out.println("frandroid - No article resume found ! ");
+        }else{
+            article.setResume(articleResume);
+        }
     }
 
     public void scrapingIphonFr(){
