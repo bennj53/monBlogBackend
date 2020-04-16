@@ -21,6 +21,7 @@ public class ArticleServiceImpl implements ArticleService {
     public static final String ZERO1NET = "01net.com";
     public static final String MAC4EVER = "mac4ever.com";
     public static final String FRANDROID = "frandroid.com";
+    public static final String MACGENERATION = "macg.co";
 
 
     @Autowired
@@ -43,6 +44,9 @@ public class ArticleServiceImpl implements ArticleService {
                 break;
             case "FRANDROID" :
                 scrapingFrAndroid();
+                break;
+            case "MACGENERATION" :
+                scrapingMacGeneration();
                 break;
             default:
                 throw new IllegalStateException("Unexpected value: " + webSite);
@@ -446,5 +450,88 @@ public class ArticleServiceImpl implements ArticleService {
 
     public void scrapingIphonFrArticleDetails(String articleUrl, WebClient client, Article article) throws IOException {
 
+    }
+
+    public void scrapingMacGeneration(){
+        WebClient client = new WebClient();
+        client.getOptions().setCssEnabled(false);
+        client.getOptions().setJavaScriptEnabled(false);
+
+        try {
+            String searchUrl = "https://www.macg.co/";
+            HtmlPage page = client.getPage(searchUrl);
+
+            List<HtmlArticle> articlesHtml = page.getByXPath("//article[@class='pas']");
+            if(articlesHtml.isEmpty()){
+                System.out.println("MacGeneration - No articleHtml found ! ");
+            }else {
+                String articleUrl = null;
+                String articleImg = null;
+                String articleTitle = null;
+                int cpt = 0;
+
+                for (HtmlArticle articleHtml : articlesHtml){
+                    //get article url
+                    List<HtmlAnchor> anchorArticle = articleHtml.getByXPath(".//a");
+                    articleUrl = anchorArticle != null && anchorArticle.size()>=1 ? anchorArticle.get(0).getHrefAttribute():null;
+                    if (!articleUrl.contains("http"))
+                        articleUrl = "https://www.macg.co" + articleUrl;
+                    //get article img
+                    List<HtmlImage> imgArticle = articleHtml.getByXPath(".//img");
+                    articleImg = imgArticle != null && imgArticle.size()>=1 ? imgArticle.get(0).getSrcAttribute() : null;
+                    //get article title
+                    List<HtmlHeading2> h2Article = articleHtml.getByXPath(".//h2");
+                    articleTitle = h2Article != null && h2Article.size()>=1 ? h2Article.get(0).getTextContent().trim() : null;
+
+                    //debug data
+                    //System.out.println(String.format("MacGeneration - Article %s --> Category : %s // Url Category : %s", ++cpt, articleCategory, articleCategoryUrl));
+                    System.out.println(String.format("MacGeneration - Article %s --> Titre : %s // Url : %s", ++cpt, articleTitle, articleUrl));
+                    //System.out.println(String.format("MacGeneration - Article %s --> Date : %s",  cpt,articleDate));
+                    System.out.println(String.format("MacGeneration - Article %s --> Img : %s",  cpt,articleImg));
+
+                    //create article
+                    Article articl = new Article();
+                    articl.setTitre(articleTitle);
+                    articl.setImg(articleImg);
+                    articl.setUrl(articleUrl);
+                    //articl.setDatePublication(articleDate);
+                    articl.setAuteur(MACGENERATION);
+                    //add resume article
+                    this.scrapingMacGenerationArticleDetails(articleUrl, client, articl);
+                    System.out.println(String.format("MacGeneration - Article %s --> Resume : %s%n",  cpt, articl.getResume()));
+
+                    //save article
+                    articleRepository.save(articl);
+
+                    //limite de 10 articles images trop lourdes
+                    if (cpt == 10){
+                        break;
+                    }
+                }
+            }
+
+        }catch(Exception e){
+            e.printStackTrace();
+            client.close();
+        }
+    }
+
+    public void scrapingMacGenerationArticleDetails(String articleUrl, WebClient client, Article article) throws IOException {
+        HtmlPage page = client.getPage(articleUrl);
+        String articleResume= null;
+
+        List<HtmlDivision> divisionArticleResume = page.getByXPath(".//div[@class='field-item even']");
+        if(divisionArticleResume != null && divisionArticleResume.size()>0){
+            List<HtmlParagraph> paragraphsResume = divisionArticleResume.get(0).getByXPath(".//p");
+            articleResume = paragraphsResume != null && paragraphsResume.size()>0 ? paragraphsResume.get(0).getTextContent() : null;
+        }else{
+            System.out.println("MacGeneration - No division for article resume found !");
+        }
+
+        if(articleResume == null){
+            System.out.println("MacGeneration - No article resume found ! ");
+        }else{
+            article.setResume(articleResume);
+        }
     }
 }

@@ -75,6 +75,7 @@ public class CatalogueServiceApplication {
 			articleService.startScraping("01NET");
 			articleService.startScraping("MAC4EVER");
 			articleService.startScraping("FRANDROID");
+			articleService.startScraping("MACGENERATION");
 		};
 
 		articleRepository.findAll().forEach(System.out::println);
