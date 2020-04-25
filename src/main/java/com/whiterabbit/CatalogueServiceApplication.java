@@ -5,6 +5,7 @@ import com.whiterabbit.dao.CategoryRepository;
 import com.whiterabbit.entities.Article;
 import com.whiterabbit.entities.Category;
 import com.whiterabbit.services.ArticleService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -22,6 +23,9 @@ public class CatalogueServiceApplication {
 
 		SpringApplication.run(CatalogueServiceApplication.class, args);
 
+
+
+
 	}
 ////////
 	@Bean
@@ -30,6 +34,7 @@ public class CatalogueServiceApplication {
 			@Override
 			public void addCorsMappings(CorsRegistry registry) {
 				registry.addMapping("/articles/add").allowedOrigins("*");
+				registry.addMapping("/articles").allowedOrigins("*");
 			}
 		};
 	}

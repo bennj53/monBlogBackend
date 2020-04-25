@@ -1,6 +1,5 @@
 package com.whiterabbit.services;
 
-import com.gargoylesoftware.htmlunit.FailingHttpStatusCodeException;
 import com.gargoylesoftware.htmlunit.WebClient;
 import com.gargoylesoftware.htmlunit.html.*;
 import com.whiterabbit.dao.ArticleRepository;
@@ -8,9 +7,7 @@ import com.whiterabbit.entities.Article;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-
 import java.io.IOException;
-import java.time.LocalDate;
 import java.util.List;
 
 @Service
@@ -51,6 +48,10 @@ public class ArticleServiceImpl implements ArticleService {
             default:
                 throw new IllegalStateException("Unexpected value: " + webSite);
         }
+    }
+
+    public void resetDataArticles(){
+        articleRepository.deleteAll();
     }
 
     public void scrapingJDG(){
@@ -256,6 +257,8 @@ public class ArticleServiceImpl implements ArticleService {
                     articleTextContent =  itemH2s != null && itemH2s.size() >=1 ? itemH2s.get(0).getTextContent() : null;
                     List<HtmlAnchor> itemAnchors = article.getByXPath(".//a");
                     articleUrl = itemAnchors != null && itemAnchors.size()>=1 ? itemAnchors.get(0).getHrefAttribute() : null;
+                    if(!articleUrl.contains("http"))
+                        articleUrl = "https:" + articleUrl;
                     List<HtmlImage> itemImgs = article.getByXPath(".//img");
                     pathImg = itemImgs != null && itemImgs.size() >=1 ? itemImgs.get(0).getAttribute("data-original") : null;
                     System.out.println(String.format("01Net - Article %s --> Titre : %s // Url : %s", ++cpt, articleTextContent, articleUrl));
@@ -268,7 +271,7 @@ public class ArticleServiceImpl implements ArticleService {
                     articl.setUrl(articleUrl);
                     articl.setAuteur(ZERO1NET);
                     //add resume article
-                    scraping01NetArticleDetails("https:" + articleUrl, client, articl);
+                    scraping01NetArticleDetails(articleUrl, client, articl);
                     System.out.println(String.format("01Net - Resume : %s%n", articl.getResume()));
                     articleRepository.save(articl);
 
@@ -503,8 +506,8 @@ public class ArticleServiceImpl implements ArticleService {
                     //save article
                     articleRepository.save(articl);
 
-                    //limite de 10 articles images trop lourdes
-                    if (cpt == 10){
+                    //limite de 20 articles images trop lourdes
+                    if (cpt == 20){
                         break;
                     }
                 }
