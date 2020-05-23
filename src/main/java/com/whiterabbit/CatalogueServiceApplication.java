@@ -4,12 +4,11 @@ import com.whiterabbit.dao.ArticleRepository;
 import com.whiterabbit.dao.CategoryRepository;
 import com.whiterabbit.entities.Article;
 import com.whiterabbit.entities.Category;
-import com.whiterabbit.services.ArticleService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
@@ -17,14 +16,19 @@ import java.util.ArrayList;
 import java.util.stream.Stream;
 
 @SpringBootApplication
+@EnableMongoRepositories(basePackages = "com.whiterabbit.dao")
 public class CatalogueServiceApplication {
+
+	//@Autowired
+	//BatchLauncher launcher;
 
 	public static void main(String[] args) {
 
 		SpringApplication.run(CatalogueServiceApplication.class, args);
-
-
-
+		/*try(ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("job-config.xml")) {
+			BatchLauncher launcher = (BatchLauncher) context.getBean(BatchLauncher.class);
+			launcher.run();
+		}*/
 
 	}
 ////////
@@ -39,6 +43,7 @@ public class CatalogueServiceApplication {
 		};
 	}
 //////////
+
 
 	@Bean
 	CommandLineRunner start(CategoryRepository categoryRepository, ArticleRepository articleRepository){
@@ -71,20 +76,4 @@ public class CatalogueServiceApplication {
 		System.out.println("*****************************************************");
 		return cl;
 	}
-
-	@Bean
-	CommandLineRunner startScraping(ArticleService articleService, ArticleRepository articleRepository){
-		CommandLineRunner cl= args -> {
-			articleService.startScraping("JDG");
-			articleService.startScraping("LESNUMS");
-			articleService.startScraping("01NET");
-			articleService.startScraping("MAC4EVER");
-			articleService.startScraping("FRANDROID");
-			articleService.startScraping("MACGENERATION");
-		};
-
-		articleRepository.findAll().forEach(System.out::println);
-		return cl;
-	}
-
 }

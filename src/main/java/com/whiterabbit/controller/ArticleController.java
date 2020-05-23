@@ -4,7 +4,6 @@ import com.whiterabbit.dao.ArticleRepository;
 import com.whiterabbit.entities.Article;
 import com.whiterabbit.exception.ArticleNotFoundException;
 import com.whiterabbit.exception.ImpossibleAjouterArticleException;
-import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
