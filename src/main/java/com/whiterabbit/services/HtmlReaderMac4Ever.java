@@ -32,7 +32,7 @@ public class HtmlReaderMac4Ever implements HtmlReader {
                 String articleUrl = null;
                 String pathImg = null;
                 String resume = null;
-                log.error("Mac4Ever - article found ! ");
+                log.info("Mac4Ever - article found ! ");
 
                 for (HtmlDivision division: divisions){
                     List<HtmlDivision> divisionArticle = division.getByXPath(".//div[@class='last-dossier-right']");
@@ -45,9 +45,9 @@ public class HtmlReaderMac4Ever implements HtmlReader {
 
                         List<HtmlImage> img = division.getByXPath(".//img");
                         pathImg = img != null && img.size()>=1 ? img.get(0).getSrcAttribute() : null;
-                        log.error(String.format("Mac4Ever - Article %s --> Titre : %s // Url : %s", ++cpt, articleTextContent, articleUrl));
-                        log.error(String.format("Mac4Ever - Img : %s", pathImg));
-                        log.error(String.format("Mac4Ever - Resume : %s%n", resume));
+                        log.info(String.format("Mac4Ever - Article %s --> Titre : %s // Url : %s", ++cpt, articleTextContent, articleUrl));
+                        log.info(String.format("Mac4Ever - Img : %s", pathImg));
+                        log.info(String.format("Mac4Ever - Resume : %s%n", resume));
 
                         //créer l' Article
                         InputData inputData = new InputData();

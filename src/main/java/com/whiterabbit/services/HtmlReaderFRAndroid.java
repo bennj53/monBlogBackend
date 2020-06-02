@@ -49,10 +49,10 @@ public class HtmlReaderFRAndroid implements HtmlReader {
                     articleDate = paragraphsDateArticle != null && paragraphsDateArticle.size()>=1 ? paragraphsDateArticle.get(0).getTextContent() : null;
 
                     //debug data
-                    log.error(String.format("frandroid - Article %s --> Category : %s // Url Category : %s", ++cpt, articleCategory, articleCategoryUrl));
-                    log.error(String.format("frandroid - Article %s --> Titre : %s // Url : %s", cpt, articleTitle, articleUrl));
-                    log.error(String.format("frandroid - Article %s --> Date : %s",  cpt,articleDate));
-                    log.error(String.format("frandroid - Article %s --> Img : %s",  cpt,pathImg));
+                    log.info(String.format("frandroid - Article %s --> Category : %s // Url Category : %s", ++cpt, articleCategory, articleCategoryUrl));
+                    log.info(String.format("frandroid - Article %s --> Titre : %s // Url : %s", cpt, articleTitle, articleUrl));
+                    log.info(String.format("frandroid - Article %s --> Date : %s",  cpt,articleDate));
+                    log.info(String.format("frandroid - Article %s --> Img : %s",  cpt,pathImg));
 
 
                     //create article
@@ -66,7 +66,7 @@ public class HtmlReaderFRAndroid implements HtmlReader {
                     try {
                         String resume = this.readHtmlPageResume(articleUrl);
                         inputData.setResume(resume);
-                        log.error(String.format("frandroid - Article %s --> Resume : %s%n",  cpt, inputData.getResume()));
+                        log.info(String.format("frandroid - Article %s --> Resume : %s%n",  cpt, inputData.getResume()));
                     } catch (IOException e) {
                         e.printStackTrace();
                     }

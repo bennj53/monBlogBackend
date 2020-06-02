@@ -1,6 +1,7 @@
 package com.whiterabbit.security;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -13,9 +14,11 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
+    Logger log = LoggerFactory.getLogger(SecurityConfig.class);
+
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        System.out.println("springSecurity");
+        log.info("springSecurity");
         //désactiver spring security//////////
         //http.authorizeRequests().antMatchers("/").permitAll();
         //désactiver token csrf et autoriser requetes CORS

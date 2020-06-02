@@ -44,7 +44,7 @@ public class HtmlReaderLesNum implements HtmlReader {
                                 && !anchor.getAttribute("aria-label").equals("") ?
                                 anchor.getAttribute("aria-label")
                                 : itemTitle ;
-                        log.error( String.format("Les NUMS - Title %s : %s --> Url : %s", ++cpt,itemTitle,itemUrl));
+                        log.info( String.format("Les NUMS - Title %s : %s --> Url : %s", ++cpt,itemTitle,itemUrl));
 
 
                         //List<HtmlArticle> imgAnchors = anchor.getByXPath(".//article");
@@ -52,7 +52,7 @@ public class HtmlReaderLesNum implements HtmlReader {
 
                         for(HtmlSource source : sources){
                             pathImg = source.getAttribute("data-srcset")!=null && !source.getAttribute("data-srcset").equals("") ? source.getAttribute("data-srcset") : pathImg;
-                            log.error( String.format("Les NUMS - Img Path : %s%n", pathImg));
+                            log.info( String.format("Les NUMS - Img Path : %s%n", pathImg));
                         }
                         //System.out.println( String.format("Les NUMS - Img Path : %s%n", pathImg));
                         if(pathImg != null && !pathImg.equals(""))
@@ -70,7 +70,7 @@ public class HtmlReaderLesNum implements HtmlReader {
                         try {
                             resume = this.readHtmlPageResume(itemUrl);
                             inputData.setResume(resume);
-                            log.error( String.format("Les NUMS - Resume : %s%n", inputData.getResume()));
+                            log.info( String.format("Les NUMS - Resume : %s%n", inputData.getResume()));
                         } catch (IOException e) {
                             e.printStackTrace();
                         }

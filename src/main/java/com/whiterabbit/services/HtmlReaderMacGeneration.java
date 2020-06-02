@@ -46,9 +46,9 @@ public class HtmlReaderMacGeneration implements HtmlReader {
 
                     //debug data
                     //System.out.println(String.format("MacGeneration - Article %s --> Category : %s // Url Category : %s", ++cpt, articleCategory, articleCategoryUrl));
-                    log.error(String.format("MacGeneration - Article %s --> Titre : %s // Url : %s", ++cpt, articleTitle, articleUrl));
+                    log.info(String.format("MacGeneration - Article %s --> Titre : %s // Url : %s", ++cpt, articleTitle, articleUrl));
                     //System.out.println(String.format("MacGeneration - Article %s --> Date : %s",  cpt,articleDate));
-                    log.error(String.format("MacGeneration - Article %s --> Img : %s",  cpt,articleImg));
+                    log.info(String.format("MacGeneration - Article %s --> Img : %s",  cpt,articleImg));
 
                     //create article
                     InputData inputData = new InputData();
@@ -61,7 +61,7 @@ public class HtmlReaderMacGeneration implements HtmlReader {
                     try {
                         String resume = this.readHtmlPageResume(articleUrl);
                         inputData.setResume(resume);
-                        log.error(String.format("MacGeneration - Article %s --> Resume : %s%n",  cpt, inputData.getResume()));
+                        log.info(String.format("MacGeneration - Article %s --> Resume : %s%n",  cpt, inputData.getResume()));
                     } catch (IOException e) {
                         e.printStackTrace();
                     }

@@ -6,10 +6,12 @@ import com.whiterabbit.entities.Article;
 import com.whiterabbit.entities.ArticleLot;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.batch.core.configuration.annotation.StepScope;
 import org.springframework.batch.item.ItemProcessor;
 import org.springframework.stereotype.Component;
 
 @Component
+@StepScope
 public class ArticleItemProcessor implements ItemProcessor<InputDataLot, ArticleLot> {
 
     Logger log = LoggerFactory.getLogger(ArticleItemProcessor.class);
@@ -24,7 +26,7 @@ public class ArticleItemProcessor implements ItemProcessor<InputDataLot, Article
             article.setUrl(inputData.getUrl());
             article.setAuteur(inputData.getAuteur());
             article.setResume(inputData.getResume());
-            log.error("----->ItemProcessor : create article" + article.getTitre());
+            log.info("----->ItemProcessor : create article" + article.getTitre());
 
             articleLot.getArticles().add(article);
         }

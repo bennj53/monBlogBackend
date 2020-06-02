@@ -4,6 +4,7 @@ import com.whiterabbit.dto.InputDataLot;
 import com.whiterabbit.services.HtmlReaderService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.batch.core.configuration.annotation.StepScope;
 import org.springframework.batch.item.ItemReader;
 import org.springframework.batch.item.NonTransientResourceException;
 import org.springframework.batch.item.ParseException;
@@ -23,6 +24,7 @@ import java.util.Properties;
 @Component
 @Configuration
 @PropertySource("classpath:application.properties")
+@StepScope
 public class HtmlPageItemReader implements ItemReader<InputDataLot> {
     Logger log = LoggerFactory.getLogger(HtmlPageItemReader.class);
     @Autowired
@@ -41,7 +43,11 @@ public class HtmlPageItemReader implements ItemReader<InputDataLot> {
         if(this.urls == null){
             this.urls = getUrlSources();
         }
-        log.error("Url sources : " + Arrays.toString(this.urls));
+
+        if (index > 0){
+            this.resetIndex();
+        }
+        log.info("Url sources : " + Arrays.toString(this.urls));
     }
 
     private String[] getUrlSources(){
@@ -53,9 +59,9 @@ public class HtmlPageItemReader implements ItemReader<InputDataLot> {
         try {
             props.load(inputStream);
             String urlSourcesStr = props.getProperty("input.url.article.sources");
-            log.error("Property Key : class.to.read." + urlSourcesStr);
+            log.info("Property Key : class.to.read." + urlSourcesStr);
             urlSources = urlSourcesStr != null ? urlSourcesStr.split(";"): new String[1];
-            log.error("Sources Loaded from properties" + Arrays.toString(urlSources));
+            log.info("Sources Loaded from properties" + Arrays.toString(urlSources));
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -74,9 +80,11 @@ public class HtmlPageItemReader implements ItemReader<InputDataLot> {
     @Override
     public InputDataLot read() throws Exception, UnexpectedInputException, ParseException, NonTransientResourceException {
         if (this.urls == null || index>=this.urls.length) {
+            log.info("----->ItemReader : url is null or empty or index >= url length");
+            this.resetIndex();
             return null;
         }
-        log.error("----->ItemReader : " + this.urls[index]);
+        log.info("----->ItemReader : " + this.urls[index]);
         InputDataLot inputDataLot = htmlReaderService.readHtmlPage("https://" + this.urls[index]);
         index ++;
         return inputDataLot;

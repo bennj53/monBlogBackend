@@ -4,6 +4,8 @@ import com.whiterabbit.dao.ArticleRepository;
 import com.whiterabbit.dao.CategoryRepository;
 import com.whiterabbit.entities.Article;
 import com.whiterabbit.entities.Category;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -19,16 +21,11 @@ import java.util.stream.Stream;
 @EnableMongoRepositories(basePackages = "com.whiterabbit.dao")
 public class CatalogueServiceApplication {
 
-	//@Autowired
-	//BatchLauncher launcher;
+	Logger log = LoggerFactory.getLogger(CatalogueServiceApplication.class);
 
 	public static void main(String[] args) {
 
 		SpringApplication.run(CatalogueServiceApplication.class, args);
-		/*try(ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("job-config.xml")) {
-			BatchLauncher launcher = (BatchLauncher) context.getBean(BatchLauncher.class);
-			launcher.run();
-		}*/
 
 	}
 ////////
@@ -48,7 +45,7 @@ public class CatalogueServiceApplication {
 	@Bean
 	CommandLineRunner start(CategoryRepository categoryRepository, ArticleRepository articleRepository){
 
-		System.out.println("*****************************************************");
+		log.info("*****************************************************");
 		CommandLineRunner cl= args -> {
 			categoryRepository.deleteAll();
 			Stream.of("C1 Developpement", "C2 Actualite").forEach(c->{
@@ -73,7 +70,7 @@ public class CatalogueServiceApplication {
 
 			articleRepository.findAll().forEach(System.out::println);
 		};
-		System.out.println("*****************************************************");
+		log.info("*****************************************************");
 		return cl;
 	}
 }

@@ -15,14 +15,15 @@ import java.util.Map;
 @CrossOrigin(origins = "*")
 @RestController
 public class BatchArticleController {
-    Logger log = LoggerFactory.getLogger(BatchArticleController.class);
+/*    Logger log = LoggerFactory.getLogger(BatchArticleController.class);
     @Autowired
     private JobLauncher jobLauncher;
     @Autowired
     private Job job;
 
-    @RequestMapping("/updateArticles")
+    @RequestMapping("/articles/updateArticles")
     public BatchStatus load() throws Exception{
+        log.error("Start job......");
         Map<String, JobParameter> parameters = new HashMap<>();
         parameters.put("time", new JobParameter(System.currentTimeMillis()));
         JobParameters jobParameters = new JobParameters(parameters);
@@ -31,5 +32,5 @@ public class BatchArticleController {
             log.error(".......");
         }
         return jobExecution.getStatus();
-    }
+    }*/
 }

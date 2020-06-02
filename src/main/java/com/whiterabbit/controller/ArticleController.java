@@ -4,6 +4,8 @@ import com.whiterabbit.dao.ArticleRepository;
 import com.whiterabbit.entities.Article;
 import com.whiterabbit.exception.ArticleNotFoundException;
 import com.whiterabbit.exception.ImpossibleAjouterArticleException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,15 +18,14 @@ import java.util.Optional;
 @RestController
 public class ArticleController {
 
+    Logger log = LoggerFactory.getLogger(ArticleController.class);
+
     @Autowired
     ArticleRepository articleRepository;
 
     @GetMapping(value = "/articles")
     public List<Article> listeArticles(){
         List<Article> articles = articleRepository.findAll();
-        System.out.println("****************************************************");
-        articles.stream().forEach(System.out::println);
-        System.out.println("****************************************************");
         return articles;
     }
 
@@ -41,7 +42,7 @@ public class ArticleController {
 
     @PostMapping(value = "/articles/add")
     public ResponseEntity<Article> ajouterArticle(@RequestBody Article article){
-        System.out.println("controller save article started");
+        log.info("controller save article started");
         Article newArticle = articleRepository.save(article);
         if(newArticle == null) throw new ImpossibleAjouterArticleException("Impossible d'ajouter article");
 

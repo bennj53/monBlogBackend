@@ -50,7 +50,7 @@ public class HtmlReaderServiceImpl implements HtmlReaderService {
         try {
             props.load(inputStream);
             classNameReader = props.getProperty("class.to.read."+propertyKey);
-            log.error("Property Key : class.to.read." + propertyKey);
+            log.info("Property Key : class.to.read." + propertyKey);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -58,7 +58,7 @@ public class HtmlReaderServiceImpl implements HtmlReaderService {
         //lancer la lecture de la page
         if(classNameReader != null){
             try {
-                log.error("Class articleReader to instance : " + Class.forName(classNameReader).getName());
+                log.info("Class articleReader to instance : " + Class.forName(classNameReader).getName());
                 htmlReader = (HtmlReader) Class.forName(classNameReader).newInstance();
                 inputDataLot = htmlReader.readHtmlPage(url);
             } catch (InstantiationException e) {

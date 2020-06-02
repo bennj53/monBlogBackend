@@ -32,7 +32,7 @@ public class HtmlReader01Net implements HtmlReader {
                 String articleTextContent =null;
                 String articleUrl = null;
                 String pathImg = null;
-                log.error("01Net - article found ! ");
+                log.info("01Net - article found ! ");
 
                 for (HtmlArticle article: articles){
                     List<HtmlHeading2> itemH2s = article.getByXPath(".//h2");
@@ -43,8 +43,8 @@ public class HtmlReader01Net implements HtmlReader {
                         articleUrl = "https:" + articleUrl;
                     List<HtmlImage> itemImgs = article.getByXPath(".//img");
                     pathImg = itemImgs != null && itemImgs.size() >=1 ? itemImgs.get(0).getAttribute("data-original") : null;
-                    log.error(String.format("01Net - Article %s --> Titre : %s // Url : %s", ++cpt, articleTextContent, articleUrl));
-                    log.error(String.format("01Net - Img : %s", pathImg));
+                    log.info(String.format("01Net - Article %s --> Titre : %s // Url : %s", ++cpt, articleTextContent, articleUrl));
+                    log.info(String.format("01Net - Img : %s", pathImg));
 
                     //créer l' Article
                     InputData inputData = new InputData();
@@ -56,7 +56,7 @@ public class HtmlReader01Net implements HtmlReader {
                     try {
                         String resume = readHtmlPageResume(articleUrl);
                         inputData.setResume(resume);
-                        log.error(String.format("01Net - Resume : %s%n", inputData.getResume()));
+                        log.info(String.format("01Net - Resume : %s%n", inputData.getResume()));
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
