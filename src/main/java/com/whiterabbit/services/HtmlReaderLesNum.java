@@ -89,7 +89,7 @@ public class HtmlReaderLesNum implements HtmlReader {
 
 
         List<HtmlParagraph> paragraphs = page.getByXPath("//p[@class='ed__a-h ed__bdy__l']");
-        if(paragraphs.isEmpty()){
+        if(paragraphs == null ||paragraphs.isEmpty()){
             log.error("LesNums - No p found ! ");
         }else{
             for(HtmlElement paragraph : paragraphs) {

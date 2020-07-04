@@ -73,7 +73,7 @@ public class HtmlReaderJDG implements HtmlReader {
         String firstParagraph = null;
 
         List<HtmlElement> items = page.getByXPath("//div[@class='single__post']");
-        if(items.isEmpty()){
+        if(items == null || items.isEmpty()){
             log.error("JDG - No p found ! ");
         }else{
             for(HtmlElement htmlItem : items) {

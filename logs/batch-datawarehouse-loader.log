@@ -1,28 +1,210 @@
-2020-06-02 00:45:04.223 ERROR 22784 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : START JOB ........
-2020-06-02 00:45:08.839 ERROR 22784 --- [scheduling-1] c.whiterabbit.services.HtmlReader01Net   : 01Net - No h2 found ! 
-2020-06-02 00:45:22.771 ERROR 22784 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : JOB nom-du-job finished .... with status exitCode=COMPLETED;exitDescription=
-2020-06-02 02:15:22.772 ERROR 22784 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : START JOB ........
-2020-06-02 02:15:27.288 ERROR 22784 --- [scheduling-1] c.whiterabbit.services.HtmlReader01Net   : 01Net - No h2 found ! 
-2020-06-02 02:15:43.369 ERROR 22784 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : JOB nom-du-job finished .... with status exitCode=COMPLETED;exitDescription=
-2020-06-02 03:45:43.371 ERROR 22784 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : START JOB ........
-2020-06-02 03:45:47.864 ERROR 22784 --- [scheduling-1] c.whiterabbit.services.HtmlReader01Net   : 01Net - No h2 found ! 
-2020-06-02 03:46:01.385 ERROR 22784 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : JOB nom-du-job finished .... with status exitCode=COMPLETED;exitDescription=
-2020-06-02 05:16:01.388 ERROR 22784 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : START JOB ........
-2020-06-02 05:16:05.861 ERROR 22784 --- [scheduling-1] c.whiterabbit.services.HtmlReader01Net   : 01Net - No h2 found ! 
-2020-06-02 05:16:18.399 ERROR 22784 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : JOB nom-du-job finished .... with status exitCode=COMPLETED;exitDescription=
-2020-06-02 06:46:18.401 ERROR 22784 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : START JOB ........
-2020-06-02 06:46:22.963 ERROR 22784 --- [scheduling-1] c.whiterabbit.services.HtmlReader01Net   : 01Net - No h2 found ! 
-2020-06-02 06:46:35.620 ERROR 22784 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : JOB nom-du-job finished .... with status exitCode=COMPLETED;exitDescription=
-2020-06-02 08:16:35.622 ERROR 22784 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : START JOB ........
-2020-06-02 08:16:40.441 ERROR 22784 --- [scheduling-1] c.whiterabbit.services.HtmlReader01Net   : 01Net - No h2 found ! 
-2020-06-02 08:16:52.418 ERROR 22784 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : JOB nom-du-job finished .... with status exitCode=COMPLETED;exitDescription=
-2020-06-02 09:46:52.420 ERROR 22784 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : START JOB ........
-2020-06-02 09:46:57.529 ERROR 22784 --- [scheduling-1] c.whiterabbit.services.HtmlReader01Net   : 01Net - No h2 found ! 
-2020-06-02 09:47:09.532 ERROR 22784 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : JOB nom-du-job finished .... with status exitCode=COMPLETED;exitDescription=
-2020-06-02 13:03:03.879 ERROR 27808 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : START JOB ........
-2020-06-02 13:03:14.792 ERROR 27808 --- [scheduling-1] c.whiterabbit.services.HtmlReader01Net   : 01Net - No h2 found ! 
-2020-06-02 13:03:39.704 ERROR 27808 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : JOB nom-du-job finished .... with status exitCode=COMPLETED;exitDescription=
-2020-06-02 13:04:39.707 ERROR 27808 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : START JOB ........
-2020-06-02 13:04:49.785 ERROR 27808 --- [scheduling-1] c.whiterabbit.services.HtmlReader01Net   : 01Net - No h2 found ! 
-2020-06-02 13:05:12.254 ERROR 27808 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : JOB nom-du-job finished .... with status exitCode=COMPLETED;exitDescription=
-2020-06-02 13:06:12.263 ERROR 27808 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : START JOB ........
+2020-06-28 13:49:57.580 ERROR 18612 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : START JOB ........
+2020-06-28 13:49:57.939 ERROR 18612 --- [scheduling-1] o.s.s.s.TaskUtils$LoggingErrorHandler    : Unexpected error occurred in scheduled task
+
+org.springframework.jdbc.BadSqlGrammarException: PreparedStatementCallback; bad SQL grammar [SELECT JOB_INSTANCE_ID, JOB_NAME from BATCH_JOB_INSTANCE where JOB_NAME = ? and JOB_KEY = ?]; nested exception is java.sql.SQLSyntaxErrorException: La table 'db_users.batch_job_instance' n'existe pas
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:235) ~[spring-jdbc-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:72) ~[spring-jdbc-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.translateException(JdbcTemplate.java:1443) ~[spring-jdbc-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:633) ~[spring-jdbc-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:669) ~[spring-jdbc-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:700) ~[spring-jdbc-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:712) ~[spring-jdbc-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:768) ~[spring-jdbc-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.batch.core.repository.dao.JdbcJobInstanceDao.getJobInstance(JdbcJobInstanceDao.java:151) ~[spring-batch-core-4.2.0.RELEASE.jar:4.2.0.RELEASE]
+	at org.springframework.batch.core.repository.support.SimpleJobRepository.getLastJobExecution(SimpleJobRepository.java:271) ~[spring-batch-core-4.2.0.RELEASE.jar:4.2.0.RELEASE]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_201]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_201]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_201]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_201]
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:344) ~[spring-aop-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:198) ~[spring-aop-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:366) ~[spring-tx-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:99) ~[spring-tx-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:212) ~[spring-aop-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at com.sun.proxy.$Proxy99.getLastJobExecution(Unknown Source) ~[na:na]
+	at org.springframework.batch.core.launch.support.SimpleJobLauncher.run(SimpleJobLauncher.java:104) ~[spring-batch-core-4.2.0.RELEASE.jar:4.2.0.RELEASE]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_201]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_201]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_201]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_201]
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:344) ~[spring-aop-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:198) ~[spring-aop-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.batch.core.configuration.annotation.SimpleBatchConfiguration$PassthruAdvice.invoke(SimpleBatchConfiguration.java:127) ~[spring-batch-core-4.2.0.RELEASE.jar:4.2.0.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:212) ~[spring-aop-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at com.sun.proxy.$Proxy97.run(Unknown Source) ~[na:na]
+	at com.whiterabbit.batchutils.ArticleBatchScheduler.schedule(ArticleBatchScheduler.java:37) ~[classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_201]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_201]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_201]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_201]
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84) ~[spring-context-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54) ~[spring-context-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) [na:1.8.0_201]
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308) [na:1.8.0_201]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180) [na:1.8.0_201]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294) [na:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_201]
+Caused by: java.sql.SQLSyntaxErrorException: La table 'db_users.batch_job_instance' n'existe pas
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120) ~[mysql-connector-java-8.0.20.jar:8.0.20]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97) ~[mysql-connector-java-8.0.20.jar:8.0.20]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-java-8.0.20.jar:8.0.20]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953) ~[mysql-connector-java-8.0.20.jar:8.0.20]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeQuery(ClientPreparedStatement.java:1003) ~[mysql-connector-java-8.0.20.jar:8.0.20]
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeQuery(ProxyPreparedStatement.java:52) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeQuery(HikariProxyPreparedStatement.java) ~[HikariCP-3.4.1.jar:na]
+	at org.springframework.jdbc.core.JdbcTemplate$1.doInPreparedStatement(JdbcTemplate.java:678) ~[spring-jdbc-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:617) ~[spring-jdbc-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	... 44 common frames omitted
+
+2020-06-28 13:50:37.679 ERROR 12712 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : START JOB ........
+2020-06-28 13:50:38.048 ERROR 12712 --- [scheduling-1] o.s.s.s.TaskUtils$LoggingErrorHandler    : Unexpected error occurred in scheduled task
+
+org.springframework.jdbc.BadSqlGrammarException: PreparedStatementCallback; bad SQL grammar [SELECT JOB_INSTANCE_ID, JOB_NAME from BATCH_JOB_INSTANCE where JOB_NAME = ? and JOB_KEY = ?]; nested exception is java.sql.SQLSyntaxErrorException: La table 'db_users.batch_job_instance' n'existe pas
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:235) ~[spring-jdbc-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:72) ~[spring-jdbc-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.translateException(JdbcTemplate.java:1443) ~[spring-jdbc-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:633) ~[spring-jdbc-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:669) ~[spring-jdbc-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:700) ~[spring-jdbc-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:712) ~[spring-jdbc-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:768) ~[spring-jdbc-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.batch.core.repository.dao.JdbcJobInstanceDao.getJobInstance(JdbcJobInstanceDao.java:151) ~[spring-batch-core-4.2.0.RELEASE.jar:4.2.0.RELEASE]
+	at org.springframework.batch.core.repository.support.SimpleJobRepository.getLastJobExecution(SimpleJobRepository.java:271) ~[spring-batch-core-4.2.0.RELEASE.jar:4.2.0.RELEASE]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_201]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_201]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_201]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_201]
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:344) ~[spring-aop-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:198) ~[spring-aop-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:366) ~[spring-tx-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:99) ~[spring-tx-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:212) ~[spring-aop-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at com.sun.proxy.$Proxy99.getLastJobExecution(Unknown Source) ~[na:na]
+	at org.springframework.batch.core.launch.support.SimpleJobLauncher.run(SimpleJobLauncher.java:104) ~[spring-batch-core-4.2.0.RELEASE.jar:4.2.0.RELEASE]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_201]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_201]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_201]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_201]
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:344) ~[spring-aop-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:198) ~[spring-aop-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.batch.core.configuration.annotation.SimpleBatchConfiguration$PassthruAdvice.invoke(SimpleBatchConfiguration.java:127) ~[spring-batch-core-4.2.0.RELEASE.jar:4.2.0.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:212) ~[spring-aop-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at com.sun.proxy.$Proxy97.run(Unknown Source) ~[na:na]
+	at com.whiterabbit.batchutils.ArticleBatchScheduler.schedule(ArticleBatchScheduler.java:37) ~[classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_201]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_201]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_201]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_201]
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84) ~[spring-context-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54) ~[spring-context-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) [na:1.8.0_201]
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308) [na:1.8.0_201]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180) [na:1.8.0_201]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294) [na:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_201]
+Caused by: java.sql.SQLSyntaxErrorException: La table 'db_users.batch_job_instance' n'existe pas
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120) ~[mysql-connector-java-8.0.20.jar:8.0.20]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97) ~[mysql-connector-java-8.0.20.jar:8.0.20]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-java-8.0.20.jar:8.0.20]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953) ~[mysql-connector-java-8.0.20.jar:8.0.20]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeQuery(ClientPreparedStatement.java:1003) ~[mysql-connector-java-8.0.20.jar:8.0.20]
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeQuery(ProxyPreparedStatement.java:52) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeQuery(HikariProxyPreparedStatement.java) ~[HikariCP-3.4.1.jar:na]
+	at org.springframework.jdbc.core.JdbcTemplate$1.doInPreparedStatement(JdbcTemplate.java:678) ~[spring-jdbc-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:617) ~[spring-jdbc-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	... 44 common frames omitted
+
+2020-06-28 14:42:44.766 ERROR 5744 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : START JOB ........
+2020-06-28 14:42:45.172 ERROR 5744 --- [scheduling-1] o.s.s.s.TaskUtils$LoggingErrorHandler    : Unexpected error occurred in scheduled task
+
+org.springframework.jdbc.BadSqlGrammarException: PreparedStatementCallback; bad SQL grammar [SELECT JOB_INSTANCE_ID, JOB_NAME from BATCH_JOB_INSTANCE where JOB_NAME = ? and JOB_KEY = ?]; nested exception is java.sql.SQLSyntaxErrorException: La table 'db_users.batch_job_instance' n'existe pas
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:235) ~[spring-jdbc-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:72) ~[spring-jdbc-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.translateException(JdbcTemplate.java:1443) ~[spring-jdbc-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:633) ~[spring-jdbc-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:669) ~[spring-jdbc-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:700) ~[spring-jdbc-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:712) ~[spring-jdbc-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:768) ~[spring-jdbc-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.batch.core.repository.dao.JdbcJobInstanceDao.getJobInstance(JdbcJobInstanceDao.java:151) ~[spring-batch-core-4.2.0.RELEASE.jar:4.2.0.RELEASE]
+	at org.springframework.batch.core.repository.support.SimpleJobRepository.getLastJobExecution(SimpleJobRepository.java:271) ~[spring-batch-core-4.2.0.RELEASE.jar:4.2.0.RELEASE]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_201]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_201]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_201]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_201]
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:344) ~[spring-aop-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:198) ~[spring-aop-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:366) ~[spring-tx-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:99) ~[spring-tx-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:212) ~[spring-aop-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at com.sun.proxy.$Proxy99.getLastJobExecution(Unknown Source) ~[na:na]
+	at org.springframework.batch.core.launch.support.SimpleJobLauncher.run(SimpleJobLauncher.java:104) ~[spring-batch-core-4.2.0.RELEASE.jar:4.2.0.RELEASE]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_201]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_201]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_201]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_201]
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:344) ~[spring-aop-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:198) ~[spring-aop-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.batch.core.configuration.annotation.SimpleBatchConfiguration$PassthruAdvice.invoke(SimpleBatchConfiguration.java:127) ~[spring-batch-core-4.2.0.RELEASE.jar:4.2.0.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:212) ~[spring-aop-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at com.sun.proxy.$Proxy97.run(Unknown Source) ~[na:na]
+	at com.whiterabbit.batchutils.ArticleBatchScheduler.schedule(ArticleBatchScheduler.java:37) ~[classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_201]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_201]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_201]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_201]
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84) ~[spring-context-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54) ~[spring-context-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) [na:1.8.0_201]
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308) [na:1.8.0_201]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180) [na:1.8.0_201]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294) [na:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_201]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_201]
+Caused by: java.sql.SQLSyntaxErrorException: La table 'db_users.batch_job_instance' n'existe pas
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120) ~[mysql-connector-java-8.0.20.jar:8.0.20]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97) ~[mysql-connector-java-8.0.20.jar:8.0.20]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-java-8.0.20.jar:8.0.20]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953) ~[mysql-connector-java-8.0.20.jar:8.0.20]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeQuery(ClientPreparedStatement.java:1003) ~[mysql-connector-java-8.0.20.jar:8.0.20]
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeQuery(ProxyPreparedStatement.java:52) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeQuery(HikariProxyPreparedStatement.java) ~[HikariCP-3.4.1.jar:na]
+	at org.springframework.jdbc.core.JdbcTemplate$1.doInPreparedStatement(JdbcTemplate.java:678) ~[spring-jdbc-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:617) ~[spring-jdbc-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	... 44 common frames omitted
+
+2020-06-28 14:43:09.724 ERROR 15384 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : START JOB ........
+2020-06-28 14:43:17.395 ERROR 15384 --- [scheduling-1] c.whiterabbit.services.HtmlReader01Net   : 01Net - No h2 found ! 
+2020-06-28 14:43:36.808 ERROR 15384 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : JOB nom-du-job finished .... with status exitCode=COMPLETED;exitDescription=
+2020-06-28 16:13:36.811 ERROR 15384 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : START JOB ........
+2020-06-28 16:13:42.198 ERROR 15384 --- [scheduling-1] c.whiterabbit.services.HtmlReader01Net   : 01Net - No h2 found ! 
+2020-06-28 16:13:58.654 ERROR 15384 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : JOB nom-du-job finished .... with status exitCode=COMPLETED;exitDescription=
+2020-06-28 17:43:58.656 ERROR 15384 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : START JOB ........
+2020-06-28 17:44:03.593 ERROR 15384 --- [scheduling-1] c.whiterabbit.services.HtmlReader01Net   : 01Net - No h2 found ! 
+2020-06-28 17:44:18.656 ERROR 15384 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : JOB nom-du-job finished .... with status exitCode=COMPLETED;exitDescription=
+2020-06-28 19:14:18.658 ERROR 15384 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : START JOB ........
+2020-06-28 19:14:23.195 ERROR 15384 --- [scheduling-1] c.whiterabbit.services.HtmlReader01Net   : 01Net - No h2 found ! 
+2020-06-28 19:14:38.745 ERROR 15384 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : JOB nom-du-job finished .... with status exitCode=COMPLETED;exitDescription=
+2020-06-28 20:44:38.747 ERROR 15384 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : START JOB ........
+2020-06-28 20:44:43.375 ERROR 15384 --- [scheduling-1] c.whiterabbit.services.HtmlReader01Net   : 01Net - No h2 found ! 
+2020-06-28 20:44:59.205 ERROR 15384 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : JOB nom-du-job finished .... with status exitCode=COMPLETED;exitDescription=
+2020-06-28 22:14:59.206 ERROR 15384 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : START JOB ........
+2020-06-28 22:15:04.115 ERROR 15384 --- [scheduling-1] c.whiterabbit.services.HtmlReader01Net   : 01Net - No h2 found ! 
+2020-06-28 22:15:18.741 ERROR 15384 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : JOB nom-du-job finished .... with status exitCode=COMPLETED;exitDescription=
