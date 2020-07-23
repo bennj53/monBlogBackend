@@ -22,62 +22,66 @@ public class HtmlReaderLesNum implements HtmlReader {
             HtmlPage htmlPage = this.getHtmlPage(url);
             InputDataLot inputDataLot = new InputDataLot();
 
-            List<HtmlElement> items = htmlPage.getByXPath("//section[@class='ln__lyt']");
-            List<HtmlElement> ul = htmlPage.getByXPath("//ul[@class='row ln__list--16 ln__list--8--v-sm--mw ln__vr--16 ln__vr--8--v-sm--mw']");
-            List<HtmlElement> li = htmlPage.getByXPath("//li[@class='col-xs-12']");
+            if(htmlPage != null) {
+                List<HtmlElement> items = htmlPage.getByXPath("//section[@class='ln__lyt']");
+                List<HtmlElement> ul = htmlPage.getByXPath("//ul[@class='row ln__list--16 ln__list--8--v-sm--mw ln__vr--16 ln__vr--8--v-sm--mw']");
+                List<HtmlElement> li = htmlPage.getByXPath("//li[@class='col-xs-12']");
 
-            if(li.isEmpty()){
-                log.error("Les NUMS - No items found ! ");
-            }else{
+                if (li.isEmpty()) {
+                    log.error("Les NUMS - No items found ! ");
+                } else {
 
-                int cpt = 0;
+                    int cpt = 0;
 
-                for(HtmlElement htmlItem : li){
-                    String itemUrl = null;
-                    String itemTitle = null;
-                    String pathImg = null;
-                    List<HtmlAnchor> itemAnchors =  htmlItem.getByXPath(".//a");
+                    for (HtmlElement htmlItem : li) {
+                        String itemUrl = null;
+                        String itemTitle = null;
+                        String pathImg = null;
+                        List<HtmlAnchor> itemAnchors = htmlItem.getByXPath(".//a");
 
-                    for (HtmlAnchor anchor : itemAnchors) {
-                        itemUrl = "https://www.lesnumeriques.com" + anchor.getHrefAttribute() ;
-                        itemTitle = anchor.getAttribute("aria-label") != null
-                                && !anchor.getAttribute("aria-label").equals("") ?
-                                anchor.getAttribute("aria-label")
-                                : itemTitle ;
-                        log.info( String.format("Les NUMS - Title %s : %s --> Url : %s", ++cpt,itemTitle,itemUrl));
+                        for (HtmlAnchor anchor : itemAnchors) {
+                            itemUrl = "https://www.lesnumeriques.com" + anchor.getHrefAttribute();
+                            itemTitle = anchor.getAttribute("aria-label") != null
+                                    && !anchor.getAttribute("aria-label").equals("") ?
+                                    anchor.getAttribute("aria-label")
+                                    : itemTitle;
+                            log.info(String.format("Les NUMS - Title %s : %s --> Url : %s", ++cpt, itemTitle, itemUrl));
 
 
-                        //List<HtmlArticle> imgAnchors = anchor.getByXPath(".//article");
-                        List<HtmlSource> sources = anchor.getByXPath(".//source");
+                            //List<HtmlArticle> imgAnchors = anchor.getByXPath(".//article");
+                            List<HtmlSource> sources = anchor.getByXPath(".//source");
 
-                        for(HtmlSource source : sources){
-                            pathImg = source.getAttribute("data-srcset")!=null && !source.getAttribute("data-srcset").equals("") ? source.getAttribute("data-srcset") : pathImg;
-                            log.info( String.format("Les NUMS - Img Path : %s%n", pathImg));
+                            for (HtmlSource source : sources) {
+                                pathImg = source.getAttribute("data-srcset") != null && !source.getAttribute("data-srcset").equals("") ? source.getAttribute("data-srcset") : pathImg;
+                                log.info(String.format("Les NUMS - Img Path : %s%n", pathImg));
+                            }
+                            //System.out.println( String.format("Les NUMS - Img Path : %s%n", pathImg));
+                            if (pathImg != null && !pathImg.equals(""))
+                                break;
                         }
-                        //System.out.println( String.format("Les NUMS - Img Path : %s%n", pathImg));
-                        if(pathImg != null && !pathImg.equals(""))
-                            break;
-                    }
-                    //créer l' Article
-                    if(itemTitle != null && itemUrl != null && !itemTitle.equals("") && !itemUrl.equals("")){
-                        InputData inputData = new InputData();
-                        inputData.setTitre(itemTitle);
-                        inputData.setImg(pathImg);
-                        inputData.setUrl(itemUrl);
-                        inputData.setAuteur(LESNUMS);
-                        //add resume article
-                        String resume = null;
-                        try {
-                            resume = this.readHtmlPageResume(itemUrl);
-                            inputData.setResume(resume);
-                            log.info( String.format("Les NUMS - Resume : %s%n", inputData.getResume()));
-                        } catch (IOException e) {
-                            e.printStackTrace();
-                        }
+                        //créer l' Article
+                        if (itemTitle != null && itemUrl != null && !itemTitle.equals("") && !itemUrl.equals("")) {
+                            InputData inputData = new InputData();
+                            inputData.setTitre(itemTitle);
+                            inputData.setImg(pathImg);
+                            inputData.setUrl(itemUrl);
+                            inputData.setAuteur(LESNUMS);
+                            //add resume article
+                            String resume = null;
+                            try {
+                                resume = this.readHtmlPageResume(itemUrl);
+                                inputData.setResume(resume);
+                                log.info(String.format("Les NUMS - Resume : %s%n", inputData.getResume()));
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
 
-                        inputDataLot.getInputDatas().add(inputData);
+                            inputDataLot.getInputDatas().add(inputData);
+                        }
                     }
                 }
+            }else{
+                log.error("Les NUMS - No web page found for url : " + url);
             }
         return inputDataLot;
     }
@@ -88,7 +92,7 @@ public class HtmlReaderLesNum implements HtmlReader {
         String paragraphTextContent = null;
 
 
-        List<HtmlParagraph> paragraphs = page.getByXPath("//p[@class='ed__a-h ed__bdy__l']");
+       /* List<HtmlParagraph> paragraphs = page.getByXPath("//p[@class='ed__a-h ed__bdy__l']");
         if(paragraphs == null ||paragraphs.isEmpty()){
             log.error("LesNums - No p found ! ");
         }else{
@@ -105,7 +109,7 @@ public class HtmlReaderLesNum implements HtmlReader {
 
                 }
             }
-        }
+        }*/
         return paragraphTextContent;
     }
 }

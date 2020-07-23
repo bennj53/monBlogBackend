@@ -28,11 +28,11 @@ public class ArticleBatchScheduler {
 
     //@Scheduled(cron = "0 * * * * * ")
     //Launch every X ms
-    @Scheduled(fixedDelayString = "${job.arcticles.periodicity}")
+    @Scheduled(fixedDelayString = "${job.articles.periodicity}")
     public void schedule() throws JobParametersInvalidException, JobExecutionAlreadyRunningException, JobRestartException, JobInstanceAlreadyCompleteException {
         log.error("START JOB ........");
-        //vider base des articles
-        articleRepository.deleteAll();
+        //vider base des articles dont auteur != bennj53
+        articleRepository.deleteAll(articleRepository.findByAuteurNot("bennj53"));
         //lancer le job update articles listes
         JobExecution jobExecution = jobLauncher.run(job.articleJob(), new JobParametersBuilder()
                 .addDate("date", new Date())

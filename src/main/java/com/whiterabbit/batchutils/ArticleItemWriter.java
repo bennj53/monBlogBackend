@@ -22,9 +22,9 @@ public class ArticleItemWriter implements ItemWriter<ArticleLot> {
     @Override
     public void write(List<? extends ArticleLot> list) throws Exception {
         log.info("----->ItemWriter : nb sources articles : " + list.size());
-        for (ArticleLot articleLot : list) {
-            log.info("----->ItemWriter : nb saved articles for " + articleLot.getArticles().get(0).getAuteur() +" : " + articleLot.getArticles().size());
-            articleRepository.saveAll(articleLot.getArticles());
-        }
+            for (ArticleLot articleLot : list) {
+                //log.info("----->ItemWriter : nb saved articles for " + articleLot.getArticles().get(0).getAuteur() + " : " + articleLot.getArticles().size());
+                articleRepository.saveAll(articleLot.getArticles());
+            }
     }
 }

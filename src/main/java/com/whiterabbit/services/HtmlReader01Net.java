@@ -72,7 +72,7 @@ public class HtmlReader01Net implements HtmlReader {
         HtmlPage page = this.getHtmlPage(url);
         String resume = null;
 
-        List<HtmlHeading2> heading2s = page.getByXPath("//h2[@class='title-large padding-bottomx2 blocx3 border-b-s']");
+/*        List<HtmlHeading2> heading2s = page.getByXPath("//h2[@class='title-large padding-bottomx2 blocx3 border-b-s']");
         if(heading2s == null || heading2s.isEmpty()){
             log.error("01Net - No h2 found ! ");
         }else{
@@ -80,7 +80,7 @@ public class HtmlReader01Net implements HtmlReader {
                 resume = heading2.getTextContent();
 
             }
-        }
+        }*/
 
         return resume;
     }

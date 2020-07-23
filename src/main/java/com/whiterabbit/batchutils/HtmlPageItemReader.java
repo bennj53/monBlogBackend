@@ -84,7 +84,7 @@ public class HtmlPageItemReader implements ItemReader<InputDataLot> {
             this.resetIndex();
             return null;
         }
-        log.info("----->ItemReader : " + this.urls[index]);
+        log.error("----->ItemReader : " + this.urls[index]);
         InputDataLot inputDataLot = htmlReaderService.readHtmlPage("https://" + this.urls[index]);
         index ++;
         return inputDataLot;

@@ -32,6 +32,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.authorizeRequests().antMatchers(HttpMethod.GET,"/article/**").permitAll();
         //TODO: à changer pour la prod
             http.authorizeRequests().antMatchers(HttpMethod.POST,"/articles/**").permitAll();
+            http.authorizeRequests().antMatchers(HttpMethod.PUT,"/articles/**").permitAll();
+            http.authorizeRequests().antMatchers(HttpMethod.DELETE,"/articles/**").permitAll();
         //
         //role necessaire pour accès aux produits et categories
         http.authorizeRequests().antMatchers("/categories/**").hasAuthority("ADMIN");
