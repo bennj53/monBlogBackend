@@ -21,58 +21,62 @@ public class HtmlReaderFRAndroid implements HtmlReader {
     public InputDataLot readHtmlPage(String url) {
             HtmlPage page = this.getHtmlPage(url);
             InputDataLot inputDataLot = new InputDataLot();
+            if(page != null) {
+                List<HtmlDivision> divisions = page.getByXPath("//div[@class='columns is-vcentered is-mobile is-relative']");
+                if (divisions.isEmpty()) {
+                    log.error("frandroid - No division found ! ");
+                } else {
+                    int cpt = 0;
+                    String articleCategory, articleCategoryUrl, articleTitle, articleUrl, pathImg, articleDate = null;
 
-            List<HtmlDivision> divisions = page.getByXPath("//div[@class='columns is-vcentered is-mobile is-relative']");
-            if(divisions.isEmpty()){
-                log.error("frandroid - No division found ! ");
-            }else {
-                int cpt = 0;
-                String articleCategory, articleCategoryUrl, articleTitle, articleUrl, pathImg, articleDate = null;
+                    for (HtmlDivision division : divisions) {
+                        //get article category and category link
+                        List<HtmlAnchor> anchorCategory = division.getByXPath(".//a[@class='post-card__category is-uppercase has-text-weight-semibold']");
+                        articleCategory = anchorCategory != null && anchorCategory.size() >= 1 ? anchorCategory.get(0).getTextContent() : null;
+                        articleCategoryUrl = anchorCategory != null && anchorCategory.size() >= 1 ? anchorCategory.get(0).getHrefAttribute() : null;
+                        //get article title and link
+                        List<HtmlAnchor> anchorArticle = division.getByXPath(".//a[@class='post-card__title-link']");
+                        articleTitle = anchorArticle != null && anchorArticle.size() >= 1 ? anchorArticle.get(0).getTextContent() : null;
+                        articleUrl = anchorArticle != null && anchorArticle.size() >= 1 ? anchorArticle.get(0).getHrefAttribute() : null;
+                        //get article img
+                        List<HtmlImage> img = division.getByXPath(".//img");
+                        pathImg = img != null && img.size() >= 1 ? img.get(0).getAttribute("data-srcset") : null;
+                        if (pathImg != null && pathImg.split(",").length > 2) {
+                            pathImg = pathImg.split(",")[2];
+                        }
 
-                for (HtmlDivision division : divisions) {
-                    //get article category and category link
-                    List<HtmlAnchor> anchorCategory = division.getByXPath(".//a[@class='post-card__category is-uppercase has-text-weight-semibold']");
-                    articleCategory = anchorCategory != null && anchorCategory.size()>=1 ? anchorCategory.get(0).getTextContent():null;
-                    articleCategoryUrl = anchorCategory != null && anchorCategory.size()>=1 ? anchorCategory.get(0).getHrefAttribute():null;
-                    //get article title and link
-                    List<HtmlAnchor> anchorArticle = division.getByXPath(".//a[@class='post-card__title-link']");
-                    articleTitle = anchorArticle != null && anchorArticle.size()>=1 ? anchorArticle.get(0).getTextContent():null;
-                    articleUrl = anchorArticle != null && anchorArticle.size()>=1 ? anchorArticle.get(0).getHrefAttribute():null;
-                    //get article img
-                    List<HtmlImage> img = division.getByXPath(".//img");
-                    pathImg = img != null && img.size()>=1 ? img.get(0).getAttribute("data-srcset") : null;
-                    if(pathImg != null && pathImg.split(",").length>1){
-                        pathImg = pathImg.split(",")[1];
+                        //get article date
+                        List<HtmlParagraph> paragraphsDateArticle = division.getByXPath(".//p[@class='post-card__date has-text-right-mobile']");
+                        articleDate = paragraphsDateArticle != null && paragraphsDateArticle.size() >= 1 ? paragraphsDateArticle.get(0).getTextContent() : null;
+
+                        //debug data
+                        log.info(String.format("frandroid - Article %s --> Category : %s // Url Category : %s", ++cpt, articleCategory, articleCategoryUrl));
+                        log.info(String.format("frandroid - Article %s --> Titre : %s // Url : %s", cpt, articleTitle, articleUrl));
+                        log.info(String.format("frandroid - Article %s --> Date : %s", cpt, articleDate));
+                        log.info(String.format("frandroid - Article %s --> Img : %s", cpt, pathImg));
+
+
+                        //create article
+                        InputData inputData = new InputData();
+                        inputData.setTitre(articleTitle);
+                        inputData.setImg(pathImg);
+                        inputData.setUrl(articleUrl);
+                        inputData.setDatePublication(articleDate);
+                        inputData.setAuteur(FRANDROID);
+                        //add resume article
+                        try {
+                            String resume = this.readHtmlPageResume(articleUrl);
+                            inputData.setResume(resume);
+                            log.info(String.format("frandroid - Article %s --> Resume : %s%n", cpt, inputData.getResume()));
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+
+                        inputDataLot.getInputDatas().add(inputData);
                     }
-                    //get article date
-                    List<HtmlParagraph> paragraphsDateArticle = division.getByXPath(".//p[@class='post-card__date has-text-right-mobile']");
-                    articleDate = paragraphsDateArticle != null && paragraphsDateArticle.size()>=1 ? paragraphsDateArticle.get(0).getTextContent() : null;
-
-                    //debug data
-                    log.info(String.format("frandroid - Article %s --> Category : %s // Url Category : %s", ++cpt, articleCategory, articleCategoryUrl));
-                    log.info(String.format("frandroid - Article %s --> Titre : %s // Url : %s", cpt, articleTitle, articleUrl));
-                    log.info(String.format("frandroid - Article %s --> Date : %s",  cpt,articleDate));
-                    log.info(String.format("frandroid - Article %s --> Img : %s",  cpt,pathImg));
-
-
-                    //create article
-                    InputData inputData = new InputData();
-                    inputData.setTitre(articleTitle);
-                    inputData.setImg(pathImg);
-                    inputData.setUrl(articleUrl);
-                    inputData.setDatePublication(articleDate);
-                    inputData.setAuteur(FRANDROID);
-                    //add resume article
-                    try {
-                        String resume = this.readHtmlPageResume(articleUrl);
-                        inputData.setResume(resume);
-                        log.info(String.format("frandroid - Article %s --> Resume : %s%n",  cpt, inputData.getResume()));
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-
-                    inputDataLot.getInputDatas().add(inputData);
                 }
+            }else{
+                log.error(FRANDROID + " - No web page found for url : " + url);
             }
             return inputDataLot;
     }
@@ -82,13 +86,16 @@ public class HtmlReaderFRAndroid implements HtmlReader {
         HtmlPage page = this.getHtmlPage(url);
         String resume= null;
 
-        List<HtmlParagraph> paragraphArticleResume = page.getByXPath(".//p[@class='chapo']");
-        String articleResume = paragraphArticleResume != null && paragraphArticleResume.size()>=1 ? paragraphArticleResume.get(0).getTextContent() : null;
+        if(page != null) {
+            List<HtmlParagraph> paragraphArticleResume = page.getByXPath(".//p[@class='chapo']");
+            resume = paragraphArticleResume != null && paragraphArticleResume.size()>=1 ? paragraphArticleResume.get(0).getTextContent() : null;
 
-        if(articleResume == null){
-            log.error("frandroid - No article resume found ! ");
+            if(resume == null){
+                log.error("frandroid - No article resume found ! ");
+            }
+        }else{
+            log.error(url + " - page resume not found");
         }
-
-        return articleResume;
+        return resume;
     }
 }

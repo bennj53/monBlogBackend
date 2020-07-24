@@ -21,60 +21,62 @@ public class HtmlReaderMacGeneration implements HtmlReader {
     public InputDataLot readHtmlPage(String url) {
             HtmlPage page = this.getHtmlPage(url);
             InputDataLot inputDataLot = new InputDataLot();
+            if(page != null) {
+                List<HtmlArticle> articlesHtml = page.getByXPath("//article[@class='pas']");
+                if(articlesHtml.isEmpty()){
+                    log.error("MacGeneration - No articleHtml found ! ");
+                }else {
+                    String articleUrl = null;
+                    String articleImg = null;
+                    String articleTitle = null;
+                    int cpt = 0;
 
-            List<HtmlArticle> articlesHtml = page.getByXPath("//article[@class='pas']");
-            if(articlesHtml.isEmpty()){
-                log.error("MacGeneration - No articleHtml found ! ");
-            }else {
-                String articleUrl = null;
-                String articleImg = null;
-                String articleTitle = null;
-                int cpt = 0;
+                    for (HtmlArticle articleHtml : articlesHtml){
+                        //get article url
+                        List<HtmlAnchor> anchorArticle = articleHtml.getByXPath(".//a");
+                        articleUrl = anchorArticle != null && anchorArticle.size()>=1 ? anchorArticle.get(0).getHrefAttribute():null;
+                        if (!articleUrl.contains("http"))
+                            articleUrl = "https://www.macg.co" + articleUrl;
+                        //get article img
+                        List<HtmlImage> imgArticle = articleHtml.getByXPath(".//img");
+                        articleImg = imgArticle != null && imgArticle.size()>=1 ? imgArticle.get(0).getSrcAttribute() : null;
+                        //get article title
+                        List<HtmlHeading2> h2Article = articleHtml.getByXPath(".//h2");
+                        articleTitle = h2Article != null && h2Article.size()>=1 ? h2Article.get(0).getTextContent().trim() : null;
 
-                for (HtmlArticle articleHtml : articlesHtml){
-                    //get article url
-                    List<HtmlAnchor> anchorArticle = articleHtml.getByXPath(".//a");
-                    articleUrl = anchorArticle != null && anchorArticle.size()>=1 ? anchorArticle.get(0).getHrefAttribute():null;
-                    if (!articleUrl.contains("http"))
-                        articleUrl = "https://www.macg.co" + articleUrl;
-                    //get article img
-                    List<HtmlImage> imgArticle = articleHtml.getByXPath(".//img");
-                    articleImg = imgArticle != null && imgArticle.size()>=1 ? imgArticle.get(0).getSrcAttribute() : null;
-                    //get article title
-                    List<HtmlHeading2> h2Article = articleHtml.getByXPath(".//h2");
-                    articleTitle = h2Article != null && h2Article.size()>=1 ? h2Article.get(0).getTextContent().trim() : null;
+                        //debug data
+                        //System.out.println(String.format("MacGeneration - Article %s --> Category : %s // Url Category : %s", ++cpt, articleCategory, articleCategoryUrl));
+                        log.info(String.format("MacGeneration - Article %s --> Titre : %s // Url : %s", ++cpt, articleTitle, articleUrl));
+                        //System.out.println(String.format("MacGeneration - Article %s --> Date : %s",  cpt,articleDate));
+                        log.info(String.format("MacGeneration - Article %s --> Img : %s",  cpt,articleImg));
 
-                    //debug data
-                    //System.out.println(String.format("MacGeneration - Article %s --> Category : %s // Url Category : %s", ++cpt, articleCategory, articleCategoryUrl));
-                    log.info(String.format("MacGeneration - Article %s --> Titre : %s // Url : %s", ++cpt, articleTitle, articleUrl));
-                    //System.out.println(String.format("MacGeneration - Article %s --> Date : %s",  cpt,articleDate));
-                    log.info(String.format("MacGeneration - Article %s --> Img : %s",  cpt,articleImg));
+                        //create article
+                        InputData inputData = new InputData();
+                        inputData.setTitre(articleTitle);
+                        inputData.setImg(articleImg);
+                        inputData.setUrl(articleUrl);
+                        //articl.setDatePublication(articleDate);
+                        inputData.setAuteur(MACGENERATION);
+                        //add resume article
+                        try {
+                            String resume = this.readHtmlPageResume(articleUrl);
+                            inputData.setResume(resume);
+                            log.info(String.format("MacGeneration - Article %s --> Resume : %s%n",  cpt, inputData.getResume()));
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
 
-                    //create article
-                    InputData inputData = new InputData();
-                    inputData.setTitre(articleTitle);
-                    inputData.setImg(articleImg);
-                    inputData.setUrl(articleUrl);
-                    //articl.setDatePublication(articleDate);
-                    inputData.setAuteur(MACGENERATION);
-                    //add resume article
-                    try {
-                        String resume = this.readHtmlPageResume(articleUrl);
-                        inputData.setResume(resume);
-                        log.info(String.format("MacGeneration - Article %s --> Resume : %s%n",  cpt, inputData.getResume()));
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
+                        inputDataLot.getInputDatas().add(inputData);
 
-                    inputDataLot.getInputDatas().add(inputData);
-
-                    //limite de 20 articles images trop lourdes
-                    if (cpt == 20){
-                        break;
+                        //limite de 20 articles images trop lourdes
+                        if (cpt == 20){
+                            break;
+                        }
                     }
                 }
+            }else{
+                log.error(MACGENERATION + " - No web page found for url : " + url);
             }
-
             return inputDataLot;
     }
 
@@ -83,12 +85,14 @@ public class HtmlReaderMacGeneration implements HtmlReader {
         HtmlPage page = this.getHtmlPage(url);
         String articleResume= null;
 
-        List<HtmlDivision> divisionArticleResume = page.getByXPath(".//div[@class='field-item even']");
-        if(divisionArticleResume != null && divisionArticleResume.size()>0){
-            List<HtmlParagraph> paragraphsResume = divisionArticleResume.get(0).getByXPath(".//p");
-            articleResume = paragraphsResume != null && paragraphsResume.size()>0 ? paragraphsResume.get(0).getTextContent() : null;
-        }else{
-            log.error("MacGeneration - No division for article resume found !");
+        if(page != null) {
+            List<HtmlDivision> divisionArticleResume = page.getByXPath(".//div[@class='field-item even']");
+            if(divisionArticleResume != null && divisionArticleResume.size()>0){
+                List<HtmlParagraph> paragraphsResume = divisionArticleResume.get(0).getByXPath(".//p");
+                articleResume = paragraphsResume != null && paragraphsResume.size()>0 ? paragraphsResume.get(0).getTextContent() : null;
+            }else{
+                log.error("MacGeneration - No division for article resume found !");
+            }
         }
 
         if(articleResume == null){

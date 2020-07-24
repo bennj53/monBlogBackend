@@ -91,25 +91,28 @@ public class HtmlReaderLesNum implements HtmlReader {
         HtmlPage page = this.getHtmlPage(url);
         String paragraphTextContent = null;
 
+        if(page != null) {
+           List<HtmlParagraph> paragraphs = page.getByXPath("//p[@class='ed__a-h ed__bdy__l']");
+            if(paragraphs == null ||paragraphs.isEmpty()){
+                log.error("LesNums - No p found ! ");
+            }else{
+                for(HtmlElement paragraph : paragraphs) {
 
-       /* List<HtmlParagraph> paragraphs = page.getByXPath("//p[@class='ed__a-h ed__bdy__l']");
-        if(paragraphs == null ||paragraphs.isEmpty()){
-            log.error("LesNums - No p found ! ");
-        }else{
-            for(HtmlElement paragraph : paragraphs) {
+                    paragraphTextContent = paragraph.getTextContent();
 
-                paragraphTextContent = paragraph.getTextContent();
+                    List<HtmlAnchor> itemAnchors = paragraph.getByXPath(".//a");
 
-                List<HtmlAnchor> itemAnchors = paragraph.getByXPath(".//a");
+                    int cpt= 1;
 
-                int cpt= 1;
+                    for (HtmlAnchor anchor : itemAnchors) {
+                        paragraphTextContent = paragraphTextContent + anchor.getTextContent();
 
-                for (HtmlAnchor anchor : itemAnchors) {
-                    paragraphTextContent = paragraphTextContent + anchor.getTextContent();
-
+                    }
                 }
             }
-        }*/
+        }else{
+            log.error(url + " - resume page not found");
+        }
         return paragraphTextContent;
     }
 }
