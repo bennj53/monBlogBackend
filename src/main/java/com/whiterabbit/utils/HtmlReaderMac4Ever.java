@@ -1,8 +1,9 @@
-package com.whiterabbit.services;
+package com.whiterabbit.utils;
 
 import com.gargoylesoftware.htmlunit.html.*;
 import com.whiterabbit.dto.InputData;
 import com.whiterabbit.dto.InputDataLot;
+import com.whiterabbit.entities.Category;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -16,6 +17,8 @@ public class HtmlReaderMac4Ever implements HtmlReader {
 
     Logger log = LoggerFactory.getLogger(HtmlReaderMac4Ever.class);
     public static final String MAC4EVER = "mac4ever.com";
+    public static final String category = Category.GENERAL.toString();
+    public static final String subcategory = Category.GENERAL.getSubcategory()[0];
 
     @Override
     public InputDataLot readHtmlPage(String url) {
@@ -53,6 +56,8 @@ public class HtmlReaderMac4Ever implements HtmlReader {
 
                             //créer l' Article
                             InputData inputData = new InputData();
+                            inputData.setCategory(category);
+                            inputData.setSubcategory(subcategory);
                             inputData.setTitre(articleTextContent);
                             inputData.setImg("https://www.mac4ever.com" + pathImg);
                             inputData.setUrl("https://www.mac4ever.com" + articleUrl);

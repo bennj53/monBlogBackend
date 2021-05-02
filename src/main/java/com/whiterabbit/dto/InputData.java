@@ -1,6 +1,7 @@
 package com.whiterabbit.dto;
 
 import com.whiterabbit.entities.Category;
+import com.whiterabbit.entities.CategoryOld;
 import lombok.*;
 
 
@@ -8,6 +9,8 @@ import lombok.*;
 @ToString @Data
 public class InputData {
     private String id;
+    private String category;
+    private String subcategory;
     private String titre;
     private String auteur;
     private String datePublication;
@@ -16,5 +19,5 @@ public class InputData {
     private String contenu;
     private String img;
     private String url;
-    private Category category;
+    private CategoryOld categoryOld;
 }

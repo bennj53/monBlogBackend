@@ -1,4 +1,4 @@
-package com.whiterabbit.services;
+package com.whiterabbit.utils;
 
 import com.gargoylesoftware.htmlunit.WebClient;
 import com.gargoylesoftware.htmlunit.html.HtmlPage;
@@ -26,4 +26,5 @@ public interface HtmlReader {
         client.close();
         return page;
     }
+
 }

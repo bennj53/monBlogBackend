@@ -1,8 +1,9 @@
-package com.whiterabbit.services;
+package com.whiterabbit.utils;
 
 import com.gargoylesoftware.htmlunit.html.*;
 import com.whiterabbit.dto.InputData;
 import com.whiterabbit.dto.InputDataLot;
+import com.whiterabbit.entities.Category;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -16,6 +17,8 @@ public class HtmlReaderMacGeneration implements HtmlReader {
 
     Logger log = LoggerFactory.getLogger(HtmlReaderMacGeneration.class);
     public static final String MACGENERATION = "macg.co";
+    public static final String category = Category.GENERAL.toString();
+    public static final String subcategory = Category.GENERAL.getSubcategory()[0];
 
     @Override
     public InputDataLot readHtmlPage(String url) {
@@ -52,6 +55,8 @@ public class HtmlReaderMacGeneration implements HtmlReader {
 
                         //create article
                         InputData inputData = new InputData();
+                        inputData.setCategory(category);
+                        inputData.setSubcategory(subcategory);
                         inputData.setTitre(articleTitle);
                         inputData.setImg(articleImg);
                         inputData.setUrl(articleUrl);

@@ -1,7 +1,7 @@
 package com.whiterabbit.controller;
 
 import com.whiterabbit.dao.CategoryRepository;
-import com.whiterabbit.entities.Category;
+import com.whiterabbit.entities.CategoryOld;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -15,7 +15,7 @@ public class CategoryController {
     CategoryRepository categoryRepository;
 
     @RequestMapping(value = "/categories")
-    public List<Category> listeCategories(){
+    public List<CategoryOld> listeCategories(){
         return categoryRepository.findAll();
     }
 }

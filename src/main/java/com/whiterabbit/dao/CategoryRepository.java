@@ -1,9 +1,9 @@
 package com.whiterabbit.dao;
 
-import com.whiterabbit.entities.Category;
+import com.whiterabbit.entities.CategoryOld;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
-@RepositoryRestResource
-public interface CategoryRepository extends MongoRepository<Category, String> {
+//@RepositoryRestResource
+public interface CategoryRepository extends MongoRepository<CategoryOld, String> {
 }

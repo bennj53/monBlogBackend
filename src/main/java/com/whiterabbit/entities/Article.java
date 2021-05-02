@@ -14,12 +14,14 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Data
 @AllArgsConstructor @NoArgsConstructor @ToString
 //pour gerer la relation bidirectionnelle avec category (champs dbref) et eviter boucle infini
-@JsonIdentityInfo(
+/*@JsonIdentityInfo(
         generator = ObjectIdGenerators.PropertyGenerator.class,
-        property = "id")
+        property = "id")*/
 public class Article {
     @Id
     private String id;
+    private String category;
+    private String subcategory;
     private String titre;
     private String auteur;
     private String datePublication;
@@ -28,6 +30,7 @@ public class Article {
     private String contenu;
     private String img;
     private String url;
-    @DBRef
-    private Category category;
+
+/*    @DBRef
+    private CategoryOld categoryOld;*/
 }

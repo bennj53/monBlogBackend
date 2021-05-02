@@ -1,6 +1,7 @@
 package com.whiterabbit.services;
 
 import com.whiterabbit.dto.InputDataLot;
+import com.whiterabbit.utils.HtmlReader;
 import lombok.Data;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

@@ -1,331 +1,854 @@
-2020-07-24 00:12:02.008 ERROR 1924 --- [http-nio-8087-exec-10] c.w.controller.ArticleController         : controller save article started
-2020-07-24 00:13:49.293 ERROR 1924 --- [http-nio-8087-exec-2] c.w.controller.ArticleController         : controller update article started
-2020-07-24 00:16:29.756 ERROR 7040 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : START JOB ........
-2020-07-24 00:16:29.963 ERROR 7040 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.journaldugeek.com/articles/
-2020-07-24 00:16:34.048 ERROR 7040 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.lesnumeriques.com/actualites
-2020-07-24 00:16:34.078 ERROR 7040 --- [scheduling-1] c.whiterabbit.services.HtmlReaderLesNum  : Les NUMS - No web page found for url : https://www.lesnumeriques.com/actualites
-2020-07-24 00:16:34.081 ERROR 7040 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.01net.com/actualites/
-2020-07-24 00:16:43.046 ERROR 7040 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.mac4ever.com/dossiers
-2020-07-24 00:16:43.117 ERROR 7040 --- [scheduling-1] o.s.batch.core.step.AbstractStep         : Encountered an error executing step nom-du-step in job nom-du-job
+2021-05-02 10:45:14.356 ERROR 2959 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : START JOB ........
+2021-05-02 10:45:14.416 ERROR 2959 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.journaldugeek.com/articles/
+2021-05-02 10:45:20.376 ERROR 2959 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.lesnumeriques.com/actualites
+2021-05-02 10:45:20.399 ERROR 2959 --- [scheduling-1] c.whiterabbit.services.HtmlReaderLesNum  : Les NUMS - No web page found for url : https://www.lesnumeriques.com/actualites
+2021-05-02 10:45:20.403 ERROR 2959 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.01net.com/actualites/
+2021-05-02 10:45:21.637 ERROR 2959 --- [scheduling-1] c.whiterabbit.services.HtmlReader01Net   : https://www.01net.com/actualites/samsung-les-galaxy-z-fold2-5g-et-z-flip-profitent-de-promotions-exceptionnelles-2041921.html - page resume not found
+2021-05-02 10:45:22.926 ERROR 2959 --- [scheduling-1] c.whiterabbit.services.HtmlReader01Net   : https://www.01net.com/actualites/macbook-air-10percent-de-remise-sur-le-dernier-ordinateur-portable-apple-2042144.html - page resume not found
+2021-05-02 10:45:23.467 ERROR 2959 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.mac4ever.com/dossiers
+2021-05-02 10:45:23.499 ERROR 2959 --- [scheduling-1] c.w.services.HtmlReaderMac4Ever          : mac4ever.com - No web page found for url : https://www.mac4ever.com/dossiers
+2021-05-02 10:45:23.502 ERROR 2959 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.frandroid.com/actualites
+2021-05-02 10:45:23.824 ERROR 2959 --- [scheduling-1] c.w.services.HtmlReaderFRAndroid         : frandroid - No division found ! 
+2021-05-02 10:45:23.828 ERROR 2959 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.macg.co/
+2021-05-02 10:45:25.617 ERROR 2959 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : JOB nom-du-job finished .... with status exitCode=COMPLETED;exitDescription=
+2021-05-02 11:09:21.745 ERROR 9429 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
 
-java.lang.NullPointerException: null
-	at com.whiterabbit.services.HtmlReaderMac4Ever.readHtmlPage(HtmlReaderMac4Ever.java:26) ~[classes/:na]
-	at com.whiterabbit.services.HtmlReaderServiceImpl.readHtmlPage(HtmlReaderServiceImpl.java:63) ~[classes/:na]
-	at com.whiterabbit.batchutils.HtmlPageItemReader.read(HtmlPageItemReader.java:88) ~[classes/:na]
-	at com.whiterabbit.batchutils.HtmlPageItemReader.read(HtmlPageItemReader.java:24) ~[classes/:na]
-	at com.whiterabbit.batchutils.HtmlPageItemReader$$EnhancerBySpringCGLIB$$ee8a38e7.read(<generated>) ~[classes/:na]
-	at com.whiterabbit.batchutils.HtmlPageItemReader$$FastClassBySpringCGLIB$$5295a48f.invoke(<generated>) ~[classes/:na]
-	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218) ~[spring-core-5.2.1.RELEASE.jar:5.2.1.RELEASE]
-	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:769) ~[spring-aop-5.2.1.RELEASE.jar:5.2.1.RELEASE]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) [spring-aop-5.2.1.RELEASE.jar:5.2.1.RELEASE]
-	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747) ~[spring-aop-5.2.1.RELEASE.jar:5.2.1.RELEASE]
-	at org.springframework.aop.support.DelegatingIntroductionInterceptor.doProceed(DelegatingIntroductionInterceptor.java:136) ~[spring-aop-5.2.1.RELEASE.jar:5.2.1.RELEASE]
-	at org.springframework.aop.support.DelegatingIntroductionInterceptor.invoke(DelegatingIntroductionInterceptor.java:124) ~[spring-aop-5.2.1.RELEASE.jar:5.2.1.RELEASE]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) [spring-aop-5.2.1.RELEASE.jar:5.2.1.RELEASE]
-	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747) ~[spring-aop-5.2.1.RELEASE.jar:5.2.1.RELEASE]
-	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:689) ~[spring-aop-5.2.1.RELEASE.jar:5.2.1.RELEASE]
-	at com.whiterabbit.batchutils.HtmlPageItemReader$$EnhancerBySpringCGLIB$$e2c4f5fb.read(<generated>) ~[classes/:na]
-	at org.springframework.batch.core.step.item.SimpleChunkProvider.doRead(SimpleChunkProvider.java:99) ~[spring-batch-core-4.2.0.RELEASE.jar:4.2.0.RELEASE]
-	at org.springframework.batch.core.step.item.SimpleChunkProvider.read(SimpleChunkProvider.java:180) ~[spring-batch-core-4.2.0.RELEASE.jar:4.2.0.RELEASE]
-	at org.springframework.batch.core.step.item.SimpleChunkProvider$1.doInIteration(SimpleChunkProvider.java:126) ~[spring-batch-core-4.2.0.RELEASE.jar:4.2.0.RELEASE]
-	at org.springframework.batch.repeat.support.RepeatTemplate.getNextResult(RepeatTemplate.java:375) ~[spring-batch-infrastructure-4.2.0.RELEASE.jar:4.2.0.RELEASE]
-	at org.springframework.batch.repeat.support.RepeatTemplate.executeInternal(RepeatTemplate.java:215) ~[spring-batch-infrastructure-4.2.0.RELEASE.jar:4.2.0.RELEASE]
-	at org.springframework.batch.repeat.support.RepeatTemplate.iterate(RepeatTemplate.java:145) ~[spring-batch-infrastructure-4.2.0.RELEASE.jar:4.2.0.RELEASE]
-	at org.springframework.batch.core.step.item.SimpleChunkProvider.provide(SimpleChunkProvider.java:118) ~[spring-batch-core-4.2.0.RELEASE.jar:4.2.0.RELEASE]
-	at org.springframework.batch.core.step.item.ChunkOrientedTasklet.execute(ChunkOrientedTasklet.java:71) ~[spring-batch-core-4.2.0.RELEASE.jar:4.2.0.RELEASE]
-	at org.springframework.batch.core.step.tasklet.TaskletStep$ChunkTransactionCallback.doInTransaction(TaskletStep.java:407) ~[spring-batch-core-4.2.0.RELEASE.jar:4.2.0.RELEASE]
-	at org.springframework.batch.core.step.tasklet.TaskletStep$ChunkTransactionCallback.doInTransaction(TaskletStep.java:331) ~[spring-batch-core-4.2.0.RELEASE.jar:4.2.0.RELEASE]
-	at org.springframework.transaction.support.TransactionTemplate.execute(TransactionTemplate.java:140) ~[spring-tx-5.2.1.RELEASE.jar:5.2.1.RELEASE]
-	at org.springframework.batch.core.step.tasklet.TaskletStep$2.doInChunkContext(TaskletStep.java:273) ~[spring-batch-core-4.2.0.RELEASE.jar:4.2.0.RELEASE]
-	at org.springframework.batch.core.scope.context.StepContextRepeatCallback.doInIteration(StepContextRepeatCallback.java:82) ~[spring-batch-core-4.2.0.RELEASE.jar:4.2.0.RELEASE]
-	at org.springframework.batch.repeat.support.RepeatTemplate.getNextResult(RepeatTemplate.java:375) ~[spring-batch-infrastructure-4.2.0.RELEASE.jar:4.2.0.RELEASE]
-	at org.springframework.batch.repeat.support.RepeatTemplate.executeInternal(RepeatTemplate.java:215) ~[spring-batch-infrastructure-4.2.0.RELEASE.jar:4.2.0.RELEASE]
-	at org.springframework.batch.repeat.support.RepeatTemplate.iterate(RepeatTemplate.java:145) ~[spring-batch-infrastructure-4.2.0.RELEASE.jar:4.2.0.RELEASE]
-	at org.springframework.batch.core.step.tasklet.TaskletStep.doExecute(TaskletStep.java:258) ~[spring-batch-core-4.2.0.RELEASE.jar:4.2.0.RELEASE]
-	at org.springframework.batch.core.step.AbstractStep.execute(AbstractStep.java:208) ~[spring-batch-core-4.2.0.RELEASE.jar:4.2.0.RELEASE]
-	at org.springframework.batch.core.job.SimpleStepHandler.handleStep(SimpleStepHandler.java:148) [spring-batch-core-4.2.0.RELEASE.jar:4.2.0.RELEASE]
-	at org.springframework.batch.core.job.AbstractJob.handleStep(AbstractJob.java:410) [spring-batch-core-4.2.0.RELEASE.jar:4.2.0.RELEASE]
-	at org.springframework.batch.core.job.SimpleJob.doExecute(SimpleJob.java:136) [spring-batch-core-4.2.0.RELEASE.jar:4.2.0.RELEASE]
-	at org.springframework.batch.core.job.AbstractJob.execute(AbstractJob.java:319) [spring-batch-core-4.2.0.RELEASE.jar:4.2.0.RELEASE]
-	at org.springframework.batch.core.launch.support.SimpleJobLauncher$1.run(SimpleJobLauncher.java:147) [spring-batch-core-4.2.0.RELEASE.jar:4.2.0.RELEASE]
-	at org.springframework.core.task.SyncTaskExecutor.execute(SyncTaskExecutor.java:50) [spring-core-5.2.1.RELEASE.jar:5.2.1.RELEASE]
-	at org.springframework.batch.core.launch.support.SimpleJobLauncher.run(SimpleJobLauncher.java:140) [spring-batch-core-4.2.0.RELEASE.jar:4.2.0.RELEASE]
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_72]
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_72]
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_72]
-	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_72]
-	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:344) [spring-aop-5.2.1.RELEASE.jar:5.2.1.RELEASE]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:198) [spring-aop-5.2.1.RELEASE.jar:5.2.1.RELEASE]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) [spring-aop-5.2.1.RELEASE.jar:5.2.1.RELEASE]
-	at org.springframework.batch.core.configuration.annotation.SimpleBatchConfiguration$PassthruAdvice.invoke(SimpleBatchConfiguration.java:127) [spring-batch-core-4.2.0.RELEASE.jar:4.2.0.RELEASE]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) [spring-aop-5.2.1.RELEASE.jar:5.2.1.RELEASE]
-	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:212) [spring-aop-5.2.1.RELEASE.jar:5.2.1.RELEASE]
-	at com.sun.proxy.$Proxy97.run(Unknown Source) [na:na]
-	at com.whiterabbit.batchutils.ArticleBatchScheduler.schedule(ArticleBatchScheduler.java:37) [classes/:na]
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_72]
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_72]
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_72]
-	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_72]
-	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84) [spring-context-5.2.1.RELEASE.jar:5.2.1.RELEASE]
-	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54) [spring-context-5.2.1.RELEASE.jar:5.2.1.RELEASE]
-	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) [na:1.8.0_72]
-	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308) [na:1.8.0_72]
-	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180) [na:1.8.0_72]
-	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294) [na:1.8.0_72]
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field articleService in com.whiterabbit.controller.ArticleController required a bean of type 'com.whiterabbit.services.ArticleService' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'com.whiterabbit.services.ArticleService' in your configuration.
+
+2021-05-02 11:11:20.463 ERROR 9506 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : START JOB ........
+2021-05-02 11:11:20.774 ERROR 9506 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.journaldugeek.com/articles/
+2021-05-02 11:11:28.514 ERROR 9506 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.lesnumeriques.com/actualites
+2021-05-02 11:11:28.542 ERROR 9506 --- [scheduling-1] c.whiterabbit.services.HtmlReaderLesNum  : Les NUMS - No web page found for url : https://www.lesnumeriques.com/actualites
+2021-05-02 11:11:28.545 ERROR 9506 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.01net.com/actualites/
+2021-05-02 11:11:29.932 ERROR 9506 --- [scheduling-1] c.whiterabbit.services.HtmlReader01Net   : https://www.01net.com/actualites/samsung-les-galaxy-z-fold2-5g-et-z-flip-profitent-de-promotions-exceptionnelles-2041921.html - page resume not found
+2021-05-02 11:11:31.292 ERROR 9506 --- [scheduling-1] c.whiterabbit.services.HtmlReader01Net   : https://www.01net.com/actualites/macbook-air-10percent-de-remise-sur-le-dernier-ordinateur-portable-apple-2042144.html - page resume not found
+2021-05-02 11:11:32.003 ERROR 9506 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.mac4ever.com/dossiers
+2021-05-02 11:11:32.033 ERROR 9506 --- [scheduling-1] c.w.services.HtmlReaderMac4Ever          : mac4ever.com - No web page found for url : https://www.mac4ever.com/dossiers
+2021-05-02 11:11:32.036 ERROR 9506 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.frandroid.com/actualites
+2021-05-02 11:11:32.525 ERROR 9506 --- [scheduling-1] c.w.services.HtmlReaderFRAndroid         : frandroid - No division found ! 
+2021-05-02 11:11:32.528 ERROR 9506 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.macg.co/
+2021-05-02 11:11:36.020 ERROR 9506 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : JOB nom-du-job finished .... with status exitCode=COMPLETED;exitDescription=
+2021-05-02 11:15:58.710 ERROR 9665 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : START JOB ........
+2021-05-02 11:15:58.990 ERROR 9665 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.journaldugeek.com/articles/
+2021-05-02 11:16:06.666 ERROR 9665 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.lesnumeriques.com/actualites
+2021-05-02 11:16:06.687 ERROR 9665 --- [scheduling-1] c.whiterabbit.services.HtmlReaderLesNum  : Les NUMS - No web page found for url : https://www.lesnumeriques.com/actualites
+2021-05-02 11:16:06.690 ERROR 9665 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.01net.com/actualites/
+2021-05-02 11:16:08.019 ERROR 9665 --- [scheduling-1] c.whiterabbit.services.HtmlReader01Net   : https://www.01net.com/actualites/samsung-les-galaxy-z-fold2-5g-et-z-flip-profitent-de-promotions-exceptionnelles-2041921.html - page resume not found
+2021-05-02 11:16:09.536 ERROR 9665 --- [scheduling-1] c.whiterabbit.services.HtmlReader01Net   : https://www.01net.com/actualites/macbook-air-10percent-de-remise-sur-le-dernier-ordinateur-portable-apple-2042144.html - page resume not found
+2021-05-02 11:16:10.190 ERROR 9665 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.mac4ever.com/dossiers
+2021-05-02 11:16:10.213 ERROR 9665 --- [scheduling-1] c.w.services.HtmlReaderMac4Ever          : mac4ever.com - No web page found for url : https://www.mac4ever.com/dossiers
+2021-05-02 11:16:10.216 ERROR 9665 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.frandroid.com/actualites
+2021-05-02 11:16:10.568 ERROR 9665 --- [scheduling-1] c.w.services.HtmlReaderFRAndroid         : frandroid - No division found ! 
+2021-05-02 11:16:10.572 ERROR 9665 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.macg.co/
+2021-05-02 11:16:15.597 ERROR 9665 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : JOB nom-du-job finished .... with status exitCode=COMPLETED;exitDescription=
+2021-05-02 11:39:24.655 ERROR 10122 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : START JOB ........
+2021-05-02 11:39:24.926 ERROR 10122 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.journaldugeek.com/articles/
+2021-05-02 11:39:33.215 ERROR 10122 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.lesnumeriques.com/actualites
+2021-05-02 11:39:33.241 ERROR 10122 --- [scheduling-1] c.whiterabbit.services.HtmlReaderLesNum  : Les NUMS - No web page found for url : https://www.lesnumeriques.com/actualites
+2021-05-02 11:39:33.244 ERROR 10122 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.01net.com/actualites/
+2021-05-02 11:39:34.505 ERROR 10122 --- [scheduling-1] c.whiterabbit.services.HtmlReader01Net   : https://www.01net.com/actualites/samsung-les-galaxy-z-fold2-5g-et-z-flip-profitent-de-promotions-exceptionnelles-2041921.html - page resume not found
+2021-05-02 11:39:35.834 ERROR 10122 --- [scheduling-1] c.whiterabbit.services.HtmlReader01Net   : https://www.01net.com/actualites/macbook-air-10percent-de-remise-sur-le-dernier-ordinateur-portable-apple-2042144.html - page resume not found
+2021-05-02 11:39:36.448 ERROR 10122 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.mac4ever.com/dossiers
+2021-05-02 11:39:36.474 ERROR 10122 --- [scheduling-1] c.w.services.HtmlReaderMac4Ever          : mac4ever.com - No web page found for url : https://www.mac4ever.com/dossiers
+2021-05-02 11:39:36.477 ERROR 10122 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.frandroid.com/actualites
+2021-05-02 11:39:36.830 ERROR 10122 --- [scheduling-1] c.w.services.HtmlReaderFRAndroid         : frandroid - No division found ! 
+2021-05-02 11:39:36.833 ERROR 10122 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.macg.co/
+2021-05-02 11:39:44.024 ERROR 10122 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : JOB nom-du-job finished .... with status exitCode=COMPLETED;exitDescription=
+2021-05-02 11:41:42.966 ERROR 10156 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : START JOB ........
+2021-05-02 11:41:43.292 ERROR 10156 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.journaldugeek.com/articles/
+2021-05-02 11:41:51.841 ERROR 10156 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.lesnumeriques.com/actualites
+2021-05-02 11:41:51.866 ERROR 10156 --- [scheduling-1] c.whiterabbit.services.HtmlReaderLesNum  : Les NUMS - No web page found for url : https://www.lesnumeriques.com/actualites
+2021-05-02 11:41:51.870 ERROR 10156 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.01net.com/actualites/
+2021-05-02 11:41:53.091 ERROR 10156 --- [scheduling-1] c.whiterabbit.services.HtmlReader01Net   : https://www.01net.com/actualites/samsung-les-galaxy-z-fold2-5g-et-z-flip-profitent-de-promotions-exceptionnelles-2041921.html - page resume not found
+2021-05-02 11:41:54.460 ERROR 10156 --- [scheduling-1] c.whiterabbit.services.HtmlReader01Net   : https://www.01net.com/actualites/macbook-air-10percent-de-remise-sur-le-dernier-ordinateur-portable-apple-2042144.html - page resume not found
+2021-05-02 11:41:55.107 ERROR 10156 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.mac4ever.com/dossiers
+2021-05-02 11:41:55.133 ERROR 10156 --- [scheduling-1] c.w.services.HtmlReaderMac4Ever          : mac4ever.com - No web page found for url : https://www.mac4ever.com/dossiers
+2021-05-02 11:41:55.136 ERROR 10156 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.frandroid.com/actualites
+2021-05-02 11:41:55.478 ERROR 10156 --- [scheduling-1] c.w.services.HtmlReaderFRAndroid         : frandroid - No division found ! 
+2021-05-02 11:41:55.481 ERROR 10156 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.macg.co/
+2021-05-02 11:42:05.152 ERROR 10156 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : JOB nom-du-job finished .... with status exitCode=COMPLETED;exitDescription=
+2021-05-02 11:48:37.832 ERROR 10316 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : START JOB ........
+2021-05-02 11:48:38.128 ERROR 10316 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.journaldugeek.com/articles/
+2021-05-02 11:48:46.686 ERROR 10316 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.lesnumeriques.com/actualites
+2021-05-02 11:48:46.713 ERROR 10316 --- [scheduling-1] c.whiterabbit.services.HtmlReaderLesNum  : Les NUMS - No web page found for url : https://www.lesnumeriques.com/actualites
+2021-05-02 11:48:46.716 ERROR 10316 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.01net.com/actualites/
+2021-05-02 11:48:47.984 ERROR 10316 --- [scheduling-1] c.whiterabbit.services.HtmlReader01Net   : https://www.01net.com/actualites/samsung-les-galaxy-z-fold2-5g-et-z-flip-profitent-de-promotions-exceptionnelles-2041921.html - page resume not found
+2021-05-02 11:48:49.365 ERROR 10316 --- [scheduling-1] c.whiterabbit.services.HtmlReader01Net   : https://www.01net.com/actualites/macbook-air-10percent-de-remise-sur-le-dernier-ordinateur-portable-apple-2042144.html - page resume not found
+2021-05-02 11:48:50.062 ERROR 10316 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.mac4ever.com/dossiers
+2021-05-02 11:48:50.091 ERROR 10316 --- [scheduling-1] c.w.services.HtmlReaderMac4Ever          : mac4ever.com - No web page found for url : https://www.mac4ever.com/dossiers
+2021-05-02 11:48:50.094 ERROR 10316 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.frandroid.com/actualites
+2021-05-02 11:48:50.438 ERROR 10316 --- [scheduling-1] c.w.services.HtmlReaderFRAndroid         : frandroid - No division found ! 
+2021-05-02 11:48:50.441 ERROR 10316 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.macg.co/
+2021-05-02 11:48:56.981 ERROR 10316 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : JOB nom-du-job finished .... with status exitCode=COMPLETED;exitDescription=
+2021-05-02 11:52:11.901 ERROR 10316 --- [http-nio-8087-exec-2] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.IllegalStateException: Ambiguous handler methods mapped for '/articles/GENERAL': {public java.util.List com.whiterabbit.controller.ArticleController.listeArticlesByCategory(java.lang.String), public java.util.Optional com.whiterabbit.controller.ArticleController.getArticle(java.lang.String)}] with root cause
+
+java.lang.IllegalStateException: Ambiguous handler methods mapped for '/articles/GENERAL': {public java.util.List com.whiterabbit.controller.ArticleController.listeArticlesByCategory(java.lang.String), public java.util.Optional com.whiterabbit.controller.ArticleController.getArticle(java.lang.String)}
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.lookupHandlerMethod(AbstractHandlerMethodMapping.java:412) ~[spring-webmvc-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.getHandlerInternal(AbstractHandlerMethodMapping.java:367) ~[spring-webmvc-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.getHandlerInternal(RequestMappingHandlerMapping.java:449) ~[spring-webmvc-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.getHandlerInternal(RequestMappingHandlerMapping.java:67) ~[spring-webmvc-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.web.servlet.handler.AbstractHandlerMapping.getHandler(AbstractHandlerMapping.java:393) ~[spring-webmvc-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.getHandler(DispatcherServlet.java:1234) ~[spring-webmvc-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1016) ~[spring-webmvc-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943) ~[spring-webmvc-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) ~[spring-webmvc-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.27.jar:9.0.27]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:320) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:126) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:90) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:118) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:158) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at com.whiterabbit.security.JWTAuthorisationFilter.doFilterInternal(JWTAuthorisationFilter.java:53) ~[classes/:na]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:92) ~[spring-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:92) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:77) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358) ~[spring-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271) ~[spring-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:526) [tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408) [tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:861) [tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1579) [tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.27.jar:9.0.27]
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [na:1.8.0_72]
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [na:1.8.0_72]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.27.jar:9.0.27]
 	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_72]
 
-2020-07-24 00:16:43.125 ERROR 7040 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : JOB nom-du-job finished .... with status exitCode=FAILED;exitDescription=java.lang.NullPointerException
-	at com.whiterabbit.services.HtmlReaderMac4Ever.readHtmlPage(HtmlReaderMac4Ever.java:26)
-	at com.whiterabbit.services.HtmlReaderServiceImpl.readHtmlPage(HtmlReaderServiceImpl.java:63)
-	at com.whiterabbit.batchutils.HtmlPageItemReader.read(HtmlPageItemReader.java:88)
-	at com.whiterabbit.batchutils.HtmlPageItemReader.read(HtmlPageItemReader.java:24)
-	at com.whiterabbit.batchutils.HtmlPageItemReader$$EnhancerBySpringCGLIB$$ee8a38e7.read(<generated>)
-	at com.whiterabbit.batchutils.HtmlPageItemReader$$FastClassBySpringCGLIB$$5295a48f.invoke(<generated>)
-	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
-	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:769)
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
-	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747)
-	at org.springframework.aop.support.DelegatingIntroductionInterceptor.doProceed(DelegatingIntroductionInterceptor.java:136)
-	at org.springframework.aop.support.DelegatingIntroductionInterceptor.invoke(DelegatingIntroductionInterceptor.java:124)
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
-	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747)
-	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:689)
-	at com.whiterabbit.batchutils.HtmlPageItemReader$$EnhancerBySpringCGLIB$$e2c4f5fb.read(<generated>)
-	at org.springframework.batch.core.step.item.SimpleChunkProvider.doRead(SimpleChunkProvider.java:99)
-	at org.springframework.batch.core.step.item.SimpleChunkProvider.read(SimpleChunkProvider.java:180)
-	at org.springframework.batch.core.step.item.SimpleChunkProvider$1.doInIteration(SimpleChunkProvider.java:126)
-	at org.springframework.batch.repeat.support.RepeatTemplate.getNextResult(RepeatTemplate.java:375)
-	at org.springframework.batch.repeat.support.RepeatTemplate.executeInternal(RepeatTemplate.java:215)
-	at org.springframework.batch.repeat.support.RepeatTemplate.iterate(RepeatTemplate.java:145)
-	at org.springframework.batch.core.step.item.SimpleChunkProvider.provide(SimpleChunkProvider.java:118)
-	at org.springframework.batch.core.step.item.ChunkOrientedTasklet.execute(ChunkOrientedTasklet.java:71)
-	at org.springframework.batch.core.step.tasklet.TaskletStep$ChunkTransactionCallback.doInTransaction(TaskletStep.java:407)
-	at org.springframework.batch.core.step.tasklet.TaskletStep$ChunkTransactionCallback.doInTransaction(TaskletStep.java:331)
-	at org.springframework.transaction.support.TransactionTemplate.execute(TransactionTemplate.java:140)
-	at org.springframework.batch.core.step.tasklet.TaskletStep$2.doInChunkContext(TaskletStep.java:273)
-	at org.springframework.batch.core.scope.context.StepContextRepeatCallback.doInIteration(StepContextRepeatCallback.java:82)
-	at org.springframework.batch.repeat.support.RepeatTemplate.getNextResult(RepeatTemplate.java:375)
-	at org.springframework.batch.repeat.support.RepeatTemplate.executeInternal(RepeatTemplate.java:215)
-	at org.springframework.batch.repeat.support.RepeatTemplate.iterate(RepeatTemplate.java:145)
-	at org.springframework.batch.core.step.tasklet.TaskletStep.doExecute(TaskletStep.java:258)
-	at org.springframework.batch.core.step.AbstractStep.execute(AbstractStep.java:208)
-	at org.springframework.batch.core.job.SimpleStepHandler.handleStep(SimpleStepHandler.java:148)
-	at org.springframework.batch.core.job.AbstractJob.handleStep(AbstractJob.java:410)
-	at org.springframework.batch.core.job.SimpleJob.doExecute(SimpleJob.java:136)
-	at org.springframework.batch.core.job.AbstractJob.execute(AbstractJob.java:319)
-	at org.springframework.batch.core.launch.support.SimpleJobLauncher$1.run(SimpleJobLauncher.java:147)
-	at org.springframework.core.task.SyncTaskExecutor.execute(SyncTaskExecutor.java:50)
-	at org.springframework.batch.core.launch.support.SimpleJobLauncher.run(SimpleJobLauncher.java:140)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:344)
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:198)
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
-	at org.springframework.batch.core.configuration.annotation.SimpleBatchConfiguration$PassthruAdvice.invoke(SimpleBatchConfiguration.java:127)
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
-	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:212)
-	at com.sun.proxy.$Proxy97.run(Unknown Source)
-	at com.whiterabbit.batchutils.ArticleBatchScheduler.schedule(ArticleBatchScheduler.java:37)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
-	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
-	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
-	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
-	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
-	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
-	at java.lang.Thread.run(Thread.java:745)
+2021-05-02 11:53:34.701 ERROR 10316 --- [http-nio-8087-exec-4] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.IllegalStateException: Ambiguous handler methods mapped for '/articles/category': {public java.util.List com.whiterabbit.controller.ArticleController.listeArticlesByCategory(java.lang.String), public java.util.Optional com.whiterabbit.controller.ArticleController.getArticle(java.lang.String)}] with root cause
 
-2020-07-24 00:18:28.654 ERROR 7040 --- [http-nio-8087-exec-1] c.w.controller.ArticleController         : article id to delete is  : 5f19e8ad63ae697fa5b35d8b
-2020-07-24 00:18:33.464 ERROR 7040 --- [http-nio-8087-exec-2] c.w.controller.ArticleController         : article id to delete is  : 5f19e8ad63ae697fa5b35d8c
-2020-07-24 00:18:37.480 ERROR 7040 --- [http-nio-8087-exec-6] c.w.controller.ArticleController         : article id to delete is  : 5f19e8ad63ae697fa5b35d8d
-2020-07-24 00:18:41.314 ERROR 7040 --- [http-nio-8087-exec-1] c.w.controller.ArticleController         : article id to delete is  : 5f19e8ad63ae697fa5b35d8e
-2020-07-24 00:18:45.362 ERROR 7040 --- [http-nio-8087-exec-5] c.w.controller.ArticleController         : article id to delete is  : 5f19e8ad63ae697fa5b35d8f
-2020-07-24 00:18:49.077 ERROR 7040 --- [http-nio-8087-exec-7] c.w.controller.ArticleController         : article id to delete is  : 5f19e8ad63ae697fa5b35d90
-2020-07-24 00:18:52.763 ERROR 7040 --- [http-nio-8087-exec-9] c.w.controller.ArticleController         : article id to delete is  : 5f19e8ad63ae697fa5b35d91
-2020-07-24 00:18:56.352 ERROR 7040 --- [http-nio-8087-exec-3] c.w.controller.ArticleController         : article id to delete is  : 5f19e8ad63ae697fa5b35d92
-2020-07-24 00:18:59.705 ERROR 7040 --- [http-nio-8087-exec-5] c.w.controller.ArticleController         : article id to delete is  : 5f19e8ad63ae697fa5b35d93
-2020-07-24 00:19:02.982 ERROR 7040 --- [http-nio-8087-exec-7] c.w.controller.ArticleController         : article id to delete is  : 5f19e8ad63ae697fa5b35d94
-2020-07-24 00:19:07.088 ERROR 7040 --- [http-nio-8087-exec-4] c.w.controller.ArticleController         : article id to delete is  : 5f19e8ad63ae697fa5b35d95
-2020-07-24 00:19:11.420 ERROR 7040 --- [http-nio-8087-exec-9] c.w.controller.ArticleController         : article id to delete is  : 5f19e8ad63ae697fa5b35d96
-2020-07-24 00:19:18.973 ERROR 7040 --- [http-nio-8087-exec-1] c.w.controller.ArticleController         : controller update article started
-2020-07-24 00:20:18.248 ERROR 7040 --- [http-nio-8087-exec-5] c.w.controller.ArticleController         : controller update article started
-2020-07-24 10:41:44.986 ERROR 7040 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : START JOB ........
-2020-07-24 10:41:45.035 ERROR 7040 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.journaldugeek.com/articles/
-2020-07-24 10:41:48.820 ERROR 7040 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.lesnumeriques.com/actualites
-2020-07-24 10:41:48.847 ERROR 7040 --- [scheduling-1] c.whiterabbit.services.HtmlReaderLesNum  : Les NUMS - No web page found for url : https://www.lesnumeriques.com/actualites
-2020-07-24 10:41:48.850 ERROR 7040 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.01net.com/actualites/
-2020-07-24 10:41:55.980 ERROR 7040 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.mac4ever.com/dossiers
-2020-07-24 10:41:56.031 ERROR 7040 --- [scheduling-1] o.s.batch.core.step.AbstractStep         : Encountered an error executing step nom-du-step in job nom-du-job
-
-java.lang.NullPointerException: null
-	at com.whiterabbit.services.HtmlReaderMac4Ever.readHtmlPage(HtmlReaderMac4Ever.java:26) ~[classes/:na]
-	at com.whiterabbit.services.HtmlReaderServiceImpl.readHtmlPage(HtmlReaderServiceImpl.java:63) ~[classes/:na]
-	at com.whiterabbit.batchutils.HtmlPageItemReader.read(HtmlPageItemReader.java:88) ~[classes/:na]
-	at com.whiterabbit.batchutils.HtmlPageItemReader.read(HtmlPageItemReader.java:24) ~[classes/:na]
-	at com.whiterabbit.batchutils.HtmlPageItemReader$$EnhancerBySpringCGLIB$$ee8a38e7.read(<generated>) ~[classes/:na]
-	at com.whiterabbit.batchutils.HtmlPageItemReader$$FastClassBySpringCGLIB$$5295a48f.invoke(<generated>) ~[classes/:na]
-	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218) ~[spring-core-5.2.1.RELEASE.jar:5.2.1.RELEASE]
-	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:769) ~[spring-aop-5.2.1.RELEASE.jar:5.2.1.RELEASE]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) [spring-aop-5.2.1.RELEASE.jar:5.2.1.RELEASE]
-	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747) ~[spring-aop-5.2.1.RELEASE.jar:5.2.1.RELEASE]
-	at org.springframework.aop.support.DelegatingIntroductionInterceptor.doProceed(DelegatingIntroductionInterceptor.java:136) ~[spring-aop-5.2.1.RELEASE.jar:5.2.1.RELEASE]
-	at org.springframework.aop.support.DelegatingIntroductionInterceptor.invoke(DelegatingIntroductionInterceptor.java:124) ~[spring-aop-5.2.1.RELEASE.jar:5.2.1.RELEASE]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) [spring-aop-5.2.1.RELEASE.jar:5.2.1.RELEASE]
-	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747) ~[spring-aop-5.2.1.RELEASE.jar:5.2.1.RELEASE]
-	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:689) ~[spring-aop-5.2.1.RELEASE.jar:5.2.1.RELEASE]
-	at com.whiterabbit.batchutils.HtmlPageItemReader$$EnhancerBySpringCGLIB$$e2c4f5fb.read(<generated>) ~[classes/:na]
-	at org.springframework.batch.core.step.item.SimpleChunkProvider.doRead(SimpleChunkProvider.java:99) ~[spring-batch-core-4.2.0.RELEASE.jar:4.2.0.RELEASE]
-	at org.springframework.batch.core.step.item.SimpleChunkProvider.read(SimpleChunkProvider.java:180) ~[spring-batch-core-4.2.0.RELEASE.jar:4.2.0.RELEASE]
-	at org.springframework.batch.core.step.item.SimpleChunkProvider$1.doInIteration(SimpleChunkProvider.java:126) ~[spring-batch-core-4.2.0.RELEASE.jar:4.2.0.RELEASE]
-	at org.springframework.batch.repeat.support.RepeatTemplate.getNextResult(RepeatTemplate.java:375) ~[spring-batch-infrastructure-4.2.0.RELEASE.jar:4.2.0.RELEASE]
-	at org.springframework.batch.repeat.support.RepeatTemplate.executeInternal(RepeatTemplate.java:215) ~[spring-batch-infrastructure-4.2.0.RELEASE.jar:4.2.0.RELEASE]
-	at org.springframework.batch.repeat.support.RepeatTemplate.iterate(RepeatTemplate.java:145) ~[spring-batch-infrastructure-4.2.0.RELEASE.jar:4.2.0.RELEASE]
-	at org.springframework.batch.core.step.item.SimpleChunkProvider.provide(SimpleChunkProvider.java:118) ~[spring-batch-core-4.2.0.RELEASE.jar:4.2.0.RELEASE]
-	at org.springframework.batch.core.step.item.ChunkOrientedTasklet.execute(ChunkOrientedTasklet.java:71) ~[spring-batch-core-4.2.0.RELEASE.jar:4.2.0.RELEASE]
-	at org.springframework.batch.core.step.tasklet.TaskletStep$ChunkTransactionCallback.doInTransaction(TaskletStep.java:407) ~[spring-batch-core-4.2.0.RELEASE.jar:4.2.0.RELEASE]
-	at org.springframework.batch.core.step.tasklet.TaskletStep$ChunkTransactionCallback.doInTransaction(TaskletStep.java:331) ~[spring-batch-core-4.2.0.RELEASE.jar:4.2.0.RELEASE]
-	at org.springframework.transaction.support.TransactionTemplate.execute(TransactionTemplate.java:140) ~[spring-tx-5.2.1.RELEASE.jar:5.2.1.RELEASE]
-	at org.springframework.batch.core.step.tasklet.TaskletStep$2.doInChunkContext(TaskletStep.java:273) ~[spring-batch-core-4.2.0.RELEASE.jar:4.2.0.RELEASE]
-	at org.springframework.batch.core.scope.context.StepContextRepeatCallback.doInIteration(StepContextRepeatCallback.java:82) ~[spring-batch-core-4.2.0.RELEASE.jar:4.2.0.RELEASE]
-	at org.springframework.batch.repeat.support.RepeatTemplate.getNextResult(RepeatTemplate.java:375) ~[spring-batch-infrastructure-4.2.0.RELEASE.jar:4.2.0.RELEASE]
-	at org.springframework.batch.repeat.support.RepeatTemplate.executeInternal(RepeatTemplate.java:215) ~[spring-batch-infrastructure-4.2.0.RELEASE.jar:4.2.0.RELEASE]
-	at org.springframework.batch.repeat.support.RepeatTemplate.iterate(RepeatTemplate.java:145) ~[spring-batch-infrastructure-4.2.0.RELEASE.jar:4.2.0.RELEASE]
-	at org.springframework.batch.core.step.tasklet.TaskletStep.doExecute(TaskletStep.java:258) ~[spring-batch-core-4.2.0.RELEASE.jar:4.2.0.RELEASE]
-	at org.springframework.batch.core.step.AbstractStep.execute(AbstractStep.java:208) ~[spring-batch-core-4.2.0.RELEASE.jar:4.2.0.RELEASE]
-	at org.springframework.batch.core.job.SimpleStepHandler.handleStep(SimpleStepHandler.java:148) [spring-batch-core-4.2.0.RELEASE.jar:4.2.0.RELEASE]
-	at org.springframework.batch.core.job.AbstractJob.handleStep(AbstractJob.java:410) [spring-batch-core-4.2.0.RELEASE.jar:4.2.0.RELEASE]
-	at org.springframework.batch.core.job.SimpleJob.doExecute(SimpleJob.java:136) [spring-batch-core-4.2.0.RELEASE.jar:4.2.0.RELEASE]
-	at org.springframework.batch.core.job.AbstractJob.execute(AbstractJob.java:319) [spring-batch-core-4.2.0.RELEASE.jar:4.2.0.RELEASE]
-	at org.springframework.batch.core.launch.support.SimpleJobLauncher$1.run(SimpleJobLauncher.java:147) [spring-batch-core-4.2.0.RELEASE.jar:4.2.0.RELEASE]
-	at org.springframework.core.task.SyncTaskExecutor.execute(SyncTaskExecutor.java:50) [spring-core-5.2.1.RELEASE.jar:5.2.1.RELEASE]
-	at org.springframework.batch.core.launch.support.SimpleJobLauncher.run(SimpleJobLauncher.java:140) [spring-batch-core-4.2.0.RELEASE.jar:4.2.0.RELEASE]
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_72]
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_72]
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_72]
-	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_72]
-	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:344) [spring-aop-5.2.1.RELEASE.jar:5.2.1.RELEASE]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:198) [spring-aop-5.2.1.RELEASE.jar:5.2.1.RELEASE]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) [spring-aop-5.2.1.RELEASE.jar:5.2.1.RELEASE]
-	at org.springframework.batch.core.configuration.annotation.SimpleBatchConfiguration$PassthruAdvice.invoke(SimpleBatchConfiguration.java:127) [spring-batch-core-4.2.0.RELEASE.jar:4.2.0.RELEASE]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) [spring-aop-5.2.1.RELEASE.jar:5.2.1.RELEASE]
-	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:212) [spring-aop-5.2.1.RELEASE.jar:5.2.1.RELEASE]
-	at com.sun.proxy.$Proxy97.run(Unknown Source) [na:na]
-	at com.whiterabbit.batchutils.ArticleBatchScheduler.schedule(ArticleBatchScheduler.java:37) [classes/:na]
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_72]
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_72]
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_72]
-	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_72]
-	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84) [spring-context-5.2.1.RELEASE.jar:5.2.1.RELEASE]
-	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54) [spring-context-5.2.1.RELEASE.jar:5.2.1.RELEASE]
-	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) [na:1.8.0_72]
-	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308) [na:1.8.0_72]
-	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180) [na:1.8.0_72]
-	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294) [na:1.8.0_72]
+java.lang.IllegalStateException: Ambiguous handler methods mapped for '/articles/category': {public java.util.List com.whiterabbit.controller.ArticleController.listeArticlesByCategory(java.lang.String), public java.util.Optional com.whiterabbit.controller.ArticleController.getArticle(java.lang.String)}
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.lookupHandlerMethod(AbstractHandlerMethodMapping.java:412) ~[spring-webmvc-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.getHandlerInternal(AbstractHandlerMethodMapping.java:367) ~[spring-webmvc-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.getHandlerInternal(RequestMappingHandlerMapping.java:449) ~[spring-webmvc-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.getHandlerInternal(RequestMappingHandlerMapping.java:67) ~[spring-webmvc-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.web.servlet.handler.AbstractHandlerMapping.getHandler(AbstractHandlerMapping.java:393) ~[spring-webmvc-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.getHandler(DispatcherServlet.java:1234) ~[spring-webmvc-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1016) ~[spring-webmvc-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943) ~[spring-webmvc-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) ~[spring-webmvc-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.27.jar:9.0.27]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:320) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:126) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:90) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:118) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:158) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at com.whiterabbit.security.JWTAuthorisationFilter.doFilterInternal(JWTAuthorisationFilter.java:53) ~[classes/:na]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:92) ~[spring-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:92) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:77) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358) ~[spring-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271) ~[spring-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:526) [tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408) [tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:861) [tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1579) [tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.27.jar:9.0.27]
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [na:1.8.0_72]
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [na:1.8.0_72]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.27.jar:9.0.27]
 	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_72]
 
-2020-07-24 10:41:56.038 ERROR 7040 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : JOB nom-du-job finished .... with status exitCode=FAILED;exitDescription=java.lang.NullPointerException
-	at com.whiterabbit.services.HtmlReaderMac4Ever.readHtmlPage(HtmlReaderMac4Ever.java:26)
-	at com.whiterabbit.services.HtmlReaderServiceImpl.readHtmlPage(HtmlReaderServiceImpl.java:63)
-	at com.whiterabbit.batchutils.HtmlPageItemReader.read(HtmlPageItemReader.java:88)
-	at com.whiterabbit.batchutils.HtmlPageItemReader.read(HtmlPageItemReader.java:24)
-	at com.whiterabbit.batchutils.HtmlPageItemReader$$EnhancerBySpringCGLIB$$ee8a38e7.read(<generated>)
-	at com.whiterabbit.batchutils.HtmlPageItemReader$$FastClassBySpringCGLIB$$5295a48f.invoke(<generated>)
-	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
-	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:769)
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
-	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747)
-	at org.springframework.aop.support.DelegatingIntroductionInterceptor.doProceed(DelegatingIntroductionInterceptor.java:136)
-	at org.springframework.aop.support.DelegatingIntroductionInterceptor.invoke(DelegatingIntroductionInterceptor.java:124)
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
-	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747)
-	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:689)
-	at com.whiterabbit.batchutils.HtmlPageItemReader$$EnhancerBySpringCGLIB$$e2c4f5fb.read(<generated>)
-	at org.springframework.batch.core.step.item.SimpleChunkProvider.doRead(SimpleChunkProvider.java:99)
-	at org.springframework.batch.core.step.item.SimpleChunkProvider.read(SimpleChunkProvider.java:180)
-	at org.springframework.batch.core.step.item.SimpleChunkProvider$1.doInIteration(SimpleChunkProvider.java:126)
-	at org.springframework.batch.repeat.support.RepeatTemplate.getNextResult(RepeatTemplate.java:375)
-	at org.springframework.batch.repeat.support.RepeatTemplate.executeInternal(RepeatTemplate.java:215)
-	at org.springframework.batch.repeat.support.RepeatTemplate.iterate(RepeatTemplate.java:145)
-	at org.springframework.batch.core.step.item.SimpleChunkProvider.provide(SimpleChunkProvider.java:118)
-	at org.springframework.batch.core.step.item.ChunkOrientedTasklet.execute(ChunkOrientedTasklet.java:71)
-	at org.springframework.batch.core.step.tasklet.TaskletStep$ChunkTransactionCallback.doInTransaction(TaskletStep.java:407)
-	at org.springframework.batch.core.step.tasklet.TaskletStep$ChunkTransactionCallback.doInTransaction(TaskletStep.java:331)
-	at org.springframework.transaction.support.TransactionTemplate.execute(TransactionTemplate.java:140)
-	at org.springframework.batch.core.step.tasklet.TaskletStep$2.doInChunkContext(TaskletStep.java:273)
-	at org.springframework.batch.core.scope.context.StepContextRepeatCallback.doInIteration(StepContextRepeatCallback.java:82)
-	at org.springframework.batch.repeat.support.RepeatTemplate.getNextResult(RepeatTemplate.java:375)
-	at org.springframework.batch.repeat.support.RepeatTemplate.executeInternal(RepeatTemplate.java:215)
-	at org.springframework.batch.repeat.support.RepeatTemplate.iterate(RepeatTemplate.java:145)
-	at org.springframework.batch.core.step.tasklet.TaskletStep.doExecute(TaskletStep.java:258)
-	at org.springframework.batch.core.step.AbstractStep.execute(AbstractStep.java:208)
-	at org.springframework.batch.core.job.SimpleStepHandler.handleStep(SimpleStepHandler.java:148)
-	at org.springframework.batch.core.job.AbstractJob.handleStep(AbstractJob.java:410)
-	at org.springframework.batch.core.job.SimpleJob.doExecute(SimpleJob.java:136)
-	at org.springframework.batch.core.job.AbstractJob.execute(AbstractJob.java:319)
-	at org.springframework.batch.core.launch.support.SimpleJobLauncher$1.run(SimpleJobLauncher.java:147)
-	at org.springframework.core.task.SyncTaskExecutor.execute(SyncTaskExecutor.java:50)
-	at org.springframework.batch.core.launch.support.SimpleJobLauncher.run(SimpleJobLauncher.java:140)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:344)
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:198)
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
-	at org.springframework.batch.core.configuration.annotation.SimpleBatchConfiguration$PassthruAdvice.invoke(SimpleBatchConfiguration.java:127)
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
-	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:212)
-	at com.sun.proxy.$Proxy97.run(Unknown Source)
-	at com.whiterabbit.batchutils.ArticleBatchScheduler.schedule(ArticleBatchScheduler.java:37)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
-	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
-	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
-	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
-	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
-	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
-	at java.lang.Thread.run(Thread.java:745)
+2021-05-02 12:18:03.439 ERROR 11028 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : START JOB ........
+2021-05-02 12:18:03.671 ERROR 11028 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.journaldugeek.com/articles/
+2021-05-02 12:18:11.132 ERROR 11028 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.lesnumeriques.com/actualites
+2021-05-02 12:18:11.159 ERROR 11028 --- [scheduling-1] c.whiterabbit.services.HtmlReaderLesNum  : Les NUMS - No web page found for url : https://www.lesnumeriques.com/actualites
+2021-05-02 12:18:11.162 ERROR 11028 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.01net.com/actualites/
+2021-05-02 12:18:12.461 ERROR 11028 --- [scheduling-1] c.whiterabbit.services.HtmlReader01Net   : https://www.01net.com/actualites/samsung-les-galaxy-z-fold2-5g-et-z-flip-profitent-de-promotions-exceptionnelles-2041921.html - page resume not found
+2021-05-02 12:18:13.846 ERROR 11028 --- [scheduling-1] c.whiterabbit.services.HtmlReader01Net   : https://www.01net.com/actualites/macbook-air-10percent-de-remise-sur-le-dernier-ordinateur-portable-apple-2042144.html - page resume not found
+2021-05-02 12:18:14.530 ERROR 11028 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.mac4ever.com/dossiers
+2021-05-02 12:18:14.569 ERROR 11028 --- [scheduling-1] c.w.services.HtmlReaderMac4Ever          : mac4ever.com - No web page found for url : https://www.mac4ever.com/dossiers
+2021-05-02 12:18:14.573 ERROR 11028 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.frandroid.com/actualites
+2021-05-02 12:18:14.930 ERROR 11028 --- [scheduling-1] c.w.services.HtmlReaderFRAndroid         : frandroid - No division found ! 
+2021-05-02 12:18:14.933 ERROR 11028 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.macg.co/
+2021-05-02 12:18:20.463 ERROR 11028 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : JOB nom-du-job finished .... with status exitCode=COMPLETED;exitDescription=
+2021-05-02 12:21:05.947 ERROR 11028 --- [http-nio-8087-exec-5] com.whiterabbit.services.ArticleService  : undefined category or sous category request parameter, category is GENERAL and sous category is INTERNATIONA
+2021-05-02 12:21:05.964 ERROR 11028 --- [http-nio-8087-exec-5] com.whiterabbit.services.ArticleService  : null
+2021-05-02 12:24:52.859 ERROR 11241 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : START JOB ........
+2021-05-02 12:24:53.097 ERROR 11241 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.journaldugeek.com/articles/
+2021-05-02 12:25:00.775 ERROR 11241 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.lesnumeriques.com/actualites
+2021-05-02 12:25:00.801 ERROR 11241 --- [scheduling-1] c.whiterabbit.services.HtmlReaderLesNum  : Les NUMS - No web page found for url : https://www.lesnumeriques.com/actualites
+2021-05-02 12:25:00.804 ERROR 11241 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.01net.com/actualites/
+2021-05-02 12:25:02.144 ERROR 11241 --- [scheduling-1] c.whiterabbit.services.HtmlReader01Net   : https://www.01net.com/actualites/samsung-les-galaxy-z-fold2-5g-et-z-flip-profitent-de-promotions-exceptionnelles-2041921.html - page resume not found
+2021-05-02 12:25:03.608 ERROR 11241 --- [scheduling-1] c.whiterabbit.services.HtmlReader01Net   : https://www.01net.com/actualites/macbook-air-10percent-de-remise-sur-le-dernier-ordinateur-portable-apple-2042144.html - page resume not found
+2021-05-02 12:25:04.302 ERROR 11241 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.mac4ever.com/dossiers
+2021-05-02 12:25:04.334 ERROR 11241 --- [scheduling-1] c.w.services.HtmlReaderMac4Ever          : mac4ever.com - No web page found for url : https://www.mac4ever.com/dossiers
+2021-05-02 12:25:04.338 ERROR 11241 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.frandroid.com/actualites
+2021-05-02 12:25:04.795 ERROR 11241 --- [scheduling-1] c.w.services.HtmlReaderFRAndroid         : frandroid - No division found ! 
+2021-05-02 12:25:04.799 ERROR 11241 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.macg.co/
+2021-05-02 12:25:09.034 ERROR 11241 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : JOB nom-du-job finished .... with status exitCode=COMPLETED;exitDescription=
+2021-05-02 12:26:43.610 ERROR 11322 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : START JOB ........
+2021-05-02 12:26:43.881 ERROR 11322 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.journaldugeek.com/articles/
+2021-05-02 12:26:51.747 ERROR 11322 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.lesnumeriques.com/actualites
+2021-05-02 12:26:51.772 ERROR 11322 --- [scheduling-1] c.whiterabbit.services.HtmlReaderLesNum  : Les NUMS - No web page found for url : https://www.lesnumeriques.com/actualites
+2021-05-02 12:26:51.777 ERROR 11322 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.01net.com/actualites/
+2021-05-02 12:26:53.029 ERROR 11322 --- [scheduling-1] c.whiterabbit.services.HtmlReader01Net   : https://www.01net.com/actualites/samsung-les-galaxy-z-fold2-5g-et-z-flip-profitent-de-promotions-exceptionnelles-2041921.html - page resume not found
+2021-05-02 12:26:54.414 ERROR 11322 --- [scheduling-1] c.whiterabbit.services.HtmlReader01Net   : https://www.01net.com/actualites/macbook-air-10percent-de-remise-sur-le-dernier-ordinateur-portable-apple-2042144.html - page resume not found
+2021-05-02 12:26:55.138 ERROR 11322 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.mac4ever.com/dossiers
+2021-05-02 12:26:55.166 ERROR 11322 --- [scheduling-1] c.w.services.HtmlReaderMac4Ever          : mac4ever.com - No web page found for url : https://www.mac4ever.com/dossiers
+2021-05-02 12:26:55.169 ERROR 11322 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.frandroid.com/actualites
+2021-05-02 12:26:55.640 ERROR 11322 --- [scheduling-1] c.w.services.HtmlReaderFRAndroid         : frandroid - No division found ! 
+2021-05-02 12:26:55.643 ERROR 11322 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.macg.co/
+2021-05-02 12:26:59.944 ERROR 11322 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : JOB nom-du-job finished .... with status exitCode=COMPLETED;exitDescription=
+2021-05-02 12:27:15.609 ERROR 11322 --- [http-nio-8087-exec-1] c.w.controller.ArticleController         : passage dans rest catalogue : GENERALINTERNATIONAL
+2021-05-02 12:29:20.119 ERROR 11403 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : START JOB ........
+2021-05-02 12:29:20.442 ERROR 11403 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.journaldugeek.com/articles/
+2021-05-02 12:29:28.249 ERROR 11403 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.lesnumeriques.com/actualites
+2021-05-02 12:29:28.268 ERROR 11403 --- [scheduling-1] c.whiterabbit.services.HtmlReaderLesNum  : Les NUMS - No web page found for url : https://www.lesnumeriques.com/actualites
+2021-05-02 12:29:28.271 ERROR 11403 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.01net.com/actualites/
+2021-05-02 12:29:29.545 ERROR 11403 --- [scheduling-1] c.whiterabbit.services.HtmlReader01Net   : https://www.01net.com/actualites/samsung-les-galaxy-z-fold2-5g-et-z-flip-profitent-de-promotions-exceptionnelles-2041921.html - page resume not found
+2021-05-02 12:29:30.936 ERROR 11403 --- [scheduling-1] c.whiterabbit.services.HtmlReader01Net   : https://www.01net.com/actualites/macbook-air-10percent-de-remise-sur-le-dernier-ordinateur-portable-apple-2042144.html - page resume not found
+2021-05-02 12:29:31.572 ERROR 11403 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.mac4ever.com/dossiers
+2021-05-02 12:29:31.599 ERROR 11403 --- [scheduling-1] c.w.services.HtmlReaderMac4Ever          : mac4ever.com - No web page found for url : https://www.mac4ever.com/dossiers
+2021-05-02 12:29:31.603 ERROR 11403 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.frandroid.com/actualites
+2021-05-02 12:29:31.954 ERROR 11403 --- [scheduling-1] c.w.services.HtmlReaderFRAndroid         : frandroid - No division found ! 
+2021-05-02 12:29:31.957 ERROR 11403 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.macg.co/
+2021-05-02 12:29:33.567 ERROR 11403 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : JOB nom-du-job finished .... with status exitCode=COMPLETED;exitDescription=
+2021-05-02 12:30:31.301 ERROR 11403 --- [http-nio-8087-exec-1] c.w.controller.ArticleController         : passage dans rest catalogue : GENERALINTERNATIONAL
+2021-05-02 12:30:31.318 ERROR 11403 --- [http-nio-8087-exec-1] com.whiterabbit.services.ArticleService  : passage dans service arcticle findBySousCategory, request parameters, category is GENERAL and sous category is INTERNATIONAL
+2021-05-02 12:34:14.738 ERROR 11525 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : START JOB ........
+2021-05-02 12:34:15.060 ERROR 11525 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.journaldugeek.com/articles/
+2021-05-02 12:34:22.806 ERROR 11525 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.lesnumeriques.com/actualites
+2021-05-02 12:34:22.834 ERROR 11525 --- [scheduling-1] c.whiterabbit.services.HtmlReaderLesNum  : Les NUMS - No web page found for url : https://www.lesnumeriques.com/actualites
+2021-05-02 12:34:22.837 ERROR 11525 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.01net.com/actualites/
+2021-05-02 12:34:24.499 ERROR 11525 --- [scheduling-1] c.whiterabbit.services.HtmlReader01Net   : https://www.01net.com/actualites/samsung-les-galaxy-z-fold2-5g-et-z-flip-profitent-de-promotions-exceptionnelles-2041921.html - page resume not found
+2021-05-02 12:34:25.946 ERROR 11525 --- [scheduling-1] c.whiterabbit.services.HtmlReader01Net   : https://www.01net.com/actualites/macbook-air-10percent-de-remise-sur-le-dernier-ordinateur-portable-apple-2042144.html - page resume not found
+2021-05-02 12:34:26.407 ERROR 11525 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.mac4ever.com/dossiers
+2021-05-02 12:34:26.435 ERROR 11525 --- [scheduling-1] c.w.services.HtmlReaderMac4Ever          : mac4ever.com - No web page found for url : https://www.mac4ever.com/dossiers
+2021-05-02 12:34:26.439 ERROR 11525 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.frandroid.com/actualites
+2021-05-02 12:34:26.811 ERROR 11525 --- [scheduling-1] c.w.services.HtmlReaderFRAndroid         : frandroid - No division found ! 
+2021-05-02 12:34:26.814 ERROR 11525 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.macg.co/
+2021-05-02 12:34:36.002 ERROR 11525 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : JOB nom-du-job finished .... with status exitCode=COMPLETED;exitDescription=
+2021-05-02 12:34:40.197 ERROR 11525 --- [http-nio-8087-exec-2] c.w.controller.ArticleController         : passage dans rest catalogue : GENERALINTERNATIONAL
+2021-05-02 12:34:40.220 ERROR 11525 --- [http-nio-8087-exec-2] com.whiterabbit.services.ArticleService  : passage dans service arcticle findBySousCategory, request parameters, category is GENERAL and sous category is INTERNATIONAL
+2021-05-02 12:37:20.565 ERROR 11599 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : START JOB ........
+2021-05-02 12:37:38.885 ERROR 11599 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.journaldugeek.com/articles/
+2021-05-02 12:37:47.043 ERROR 11599 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.lesnumeriques.com/actualites
+2021-05-02 12:37:47.075 ERROR 11599 --- [scheduling-1] c.whiterabbit.services.HtmlReaderLesNum  : Les NUMS - No web page found for url : https://www.lesnumeriques.com/actualites
+2021-05-02 12:37:47.078 ERROR 11599 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.01net.com/actualites/
+2021-05-02 12:37:57.866 ERROR 11599 --- [scheduling-1] c.whiterabbit.services.HtmlReader01Net   : https://www.01net.com/actualites/samsung-les-galaxy-z-fold2-5g-et-z-flip-profitent-de-promotions-exceptionnelles-2041921.html - page resume not found
+2021-05-02 12:37:59.254 ERROR 11599 --- [scheduling-1] c.whiterabbit.services.HtmlReader01Net   : https://www.01net.com/actualites/macbook-air-10percent-de-remise-sur-le-dernier-ordinateur-portable-apple-2042144.html - page resume not found
+2021-05-02 12:37:59.704 ERROR 11599 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.mac4ever.com/dossiers
+2021-05-02 12:37:59.740 ERROR 11599 --- [scheduling-1] c.w.services.HtmlReaderMac4Ever          : mac4ever.com - No web page found for url : https://www.mac4ever.com/dossiers
+2021-05-02 12:37:59.744 ERROR 11599 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.frandroid.com/actualites
+2021-05-02 12:38:00.098 ERROR 11599 --- [scheduling-1] c.w.services.HtmlReaderFRAndroid         : frandroid - No division found ! 
+2021-05-02 12:38:00.101 ERROR 11599 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.macg.co/
+2021-05-02 12:38:04.552 ERROR 11599 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : JOB nom-du-job finished .... with status exitCode=COMPLETED;exitDescription=
+2021-05-02 12:38:26.331 ERROR 11599 --- [http-nio-8087-exec-1] c.w.controller.ArticleController         : passage dans rest catalogue : GENERAL INTERNATIONAL
+2021-05-02 12:38:26.354 ERROR 11599 --- [http-nio-8087-exec-1] com.whiterabbit.services.ArticleService  : passage dans service article findBySubcategory, request parameters, category is GENERAL and subcategory is INTERNATIONAL
+2021-05-02 12:44:53.957 ERROR 11823 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : START JOB ........
+2021-05-02 12:44:54.214 ERROR 11823 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.journaldugeek.com/articles/
+2021-05-02 12:45:02.254 ERROR 11823 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.lesnumeriques.com/actualites
+2021-05-02 12:45:02.279 ERROR 11823 --- [scheduling-1] c.whiterabbit.services.HtmlReaderLesNum  : Les NUMS - No web page found for url : https://www.lesnumeriques.com/actualites
+2021-05-02 12:45:02.282 ERROR 11823 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.01net.com/actualites/
+2021-05-02 12:45:03.686 ERROR 11823 --- [scheduling-1] c.whiterabbit.services.HtmlReader01Net   : https://www.01net.com/actualites/samsung-les-galaxy-z-fold2-5g-et-z-flip-profitent-de-promotions-exceptionnelles-2041921.html - page resume not found
+2021-05-02 12:45:05.156 ERROR 11823 --- [scheduling-1] c.whiterabbit.services.HtmlReader01Net   : https://www.01net.com/actualites/macbook-air-10percent-de-remise-sur-le-dernier-ordinateur-portable-apple-2042144.html - page resume not found
+2021-05-02 12:45:05.606 ERROR 11823 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.mac4ever.com/dossiers
+2021-05-02 12:45:05.631 ERROR 11823 --- [scheduling-1] c.w.services.HtmlReaderMac4Ever          : mac4ever.com - No web page found for url : https://www.mac4ever.com/dossiers
+2021-05-02 12:45:05.635 ERROR 11823 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.frandroid.com/actualites
+2021-05-02 12:45:05.985 ERROR 11823 --- [scheduling-1] c.w.services.HtmlReaderFRAndroid         : frandroid - No division found ! 
+2021-05-02 12:45:05.988 ERROR 11823 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.macg.co/
+2021-05-02 12:45:07.515 ERROR 11823 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : JOB nom-du-job finished .... with status exitCode=COMPLETED;exitDescription=
+2021-05-02 12:45:14.976 ERROR 11823 --- [http-nio-8087-exec-1] c.w.controller.ArticleController         : passage dans rest catalogue : GENERAL INTERNATIONAL
+2021-05-02 12:45:14.981 ERROR 11823 --- [http-nio-8087-exec-1] com.whiterabbit.services.ArticleService  : passage dans service article findBySubcategory, request parameters, category is GENERAL and subcategory is INTERNATIONAL
+2021-05-02 12:45:28.505 ERROR 11823 --- [http-nio-8087-exec-3] c.w.controller.ArticleController         : passage dans rest catalogue : GENERAL FFF
+2021-05-02 12:45:28.523 ERROR 11823 --- [http-nio-8087-exec-3] com.whiterabbit.services.ArticleService  : passage dans service article findBySubcategory, request parameters, category is GENERAL and subcategory is FFF
+2021-05-02 12:45:28.523 ERROR 11823 --- [http-nio-8087-exec-3] com.whiterabbit.services.ArticleService  : undefined category or sous category request parameter, category is GENERAL and sous category is FFF
+2021-05-02 12:45:28.523 ERROR 11823 --- [http-nio-8087-exec-3] com.whiterabbit.services.ArticleService  : null
+2021-05-02 12:46:04.275 ERROR 11823 --- [http-nio-8087-exec-4] c.w.controller.ArticleController         : passage dans rest catalogue : GENERAL TECHNOLOGIE
+2021-05-02 12:46:04.291 ERROR 11823 --- [http-nio-8087-exec-4] com.whiterabbit.services.ArticleService  : passage dans service article findBySubcategory, request parameters, category is GENERAL and subcategory is TECHNOLOGIE
+2021-05-02 12:59:50.881 ERROR 12006 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : START JOB ........
+2021-05-02 12:59:51.141 ERROR 12006 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.journaldugeek.com/articles/
+2021-05-02 12:59:59.036 ERROR 12006 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.lesnumeriques.com/actualites
+2021-05-02 12:59:59.062 ERROR 12006 --- [scheduling-1] c.whiterabbit.services.HtmlReaderLesNum  : Les NUMS - No web page found for url : https://www.lesnumeriques.com/actualites
+2021-05-02 12:59:59.065 ERROR 12006 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.01net.com/actualites/
+2021-05-02 13:00:00.345 ERROR 12006 --- [scheduling-1] c.whiterabbit.services.HtmlReader01Net   : https://www.01net.com/actualites/samsung-les-galaxy-z-fold2-5g-et-z-flip-profitent-de-promotions-exceptionnelles-2041921.html - page resume not found
+2021-05-02 13:00:01.858 ERROR 12006 --- [scheduling-1] c.whiterabbit.services.HtmlReader01Net   : https://www.01net.com/actualites/macbook-air-10percent-de-remise-sur-le-dernier-ordinateur-portable-apple-2042144.html - page resume not found
+2021-05-02 13:00:02.311 ERROR 12006 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.mac4ever.com/dossiers
+2021-05-02 13:00:02.341 ERROR 12006 --- [scheduling-1] c.w.services.HtmlReaderMac4Ever          : mac4ever.com - No web page found for url : https://www.mac4ever.com/dossiers
+2021-05-02 13:00:02.377 ERROR 12006 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.frandroid.com/actualites
+2021-05-02 13:00:02.716 ERROR 12006 --- [scheduling-1] c.w.services.HtmlReaderFRAndroid         : frandroid - No division found ! 
+2021-05-02 13:00:02.719 ERROR 12006 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.macg.co/
+2021-05-02 13:00:05.211 ERROR 12006 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : JOB nom-du-job finished .... with status exitCode=COMPLETED;exitDescription=
+2021-05-02 13:02:05.730 ERROR 12006 --- [http-nio-8087-exec-2] c.w.controller.ArticleController         : passage dans rest catalogue : general technology
+2021-05-02 13:02:05.736 ERROR 12006 --- [http-nio-8087-exec-2] com.whiterabbit.services.ArticleService  : passage dans service article findBySubcategory, request parameters, category is general and subcategory is technology
+2021-05-02 13:02:05.736 ERROR 12006 --- [http-nio-8087-exec-2] com.whiterabbit.services.ArticleService  : undefined category or sous category request parameter, category is general and sous category is technology
+2021-05-02 13:02:05.736 ERROR 12006 --- [http-nio-8087-exec-2] com.whiterabbit.services.ArticleService  : No enum constant com.whiterabbit.entities.Category.general
+2021-05-02 13:04:27.908 ERROR 12132 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : START JOB ........
+2021-05-02 13:04:28.117 ERROR 12132 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.journaldugeek.com/articles/
+2021-05-02 13:04:36.188 ERROR 12132 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.lesnumeriques.com/actualites
+2021-05-02 13:04:36.215 ERROR 12132 --- [scheduling-1] c.whiterabbit.services.HtmlReaderLesNum  : Les NUMS - No web page found for url : https://www.lesnumeriques.com/actualites
+2021-05-02 13:04:36.218 ERROR 12132 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.01net.com/actualites/
+2021-05-02 13:04:37.595 ERROR 12132 --- [scheduling-1] c.whiterabbit.services.HtmlReader01Net   : https://www.01net.com/actualites/samsung-les-galaxy-z-fold2-5g-et-z-flip-profitent-de-promotions-exceptionnelles-2041921.html - page resume not found
+2021-05-02 13:04:39.056 ERROR 12132 --- [scheduling-1] c.whiterabbit.services.HtmlReader01Net   : https://www.01net.com/actualites/macbook-air-10percent-de-remise-sur-le-dernier-ordinateur-portable-apple-2042144.html - page resume not found
+2021-05-02 13:04:39.509 ERROR 12132 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.mac4ever.com/dossiers
+2021-05-02 13:04:39.542 ERROR 12132 --- [scheduling-1] c.w.services.HtmlReaderMac4Ever          : mac4ever.com - No web page found for url : https://www.mac4ever.com/dossiers
+2021-05-02 13:04:39.545 ERROR 12132 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.frandroid.com/actualites
+2021-05-02 13:04:40.006 ERROR 12132 --- [scheduling-1] c.w.services.HtmlReaderFRAndroid         : frandroid - No division found ! 
+2021-05-02 13:04:40.009 ERROR 12132 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.macg.co/
+2021-05-02 13:04:42.643 ERROR 12132 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : JOB nom-du-job finished .... with status exitCode=COMPLETED;exitDescription=
+2021-05-02 13:04:57.732 ERROR 12132 --- [http-nio-8087-exec-2] c.w.controller.ArticleController         : passage dans rest catalogue : general technology
+2021-05-02 13:04:57.737 ERROR 12132 --- [http-nio-8087-exec-2] com.whiterabbit.services.ArticleService  : passage dans service article findBySubcategory, request parameters, category is general and subcategory is technology
+2021-05-02 14:04:42.740 ERROR 12132 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : START JOB ........
+2021-05-02 14:04:42.806 ERROR 12132 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.journaldugeek.com/articles/
+2021-05-02 14:04:49.413 ERROR 12132 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.lesnumeriques.com/actualites
+2021-05-02 14:04:49.432 ERROR 12132 --- [scheduling-1] c.whiterabbit.services.HtmlReaderLesNum  : Les NUMS - No web page found for url : https://www.lesnumeriques.com/actualites
+2021-05-02 14:04:49.435 ERROR 12132 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.01net.com/actualites/
+2021-05-02 14:04:50.726 ERROR 12132 --- [scheduling-1] c.whiterabbit.services.HtmlReader01Net   : https://www.01net.com/actualites/samsung-les-galaxy-z-fold2-5g-et-z-flip-profitent-de-promotions-exceptionnelles-2041921.html - page resume not found
+2021-05-02 14:04:52.110 ERROR 12132 --- [scheduling-1] c.whiterabbit.services.HtmlReader01Net   : https://www.01net.com/actualites/macbook-air-10percent-de-remise-sur-le-dernier-ordinateur-portable-apple-2042144.html - page resume not found
+2021-05-02 14:04:52.387 ERROR 12132 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.mac4ever.com/dossiers
+2021-05-02 14:04:52.423 ERROR 12132 --- [scheduling-1] c.w.services.HtmlReaderMac4Ever          : mac4ever.com - No web page found for url : https://www.mac4ever.com/dossiers
+2021-05-02 14:04:52.429 ERROR 12132 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.frandroid.com/actualites
+2021-05-02 14:04:52.781 ERROR 12132 --- [scheduling-1] c.w.services.HtmlReaderFRAndroid         : frandroid - No division found ! 
+2021-05-02 14:04:52.787 ERROR 12132 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.macg.co/
+2021-05-02 14:04:54.660 ERROR 12132 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : JOB nom-du-job finished .... with status exitCode=COMPLETED;exitDescription=
+2021-05-02 14:19:15.783 ERROR 12950 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : START JOB ........
+2021-05-02 14:19:16.133 ERROR 12950 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.journaldugeek.com/articles/
+2021-05-02 14:19:24.643 ERROR 12950 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.lesnumeriques.com/actualites
+2021-05-02 14:19:24.669 ERROR 12950 --- [scheduling-1] c.whiterabbit.services.HtmlReaderLesNum  : Les NUMS - No web page found for url : https://www.lesnumeriques.com/actualites
+2021-05-02 14:19:24.673 ERROR 12950 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.01net.com/actualites/
+2021-05-02 14:19:26.049 ERROR 12950 --- [scheduling-1] c.whiterabbit.services.HtmlReader01Net   : https://www.01net.com/actualites/samsung-les-galaxy-z-fold2-5g-et-z-flip-profitent-de-promotions-exceptionnelles-2041921.html - page resume not found
+2021-05-02 14:19:27.513 ERROR 12950 --- [scheduling-1] c.whiterabbit.services.HtmlReader01Net   : https://www.01net.com/actualites/macbook-air-10percent-de-remise-sur-le-dernier-ordinateur-portable-apple-2042144.html - page resume not found
+2021-05-02 14:19:27.767 ERROR 12950 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.mac4ever.com/dossiers
+2021-05-02 14:19:27.790 ERROR 12950 --- [scheduling-1] c.w.services.HtmlReaderMac4Ever          : mac4ever.com - No web page found for url : https://www.mac4ever.com/dossiers
+2021-05-02 14:19:27.793 ERROR 12950 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.frandroid.com/actualites
+2021-05-02 14:19:28.142 ERROR 12950 --- [scheduling-1] c.w.services.HtmlReaderFRAndroid         : frandroid - No division found ! 
+2021-05-02 14:19:28.146 ERROR 12950 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.macg.co/
+2021-05-02 14:19:30.340 ERROR 12950 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : JOB nom-du-job finished .... with status exitCode=COMPLETED;exitDescription=
+2021-05-02 14:20:21.567 ERROR 12950 --- [http-nio-8087-exec-1] c.w.controller.ArticleController         : passage dans rest catalogue : general technology
+2021-05-02 14:20:21.572 ERROR 12950 --- [http-nio-8087-exec-1] com.whiterabbit.services.ArticleService  : passage dans service article findBySubcategory, request parameters, category is general and subcategory is technology
+2021-05-02 14:20:38.801 ERROR 12950 --- [http-nio-8087-exec-3] c.w.controller.ArticleController         : passage dans rest catalogue : eneral technology
+2021-05-02 14:20:38.818 ERROR 12950 --- [http-nio-8087-exec-3] com.whiterabbit.services.ArticleService  : passage dans service article findBySubcategory, request parameters, category is eneral and subcategory is technology
+2021-05-02 14:20:38.819 ERROR 12950 --- [http-nio-8087-exec-3] com.whiterabbit.services.ArticleService  : undefined category or sous category request parameter, category is eneral and sous category is technology
+2021-05-02 14:20:38.819 ERROR 12950 --- [http-nio-8087-exec-3] com.whiterabbit.services.ArticleService  : No enum constant com.whiterabbit.entities.Category.ENERAL
+2021-05-02 14:21:05.396 ERROR 12950 --- [http-nio-8087-exec-4] c.w.controller.ArticleController         : passage dans rest catalogue : general technology
+2021-05-02 14:21:05.410 ERROR 12950 --- [http-nio-8087-exec-4] com.whiterabbit.services.ArticleService  : passage dans service article findBySubcategory, request parameters, category is general and subcategory is technology
+2021-05-02 14:21:59.308 ERROR 13026 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : START JOB ........
+2021-05-02 14:21:59.631 ERROR 13026 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.journaldugeek.com/articles/
+2021-05-02 14:22:07.892 ERROR 13026 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.lesnumeriques.com/actualites
+2021-05-02 14:22:07.919 ERROR 13026 --- [scheduling-1] c.whiterabbit.services.HtmlReaderLesNum  : Les NUMS - No web page found for url : https://www.lesnumeriques.com/actualites
+2021-05-02 14:22:07.922 ERROR 13026 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.01net.com/actualites/
+2021-05-02 14:22:09.300 ERROR 13026 --- [scheduling-1] c.whiterabbit.services.HtmlReader01Net   : https://www.01net.com/actualites/samsung-les-galaxy-z-fold2-5g-et-z-flip-profitent-de-promotions-exceptionnelles-2041921.html - page resume not found
+2021-05-02 14:22:10.799 ERROR 13026 --- [scheduling-1] c.whiterabbit.services.HtmlReader01Net   : https://www.01net.com/actualites/macbook-air-10percent-de-remise-sur-le-dernier-ordinateur-portable-apple-2042144.html - page resume not found
+2021-05-02 14:22:11.063 ERROR 13026 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.mac4ever.com/dossiers
+2021-05-02 14:22:11.092 ERROR 13026 --- [scheduling-1] c.w.services.HtmlReaderMac4Ever          : mac4ever.com - No web page found for url : https://www.mac4ever.com/dossiers
+2021-05-02 14:22:11.095 ERROR 13026 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.frandroid.com/actualites
+2021-05-02 14:22:11.459 ERROR 13026 --- [scheduling-1] c.w.services.HtmlReaderFRAndroid         : frandroid - No division found ! 
+2021-05-02 14:22:11.463 ERROR 13026 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.macg.co/
+2021-05-02 14:22:12.971 ERROR 13026 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : JOB nom-du-job finished .... with status exitCode=COMPLETED;exitDescription=
+2021-05-02 14:51:19.189 ERROR 13026 --- [http-nio-8087-exec-5] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
 
-2020-07-24 11:29:24.672 ERROR 11460 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : START JOB ........
-2020-07-24 11:29:24.943 ERROR 11460 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.frandroid.com/actualites
-2020-07-24 11:29:32.245 ERROR 11460 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.macg.co/
-2020-07-24 11:29:37.794 ERROR 11460 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : JOB nom-du-job finished .... with status exitCode=COMPLETED;exitDescription=
-2020-07-24 11:45:20.870 ERROR 12101 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : START JOB ........
-2020-07-24 11:45:21.077 ERROR 12101 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.frandroid.com/actualites
-2020-07-24 11:45:29.457 ERROR 12101 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.macg.co/
-2020-07-24 11:45:34.420 ERROR 12101 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : JOB nom-du-job finished .... with status exitCode=COMPLETED;exitDescription=
-2020-07-24 11:48:27.722 ERROR 12205 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : START JOB ........
-2020-07-24 11:48:27.999 ERROR 12205 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.frandroid.com/actualites
-2020-07-24 11:48:37.636 ERROR 12205 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.macg.co/
-2020-07-24 11:48:42.773 ERROR 12205 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : JOB nom-du-job finished .... with status exitCode=COMPLETED;exitDescription=
-2020-07-24 11:51:51.052 ERROR 12306 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : START JOB ........
-2020-07-24 11:51:51.298 ERROR 12306 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.frandroid.com/actualites
-2020-07-24 11:51:58.393 ERROR 12306 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.macg.co/
-2020-07-24 11:52:04.531 ERROR 12306 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : JOB nom-du-job finished .... with status exitCode=COMPLETED;exitDescription=
-2020-07-24 11:53:39.814 ERROR 12365 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : START JOB ........
-2020-07-24 11:53:40.020 ERROR 12365 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.journaldugeek.com/articles/
-2020-07-24 11:53:46.557 ERROR 12365 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.lesnumeriques.com/actualites
-2020-07-24 11:53:46.590 ERROR 12365 --- [scheduling-1] c.whiterabbit.services.HtmlReaderLesNum  : Les NUMS - No web page found for url : https://www.lesnumeriques.com/actualites
-2020-07-24 11:53:46.594 ERROR 12365 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.01net.com/actualites/
-2020-07-24 11:53:46.986 ERROR 12365 --- [scheduling-1] c.whiterabbit.services.HtmlReader01Net   : 01Net - No h2 found ! 
-2020-07-24 11:53:53.933 ERROR 12365 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.mac4ever.com/dossiers
-2020-07-24 11:53:53.973 ERROR 12365 --- [scheduling-1] c.w.services.HtmlReaderMac4Ever          : mac4ever.com - No web page found for url : https://www.mac4ever.com/dossiers
-2020-07-24 11:53:53.976 ERROR 12365 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.frandroid.com/actualites
-2020-07-24 11:54:00.275 ERROR 12365 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.macg.co/
-2020-07-24 11:54:05.402 ERROR 12365 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : JOB nom-du-job finished .... with status exitCode=COMPLETED;exitDescription=
+org.springframework.security.web.firewall.RequestRejectedException: The request was rejected because the URL contained a potentially malicious String "//"
+	at org.springframework.security.web.firewall.StrictHttpFirewall.rejectedBlacklistedUrls(StrictHttpFirewall.java:369) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.firewall.StrictHttpFirewall.getFirewalledRequest(StrictHttpFirewall.java:336) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:194) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358) ~[spring-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271) ~[spring-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:526) [tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408) [tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:861) [tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1579) [tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.27.jar:9.0.27]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [na:1.8.0_72]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [na:1.8.0_72]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.27.jar:9.0.27]
+	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_72]
+
+2021-05-02 14:52:12.958 ERROR 13026 --- [http-nio-8087-exec-7] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
+
+org.springframework.security.web.firewall.RequestRejectedException: The request was rejected because the URL contained a potentially malicious String "//"
+	at org.springframework.security.web.firewall.StrictHttpFirewall.rejectedBlacklistedUrls(StrictHttpFirewall.java:369) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.firewall.StrictHttpFirewall.getFirewalledRequest(StrictHttpFirewall.java:336) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:194) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358) ~[spring-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271) ~[spring-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:526) [tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408) [tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:861) [tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1579) [tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.27.jar:9.0.27]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [na:1.8.0_72]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [na:1.8.0_72]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.27.jar:9.0.27]
+	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_72]
+
+2021-05-02 14:53:07.127 ERROR 13026 --- [http-nio-8087-exec-8] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
+
+org.springframework.security.web.firewall.RequestRejectedException: The request was rejected because the URL contained a potentially malicious String "//"
+	at org.springframework.security.web.firewall.StrictHttpFirewall.rejectedBlacklistedUrls(StrictHttpFirewall.java:369) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.firewall.StrictHttpFirewall.getFirewalledRequest(StrictHttpFirewall.java:336) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:194) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358) ~[spring-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271) ~[spring-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:526) [tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408) [tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:861) [tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1579) [tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.27.jar:9.0.27]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [na:1.8.0_72]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [na:1.8.0_72]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.27.jar:9.0.27]
+	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_72]
+
+2021-05-02 14:53:32.820 ERROR 13026 --- [http-nio-8087-exec-9] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
+
+org.springframework.security.web.firewall.RequestRejectedException: The request was rejected because the URL contained a potentially malicious String "//"
+	at org.springframework.security.web.firewall.StrictHttpFirewall.rejectedBlacklistedUrls(StrictHttpFirewall.java:369) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.firewall.StrictHttpFirewall.getFirewalledRequest(StrictHttpFirewall.java:336) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:194) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358) ~[spring-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271) ~[spring-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:526) [tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408) [tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:861) [tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1579) [tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.27.jar:9.0.27]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [na:1.8.0_72]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [na:1.8.0_72]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.27.jar:9.0.27]
+	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_72]
+
+2021-05-02 14:53:50.199 ERROR 13026 --- [http-nio-8087-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
+
+org.springframework.security.web.firewall.RequestRejectedException: The request was rejected because the URL contained a potentially malicious String "//"
+	at org.springframework.security.web.firewall.StrictHttpFirewall.rejectedBlacklistedUrls(StrictHttpFirewall.java:369) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.firewall.StrictHttpFirewall.getFirewalledRequest(StrictHttpFirewall.java:336) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:194) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358) ~[spring-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271) ~[spring-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:526) [tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408) [tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:861) [tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1579) [tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.27.jar:9.0.27]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [na:1.8.0_72]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [na:1.8.0_72]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.27.jar:9.0.27]
+	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_72]
+
+2021-05-02 14:55:18.638 ERROR 13026 --- [http-nio-8087-exec-5] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
+
+org.springframework.security.web.firewall.RequestRejectedException: The request was rejected because the URL contained a potentially malicious String "//"
+	at org.springframework.security.web.firewall.StrictHttpFirewall.rejectedBlacklistedUrls(StrictHttpFirewall.java:369) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.firewall.StrictHttpFirewall.getFirewalledRequest(StrictHttpFirewall.java:336) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:194) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178) ~[spring-security-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358) ~[spring-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271) ~[spring-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:526) [tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408) [tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:861) [tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1579) [tomcat-embed-core-9.0.27.jar:9.0.27]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.27.jar:9.0.27]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [na:1.8.0_72]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [na:1.8.0_72]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.27.jar:9.0.27]
+	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_72]
+
+2021-05-02 15:01:57.070 ERROR 14544 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : START JOB ........
+2021-05-02 15:01:57.406 ERROR 14544 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.journaldugeek.com/articles/
+2021-05-02 15:02:05.674 ERROR 14544 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.lesnumeriques.com/actualites
+2021-05-02 15:02:05.703 ERROR 14544 --- [scheduling-1] c.whiterabbit.services.HtmlReaderLesNum  : Les NUMS - No web page found for url : https://www.lesnumeriques.com/actualites
+2021-05-02 15:02:05.708 ERROR 14544 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.01net.com/actualites/
+2021-05-02 15:02:07.071 ERROR 14544 --- [scheduling-1] c.whiterabbit.services.HtmlReader01Net   : https://www.01net.com/actualites/samsung-les-galaxy-z-fold2-5g-et-z-flip-profitent-de-promotions-exceptionnelles-2041921.html - page resume not found
+2021-05-02 15:02:08.520 ERROR 14544 --- [scheduling-1] c.whiterabbit.services.HtmlReader01Net   : https://www.01net.com/actualites/macbook-air-10percent-de-remise-sur-le-dernier-ordinateur-portable-apple-2042144.html - page resume not found
+2021-05-02 15:02:08.770 ERROR 14544 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.mac4ever.com/dossiers
+2021-05-02 15:02:08.794 ERROR 14544 --- [scheduling-1] c.w.services.HtmlReaderMac4Ever          : mac4ever.com - No web page found for url : https://www.mac4ever.com/dossiers
+2021-05-02 15:02:08.797 ERROR 14544 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.frandroid.com/actualites
+2021-05-02 15:02:09.143 ERROR 14544 --- [scheduling-1] c.w.services.HtmlReaderFRAndroid         : frandroid - No division found ! 
+2021-05-02 15:02:09.146 ERROR 14544 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.macg.co/
+2021-05-02 15:02:12.181 ERROR 14544 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : JOB nom-du-job finished .... with status exitCode=COMPLETED;exitDescription=
+2021-05-02 15:03:52.633 ERROR 14633 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : START JOB ........
+2021-05-02 15:03:52.825 ERROR 14633 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.journaldugeek.com/articles/
+2021-05-02 15:04:00.834 ERROR 14633 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.lesnumeriques.com/actualites
+2021-05-02 15:04:00.855 ERROR 14633 --- [scheduling-1] c.whiterabbit.services.HtmlReaderLesNum  : Les NUMS - No web page found for url : https://www.lesnumeriques.com/actualites
+2021-05-02 15:04:00.859 ERROR 14633 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.01net.com/actualites/
+2021-05-02 15:04:02.321 ERROR 14633 --- [scheduling-1] c.whiterabbit.services.HtmlReader01Net   : https://www.01net.com/actualites/samsung-les-galaxy-z-fold2-5g-et-z-flip-profitent-de-promotions-exceptionnelles-2041921.html - page resume not found
+2021-05-02 15:04:03.762 ERROR 14633 --- [scheduling-1] c.whiterabbit.services.HtmlReader01Net   : https://www.01net.com/actualites/macbook-air-10percent-de-remise-sur-le-dernier-ordinateur-portable-apple-2042144.html - page resume not found
+2021-05-02 15:04:04.019 ERROR 14633 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.mac4ever.com/dossiers
+2021-05-02 15:04:04.047 ERROR 14633 --- [scheduling-1] c.w.services.HtmlReaderMac4Ever          : mac4ever.com - No web page found for url : https://www.mac4ever.com/dossiers
+2021-05-02 15:04:04.051 ERROR 14633 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.frandroid.com/actualites
+2021-05-02 15:04:04.401 ERROR 14633 --- [scheduling-1] c.w.services.HtmlReaderFRAndroid         : frandroid - No division found ! 
+2021-05-02 15:04:04.404 ERROR 14633 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.macg.co/
+2021-05-02 15:04:08.314 ERROR 14633 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : JOB nom-du-job finished .... with status exitCode=COMPLETED;exitDescription=
+2021-05-02 15:04:27.350 ERROR 14633 --- [http-nio-8087-exec-1] c.w.controller.ArticleController         : passage dans rest listArticlesByCategory : general
+2021-05-02 15:04:42.829 ERROR 14633 --- [http-nio-8087-exec-3] c.w.controller.ArticleController         : passage dans rest listArticlesByCategory : general
+2021-05-02 15:07:15.201 ERROR 14717 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : START JOB ........
+2021-05-02 15:07:15.411 ERROR 14717 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.journaldugeek.com/articles/
+2021-05-02 15:07:23.353 ERROR 14717 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.lesnumeriques.com/actualites
+2021-05-02 15:07:23.374 ERROR 14717 --- [scheduling-1] c.whiterabbit.services.HtmlReaderLesNum  : Les NUMS - No web page found for url : https://www.lesnumeriques.com/actualites
+2021-05-02 15:07:23.378 ERROR 14717 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.01net.com/actualites/
+2021-05-02 15:07:24.831 ERROR 14717 --- [scheduling-1] c.whiterabbit.services.HtmlReader01Net   : https://www.01net.com/actualites/samsung-les-galaxy-z-fold2-5g-et-z-flip-profitent-de-promotions-exceptionnelles-2041921.html - page resume not found
+2021-05-02 15:07:26.265 ERROR 14717 --- [scheduling-1] c.whiterabbit.services.HtmlReader01Net   : https://www.01net.com/actualites/macbook-air-10percent-de-remise-sur-le-dernier-ordinateur-portable-apple-2042144.html - page resume not found
+2021-05-02 15:07:26.513 ERROR 14717 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.mac4ever.com/dossiers
+2021-05-02 15:07:26.545 ERROR 14717 --- [scheduling-1] c.w.services.HtmlReaderMac4Ever          : mac4ever.com - No web page found for url : https://www.mac4ever.com/dossiers
+2021-05-02 15:07:26.548 ERROR 14717 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.frandroid.com/actualites
+2021-05-02 15:07:26.890 ERROR 14717 --- [scheduling-1] c.w.services.HtmlReaderFRAndroid         : frandroid - No division found ! 
+2021-05-02 15:07:26.893 ERROR 14717 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.macg.co/
+2021-05-02 15:07:28.462 ERROR 14717 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : JOB nom-du-job finished .... with status exitCode=COMPLETED;exitDescription=
+2021-05-02 15:07:47.635 ERROR 14717 --- [http-nio-8087-exec-2] c.w.controller.ArticleController         : passage dans rest listArticlesByCategory : general
+2021-05-02 15:07:47.640 ERROR 14717 --- [http-nio-8087-exec-2] com.whiterabbit.services.ArticleService  : passage dans service article findByCategory, request parameters, category is general
+2021-05-02 15:07:47.640 ERROR 14717 --- [http-nio-8087-exec-2] com.whiterabbit.services.ArticleService  : category to string : GENERAL
+2021-05-02 15:08:34.393 ERROR 14770 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : START JOB ........
+2021-05-02 15:08:34.743 ERROR 14770 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.journaldugeek.com/articles/
+2021-05-02 15:08:42.600 ERROR 14770 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.lesnumeriques.com/actualites
+2021-05-02 15:08:42.621 ERROR 14770 --- [scheduling-1] c.whiterabbit.services.HtmlReaderLesNum  : Les NUMS - No web page found for url : https://www.lesnumeriques.com/actualites
+2021-05-02 15:08:42.624 ERROR 14770 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.01net.com/actualites/
+2021-05-02 15:08:44.065 ERROR 14770 --- [scheduling-1] c.whiterabbit.services.HtmlReader01Net   : https://www.01net.com/actualites/samsung-les-galaxy-z-fold2-5g-et-z-flip-profitent-de-promotions-exceptionnelles-2041921.html - page resume not found
+2021-05-02 15:08:45.729 ERROR 14770 --- [scheduling-1] c.whiterabbit.services.HtmlReader01Net   : https://www.01net.com/actualites/macbook-air-10percent-de-remise-sur-le-dernier-ordinateur-portable-apple-2042144.html - page resume not found
+2021-05-02 15:08:45.968 ERROR 14770 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.mac4ever.com/dossiers
+2021-05-02 15:08:45.998 ERROR 14770 --- [scheduling-1] c.w.services.HtmlReaderMac4Ever          : mac4ever.com - No web page found for url : https://www.mac4ever.com/dossiers
+2021-05-02 15:08:46.001 ERROR 14770 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.frandroid.com/actualites
+2021-05-02 15:08:46.475 ERROR 14770 --- [scheduling-1] c.w.services.HtmlReaderFRAndroid         : frandroid - No division found ! 
+2021-05-02 15:08:46.478 ERROR 14770 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.macg.co/
+2021-05-02 15:08:48.758 ERROR 14770 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : JOB nom-du-job finished .... with status exitCode=COMPLETED;exitDescription=
+2021-05-02 15:09:00.746 ERROR 14770 --- [http-nio-8087-exec-1] c.w.controller.ArticleController         : passage dans rest listArticlesByCategory : general
+2021-05-02 15:09:00.766 ERROR 14770 --- [http-nio-8087-exec-1] com.whiterabbit.services.ArticleService  : passage dans service article findByCategory, request parameters, category is general
+2021-05-02 15:09:00.782 ERROR 14770 --- [http-nio-8087-exec-1] com.whiterabbit.services.ArticleService  : category to string : GENERAL
+2021-05-02 15:09:23.800 ERROR 14770 --- [http-nio-8087-exec-6] c.w.controller.ArticleController         : passage dans rest listArticlesByCategory : developpement
+2021-05-02 15:09:23.802 ERROR 14770 --- [http-nio-8087-exec-6] com.whiterabbit.services.ArticleService  : passage dans service article findByCategory, request parameters, category is developpement
+2021-05-02 15:09:23.802 ERROR 14770 --- [http-nio-8087-exec-6] com.whiterabbit.services.ArticleService  : category to string : DEVELOPPEMENT
+2021-05-02 15:11:35.306 ERROR 14770 --- [http-nio-8087-exec-2] c.w.controller.ArticleController         : passage dans rest listArticlesByCategory : developpement
+2021-05-02 15:11:35.307 ERROR 14770 --- [http-nio-8087-exec-2] com.whiterabbit.services.ArticleService  : passage dans service article findByCategory, request parameters, category is developpement
+2021-05-02 15:11:35.307 ERROR 14770 --- [http-nio-8087-exec-2] com.whiterabbit.services.ArticleService  : category to string : DEVELOPPEMENT
+2021-05-02 15:11:40.541 ERROR 14770 --- [http-nio-8087-exec-3] c.w.controller.ArticleController         : passage dans rest listArticlesByCategory : developpement
+2021-05-02 15:11:40.542 ERROR 14770 --- [http-nio-8087-exec-3] com.whiterabbit.services.ArticleService  : passage dans service article findByCategory, request parameters, category is developpement
+2021-05-02 15:11:40.542 ERROR 14770 --- [http-nio-8087-exec-3] com.whiterabbit.services.ArticleService  : category to string : DEVELOPPEMENT
+2021-05-02 15:11:44.077 ERROR 14770 --- [http-nio-8087-exec-4] c.w.controller.ArticleController         : passage dans rest listArticlesByCategory : developpement
+2021-05-02 15:11:44.077 ERROR 14770 --- [http-nio-8087-exec-4] com.whiterabbit.services.ArticleService  : passage dans service article findByCategory, request parameters, category is developpement
+2021-05-02 15:11:44.077 ERROR 14770 --- [http-nio-8087-exec-4] com.whiterabbit.services.ArticleService  : category to string : DEVELOPPEMENT
+2021-05-02 15:12:14.454 ERROR 14770 --- [http-nio-8087-exec-8] c.w.controller.ArticleController         : passage dans rest listArticlesByCategory : developpement
+2021-05-02 15:12:14.456 ERROR 14770 --- [http-nio-8087-exec-8] com.whiterabbit.services.ArticleService  : passage dans service article findByCategory, request parameters, category is developpement
+2021-05-02 15:12:14.456 ERROR 14770 --- [http-nio-8087-exec-8] com.whiterabbit.services.ArticleService  : category to string : DEVELOPPEMENT
+2021-05-02 15:14:58.653 ERROR 15045 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : START JOB ........
+2021-05-02 15:14:59.023 ERROR 15045 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.journaldugeek.com/articles/
+2021-05-02 15:15:06.819 ERROR 15045 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.lesnumeriques.com/actualites
+2021-05-02 15:15:06.849 ERROR 15045 --- [scheduling-1] c.whiterabbit.services.HtmlReaderLesNum  : Les NUMS - No web page found for url : https://www.lesnumeriques.com/actualites
+2021-05-02 15:15:06.853 ERROR 15045 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.01net.com/actualites/
+2021-05-02 15:15:08.224 ERROR 15045 --- [scheduling-1] c.whiterabbit.services.HtmlReader01Net   : https://www.01net.com/actualites/samsung-les-galaxy-z-fold2-5g-et-z-flip-profitent-de-promotions-exceptionnelles-2041921.html - page resume not found
+2021-05-02 15:15:09.688 ERROR 15045 --- [scheduling-1] c.whiterabbit.services.HtmlReader01Net   : https://www.01net.com/actualites/macbook-air-10percent-de-remise-sur-le-dernier-ordinateur-portable-apple-2042144.html - page resume not found
+2021-05-02 15:15:09.973 ERROR 15045 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.mac4ever.com/dossiers
+2021-05-02 15:15:10.005 ERROR 15045 --- [scheduling-1] c.w.services.HtmlReaderMac4Ever          : mac4ever.com - No web page found for url : https://www.mac4ever.com/dossiers
+2021-05-02 15:15:10.010 ERROR 15045 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.frandroid.com/actualites
+2021-05-02 15:15:10.489 ERROR 15045 --- [scheduling-1] c.w.services.HtmlReaderFRAndroid         : frandroid - No division found ! 
+2021-05-02 15:15:10.492 ERROR 15045 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.macg.co/
+2021-05-02 15:15:12.431 ERROR 15045 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : JOB nom-du-job finished .... with status exitCode=COMPLETED;exitDescription=
+2021-05-02 15:15:34.494 ERROR 15045 --- [http-nio-8087-exec-6] c.w.controller.ArticleController         : passage dans rest listArticlesByCategory : developpement
+2021-05-02 15:15:34.499 ERROR 15045 --- [http-nio-8087-exec-6] com.whiterabbit.services.ArticleService  : passage dans service article findByCategory, request parameters, category is developpement
+2021-05-02 15:15:34.500 ERROR 15045 --- [http-nio-8087-exec-6] com.whiterabbit.services.ArticleService  : category to string : DEVELOPPEMENT
+2021-05-02 15:15:41.223 ERROR 15045 --- [http-nio-8087-exec-10] c.w.controller.ArticleController         : passage dans rest listArticlesByCategory : developpement
+2021-05-02 15:15:41.224 ERROR 15045 --- [http-nio-8087-exec-10] com.whiterabbit.services.ArticleService  : passage dans service article findByCategory, request parameters, category is developpement
+2021-05-02 15:15:41.224 ERROR 15045 --- [http-nio-8087-exec-10] com.whiterabbit.services.ArticleService  : category to string : DEVELOPPEMENT
+2021-05-02 15:16:00.543 ERROR 15045 --- [http-nio-8087-exec-4] c.w.controller.ArticleController         : passage dans rest listArticlesByCategory : developpement
+2021-05-02 15:16:00.544 ERROR 15045 --- [http-nio-8087-exec-4] com.whiterabbit.services.ArticleService  : passage dans service article findByCategory, request parameters, category is developpement
+2021-05-02 15:16:00.544 ERROR 15045 --- [http-nio-8087-exec-4] com.whiterabbit.services.ArticleService  : category to string : DEVELOPPEMENT
+2021-05-02 15:22:15.753 ERROR 15045 --- [http-nio-8087-exec-2] c.w.controller.ArticleController         : passage dans rest listArticlesByCategory : developpement
+2021-05-02 15:22:15.754 ERROR 15045 --- [http-nio-8087-exec-2] com.whiterabbit.services.ArticleService  : passage dans service article findByCategory, request parameters, category is developpement
+2021-05-02 15:22:15.755 ERROR 15045 --- [http-nio-8087-exec-2] com.whiterabbit.services.ArticleService  : category to string : DEVELOPPEMENT
+2021-05-02 16:15:12.449 ERROR 15045 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : START JOB ........
+2021-05-02 16:15:12.511 ERROR 15045 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.journaldugeek.com/articles/
+2021-05-02 16:15:19.274 ERROR 15045 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.lesnumeriques.com/actualites
+2021-05-02 16:15:19.290 ERROR 15045 --- [scheduling-1] c.whiterabbit.services.HtmlReaderLesNum  : Les NUMS - No web page found for url : https://www.lesnumeriques.com/actualites
+2021-05-02 16:15:19.311 ERROR 15045 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.01net.com/actualites/
+2021-05-02 16:15:20.689 ERROR 15045 --- [scheduling-1] c.whiterabbit.services.HtmlReader01Net   : https://www.01net.com/actualites/samsung-les-galaxy-z-fold2-5g-et-z-flip-profitent-de-promotions-exceptionnelles-2041921.html - page resume not found
+2021-05-02 16:15:22.010 ERROR 15045 --- [scheduling-1] c.whiterabbit.services.HtmlReader01Net   : https://www.01net.com/actualites/macbook-air-10percent-de-remise-sur-le-dernier-ordinateur-portable-apple-2042144.html - page resume not found
+2021-05-02 16:15:22.239 ERROR 15045 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.mac4ever.com/dossiers
+2021-05-02 16:15:22.292 ERROR 15045 --- [scheduling-1] c.w.services.HtmlReaderMac4Ever          : mac4ever.com - No web page found for url : https://www.mac4ever.com/dossiers
+2021-05-02 16:15:22.311 ERROR 15045 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.frandroid.com/actualites
+2021-05-02 16:15:22.783 ERROR 15045 --- [scheduling-1] c.w.services.HtmlReaderFRAndroid         : frandroid - No division found ! 
+2021-05-02 16:15:22.788 ERROR 15045 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.macg.co/
+2021-05-02 16:15:27.122 ERROR 15045 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : JOB nom-du-job finished .... with status exitCode=COMPLETED;exitDescription=
+2021-05-02 16:22:33.933 ERROR 15045 --- [http-nio-8087-exec-6] c.w.controller.ArticleController         : passage dans rest listArticlesByCategory : developpement
+2021-05-02 16:22:33.935 ERROR 15045 --- [http-nio-8087-exec-6] com.whiterabbit.services.ArticleService  : passage dans service article findByCategory, request parameters, category is developpement
+2021-05-02 16:22:33.935 ERROR 15045 --- [http-nio-8087-exec-6] com.whiterabbit.services.ArticleService  : category to string : DEVELOPPEMENT
+2021-05-02 18:50:52.618 ERROR 15045 --- [http-nio-8087-exec-3] c.w.controller.ArticleController         : passage dans rest listArticlesByCategory : developpement
+2021-05-02 18:50:52.620 ERROR 15045 --- [http-nio-8087-exec-3] com.whiterabbit.services.ArticleService  : passage dans service article findByCategory, request parameters, category is developpement
+2021-05-02 18:50:52.620 ERROR 15045 --- [http-nio-8087-exec-3] com.whiterabbit.services.ArticleService  : category to string : DEVELOPPEMENT
+2021-05-02 18:56:40.177 ERROR 15045 --- [http-nio-8087-exec-7] c.w.controller.ArticleController         : passage dans rest listArticlesByCategory : developpement
+2021-05-02 18:56:40.177 ERROR 15045 --- [http-nio-8087-exec-7] com.whiterabbit.services.ArticleService  : passage dans service article findByCategory, request parameters, category is developpement
+2021-05-02 18:56:40.177 ERROR 15045 --- [http-nio-8087-exec-7] com.whiterabbit.services.ArticleService  : category to string : DEVELOPPEMENT
+2021-05-02 19:18:50.606 ERROR 16627 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : START JOB ........
+2021-05-02 19:18:50.914 ERROR 16627 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.journaldugeek.com/articles/
+2021-05-02 19:18:59.252 ERROR 16627 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.lesnumeriques.com/actualites
+2021-05-02 19:18:59.279 ERROR 16627 --- [scheduling-1] c.whiterabbit.services.HtmlReaderLesNum  : Les NUMS - No web page found for url : https://www.lesnumeriques.com/actualites
+2021-05-02 19:18:59.282 ERROR 16627 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.01net.com/actualites/
+2021-05-02 19:19:00.788 ERROR 16627 --- [scheduling-1] c.whiterabbit.services.HtmlReader01Net   : https://www.01net.com/actualites/samsung-les-galaxy-z-fold2-5g-et-z-flip-profitent-de-promotions-exceptionnelles-2041921.html - page resume not found
+2021-05-02 19:19:02.248 ERROR 16627 --- [scheduling-1] c.whiterabbit.services.HtmlReader01Net   : https://www.01net.com/actualites/macbook-air-10percent-de-remise-sur-le-dernier-ordinateur-portable-apple-2042144.html - page resume not found
+2021-05-02 19:19:02.459 ERROR 16627 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.mac4ever.com/dossiers
+2021-05-02 19:19:02.527 ERROR 16627 --- [scheduling-1] c.w.services.HtmlReaderMac4Ever          : mac4ever.com - No web page found for url : https://www.mac4ever.com/dossiers
+2021-05-02 19:19:02.530 ERROR 16627 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.frandroid.com/actualites
+2021-05-02 19:19:02.892 ERROR 16627 --- [scheduling-1] c.w.services.HtmlReaderFRAndroid         : frandroid - No division found ! 
+2021-05-02 19:19:02.896 ERROR 16627 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.macg.co/
+2021-05-02 19:19:08.125 ERROR 16627 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : JOB nom-du-job finished .... with status exitCode=COMPLETED;exitDescription=
+2021-05-02 19:53:35.133 ERROR 17430 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : START JOB ........
+2021-05-02 19:53:35.431 ERROR 17430 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.journaldugeek.com/articles/
+2021-05-02 19:53:43.650 ERROR 17430 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.lesnumeriques.com/actualites
+2021-05-02 19:53:43.680 ERROR 17430 --- [scheduling-1] com.whiterabbit.utils.HtmlReaderLesNum   : Les NUMS - No web page found for url : https://www.lesnumeriques.com/actualites
+2021-05-02 19:53:43.684 ERROR 17430 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.01net.com/actualites/
+2021-05-02 19:53:45.188 ERROR 17430 --- [scheduling-1] com.whiterabbit.utils.HtmlReader01Net    : https://www.01net.com/actualites/samsung-les-galaxy-z-fold2-5g-et-z-flip-profitent-de-promotions-exceptionnelles-2041921.html - page resume not found
+2021-05-02 19:53:46.595 ERROR 17430 --- [scheduling-1] com.whiterabbit.utils.HtmlReader01Net    : https://www.01net.com/actualites/macbook-air-10percent-de-remise-sur-le-dernier-ordinateur-portable-apple-2042144.html - page resume not found
+2021-05-02 19:53:46.806 ERROR 17430 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.mac4ever.com/dossiers
+2021-05-02 19:53:46.837 ERROR 17430 --- [scheduling-1] c.whiterabbit.utils.HtmlReaderMac4Ever   : mac4ever.com - No web page found for url : https://www.mac4ever.com/dossiers
+2021-05-02 19:53:46.840 ERROR 17430 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.frandroid.com/actualites
+2021-05-02 19:53:47.192 ERROR 17430 --- [scheduling-1] c.whiterabbit.utils.HtmlReaderFRAndroid  : frandroid - No division found ! 
+2021-05-02 19:53:47.195 ERROR 17430 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.macg.co/
+2021-05-02 19:53:58.869 ERROR 17430 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : JOB nom-du-job finished .... with status exitCode=COMPLETED;exitDescription=
+2021-05-02 19:54:19.226 ERROR 17430 --- [http-nio-8087-exec-5] c.w.controller.ArticleController         : passage dans rest listArticlesByCategory : developpement
+2021-05-02 19:54:19.228 ERROR 17430 --- [http-nio-8087-exec-5] com.whiterabbit.services.ArticleService  : passage dans service article findByCategory, request parameters, category is developpement
+2021-05-02 19:54:19.228 ERROR 17430 --- [http-nio-8087-exec-5] com.whiterabbit.services.ArticleService  : category to string : DEVELOPPEMENT
+2021-05-02 19:54:27.063 ERROR 17430 --- [http-nio-8087-exec-7] c.w.controller.ArticleController         : passage dans rest listArticlesByCategory : developpement
+2021-05-02 19:54:27.064 ERROR 17430 --- [http-nio-8087-exec-7] com.whiterabbit.services.ArticleService  : passage dans service article findByCategory, request parameters, category is developpement
+2021-05-02 19:54:27.065 ERROR 17430 --- [http-nio-8087-exec-7] com.whiterabbit.services.ArticleService  : category to string : DEVELOPPEMENT
+2021-05-02 19:54:51.280 ERROR 17430 --- [http-nio-8087-exec-1] c.w.controller.ArticleController         : passage dans rest listArticlesByCategory : developpement
+2021-05-02 19:54:51.281 ERROR 17430 --- [http-nio-8087-exec-1] com.whiterabbit.services.ArticleService  : passage dans service article findByCategory, request parameters, category is developpement
+2021-05-02 19:54:51.281 ERROR 17430 --- [http-nio-8087-exec-1] com.whiterabbit.services.ArticleService  : category to string : DEVELOPPEMENT

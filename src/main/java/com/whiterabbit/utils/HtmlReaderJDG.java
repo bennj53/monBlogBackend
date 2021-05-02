@@ -1,8 +1,9 @@
-package com.whiterabbit.services;
+package com.whiterabbit.utils;
 
 import com.gargoylesoftware.htmlunit.html.*;
 import com.whiterabbit.dto.InputDataLot;
 import com.whiterabbit.dto.InputData;
+import com.whiterabbit.entities.Category;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -16,6 +17,8 @@ public class HtmlReaderJDG implements HtmlReader {
 
     Logger log = LoggerFactory.getLogger(HtmlReaderJDG.class);
     public static final String JDG = "journaldugeek.com";
+    public static final String category = Category.GENERAL.toString();
+    public static final String subcategory = Category.GENERAL.getSubcategory()[0];
 
     @Override
     public InputDataLot readHtmlPage(String url) {
@@ -48,6 +51,8 @@ public class HtmlReaderJDG implements HtmlReader {
 
                             //créer l' Article
                             InputData inputData = new InputData();
+                            inputData.setCategory(category);
+                            inputData.setSubcategory(subcategory);
                             inputData.setTitre(itemTitle);
                             inputData.setImg(pathImg);
                             inputData.setUrl(itemUrl);

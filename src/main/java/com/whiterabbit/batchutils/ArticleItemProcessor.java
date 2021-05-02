@@ -21,6 +21,8 @@ public class ArticleItemProcessor implements ItemProcessor<InputDataLot, Article
         ArticleLot articleLot = new ArticleLot();
         for (InputData inputData: inputDataLot.getInputDatas()) {
             Article article = new Article();
+            article.setCategory(inputData.getCategory());
+            article.setSubcategory(inputData.getSubcategory());
             article.setTitre(inputData.getTitre());
             article.setImg(inputData.getImg());
             article.setUrl(inputData.getUrl());
