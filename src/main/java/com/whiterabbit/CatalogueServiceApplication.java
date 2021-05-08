@@ -2,8 +2,11 @@ package com.whiterabbit;
 
 import com.whiterabbit.dao.ArticleRepository;
 import com.whiterabbit.dao.CategoryRepository;
+import com.whiterabbit.dto.InputDataLot;
 import com.whiterabbit.entities.Article;
 import com.whiterabbit.entities.Category;
+import com.whiterabbit.services.HtmlReaderService;
+import com.whiterabbit.services.HtmlReaderServiceImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
