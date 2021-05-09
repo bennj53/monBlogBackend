@@ -1,159 +1,853 @@
-2021-05-08 11:13:14.838 ERROR 33935 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : START JOB ........
-2021-05-08 11:13:15.224 ERROR 33935 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.journaldugeek.com/articles/
-2021-05-08 11:14:16.330 ERROR 33972 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : START JOB ........
-2021-05-08 11:14:16.510 ERROR 33972 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.journaldugeek.com/articles/
-2021-05-08 11:14:24.680 ERROR 33972 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.lesnumeriques.com/actualites
-2021-05-08 11:14:24.719 ERROR 33972 --- [scheduling-1] com.whiterabbit.utils.HtmlReaderLesNum   : Les NUMS - No web page found for url : https://www.lesnumeriques.com/actualites
-2021-05-08 11:14:24.723 ERROR 33972 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.01net.com/actualites/
-2021-05-08 11:14:25.743 ERROR 33972 --- [scheduling-1] com.whiterabbit.utils.HtmlReader01Net    : https://www.01net.com/actualites/bon-plan-xiaomi-effectue-jusqu-a-150-euros-de-remise-sur-une-selection-de-televiseurs-hd-et-4k-2042444.html - page resume not found
-2021-05-08 11:14:29.453 ERROR 33972 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.mac4ever.com/dossiers
-2021-05-08 11:14:29.489 ERROR 33972 --- [scheduling-1] c.whiterabbit.utils.HtmlReaderMac4Ever   : mac4ever.com - No web page found for url : https://www.mac4ever.com/dossiers
-2021-05-08 11:14:29.497 ERROR 33972 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.frandroid.com/actualites
-2021-05-08 11:14:29.847 ERROR 33972 --- [scheduling-1] c.whiterabbit.utils.HtmlReaderFRAndroid  : frandroid - No division found ! 
-2021-05-08 11:14:29.851 ERROR 33972 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.macg.co/
-2021-05-08 11:14:32.504 ERROR 33972 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : JOB nom-du-job finished .... with status exitCode=COMPLETED;exitDescription=
-2021-05-08 11:26:16.039 ERROR 33972 --- [http-nio-8087-exec-5] c.w.controller.ArticleController         : passage dans rest listArticlesByCategory : developpement
-2021-05-08 11:26:16.040 ERROR 33972 --- [http-nio-8087-exec-5] com.whiterabbit.services.ArticleService  : passage dans service article findByCategory, request parameters, category is developpement
-2021-05-08 11:26:16.040 ERROR 33972 --- [http-nio-8087-exec-5] com.whiterabbit.services.ArticleService  : category to string : DEVELOPPEMENT
-2021-05-08 12:24:41.241 ERROR 36525 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : START JOB ........
-2021-05-08 12:24:41.535 ERROR 36525 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.journaldugeek.com/articles/
-2021-05-08 12:24:49.180 ERROR 36525 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.lesnumeriques.com/actualites
-2021-05-08 12:24:49.207 ERROR 36525 --- [scheduling-1] com.whiterabbit.utils.HtmlReaderLesNum   : Les NUMS - No web page found for url : https://www.lesnumeriques.com/actualites
-2021-05-08 12:24:49.210 ERROR 36525 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.01net.com/actualites/
-2021-05-08 12:24:50.563 ERROR 36525 --- [scheduling-1] com.whiterabbit.utils.HtmlReader01Net    : https://www.01net.com/actualites/bon-plan-xiaomi-effectue-jusqu-a-150-euros-de-remise-sur-une-selection-de-televiseurs-hd-et-4k-2042444.html - page resume not found
-2021-05-08 12:24:54.079 ERROR 36525 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.mac4ever.com/dossiers
-2021-05-08 12:24:54.108 ERROR 36525 --- [scheduling-1] c.whiterabbit.utils.HtmlReaderMac4Ever   : mac4ever.com - No web page found for url : https://www.mac4ever.com/dossiers
-2021-05-08 12:24:54.112 ERROR 36525 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.frandroid.com/actualites
-2021-05-08 12:24:54.455 ERROR 36525 --- [scheduling-1] c.whiterabbit.utils.HtmlReaderFRAndroid  : frandroid - No division found ! 
-2021-05-08 12:24:54.458 ERROR 36525 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.macg.co/
-2021-05-08 12:24:56.601 ERROR 36525 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.news.humancoders.com/t/java
-2021-05-08 12:24:56.612 ERROR 36525 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : JOB nom-du-job finished .... with status exitCode=COMPLETED;exitDescription=
-2021-05-08 12:25:22.293 ERROR 36525 --- [http-nio-8087-exec-6] c.w.controller.ArticleController         : passage dans rest listArticlesByCategory : developpement
-2021-05-08 12:25:22.295 ERROR 36525 --- [http-nio-8087-exec-6] com.whiterabbit.services.ArticleService  : passage dans service article findByCategory, request parameters, category is developpement
-2021-05-08 12:25:22.295 ERROR 36525 --- [http-nio-8087-exec-6] com.whiterabbit.services.ArticleService  : category to string : DEVELOPPEMENT
-2021-05-08 12:30:32.181 ERROR 36688 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : START JOB ........
-2021-05-08 12:30:32.538 ERROR 36688 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.journaldugeek.com/articles/
-2021-05-08 12:30:40.346 ERROR 36688 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.lesnumeriques.com/actualites
-2021-05-08 12:30:40.384 ERROR 36688 --- [scheduling-1] com.whiterabbit.utils.HtmlReaderLesNum   : Les NUMS - No web page found for url : https://www.lesnumeriques.com/actualites
-2021-05-08 12:30:40.388 ERROR 36688 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.01net.com/actualites/
-2021-05-08 12:30:41.673 ERROR 36688 --- [scheduling-1] com.whiterabbit.utils.HtmlReader01Net    : https://www.01net.com/actualites/bon-plan-xiaomi-effectue-jusqu-a-150-euros-de-remise-sur-une-selection-de-televiseurs-hd-et-4k-2042444.html - page resume not found
-2021-05-08 12:30:45.289 ERROR 36688 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.mac4ever.com/dossiers
-2021-05-08 12:30:45.322 ERROR 36688 --- [scheduling-1] c.whiterabbit.utils.HtmlReaderMac4Ever   : mac4ever.com - No web page found for url : https://www.mac4ever.com/dossiers
-2021-05-08 12:30:45.325 ERROR 36688 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.frandroid.com/actualites
-2021-05-08 12:30:45.669 ERROR 36688 --- [scheduling-1] c.whiterabbit.utils.HtmlReaderFRAndroid  : frandroid - No division found ! 
-2021-05-08 12:30:45.673 ERROR 36688 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.macg.co/
-2021-05-08 12:30:49.698 ERROR 36688 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.news.humancoders.com/t/java
-2021-05-08 12:30:49.714 ERROR 36688 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : JOB nom-du-job finished .... with status exitCode=COMPLETED;exitDescription=
-2021-05-08 12:37:41.269 ERROR 36795 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : START JOB ........
-2021-05-08 12:37:41.523 ERROR 36795 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.journaldugeek.com/articles/
-2021-05-08 12:37:49.072 ERROR 36795 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.lesnumeriques.com/actualites
-2021-05-08 12:37:49.098 ERROR 36795 --- [scheduling-1] com.whiterabbit.utils.HtmlReaderLesNum   : Les NUMS - No web page found for url : https://www.lesnumeriques.com/actualites
-2021-05-08 12:37:49.101 ERROR 36795 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.01net.com/actualites/
-2021-05-08 12:37:50.358 ERROR 36795 --- [scheduling-1] com.whiterabbit.utils.HtmlReader01Net    : https://www.01net.com/actualites/bon-plan-xiaomi-effectue-jusqu-a-150-euros-de-remise-sur-une-selection-de-televiseurs-hd-et-4k-2042444.html - page resume not found
-2021-05-08 12:37:53.835 ERROR 36795 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.mac4ever.com/dossiers
-2021-05-08 12:37:53.863 ERROR 36795 --- [scheduling-1] c.whiterabbit.utils.HtmlReaderMac4Ever   : mac4ever.com - No web page found for url : https://www.mac4ever.com/dossiers
-2021-05-08 12:37:53.867 ERROR 36795 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.frandroid.com/actualites
-2021-05-08 12:37:54.926 ERROR 36795 --- [scheduling-1] c.whiterabbit.utils.HtmlReaderFRAndroid  : frandroid - No division found ! 
-2021-05-08 12:37:54.929 ERROR 36795 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.macg.co/
-2021-05-08 12:37:58.397 ERROR 36795 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.news.humancoders.com/t/java
-2021-05-08 12:37:58.409 ERROR 36795 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : JOB nom-du-job finished .... with status exitCode=COMPLETED;exitDescription=
-2021-05-08 12:40:53.057 ERROR 36889 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : START JOB ........
-2021-05-08 12:40:53.336 ERROR 36889 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.news.humancoders.com/t/java
-2021-05-08 12:40:53.366 ERROR 36889 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : JOB nom-du-job finished .... with status exitCode=COMPLETED;exitDescription=
-2021-05-08 13:40:53.418 ERROR 36889 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : START JOB ........
-2021-05-08 13:40:53.446 ERROR 36889 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.news.humancoders.com/t/java
-2021-05-08 13:40:53.456 ERROR 36889 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : JOB nom-du-job finished .... with status exitCode=COMPLETED;exitDescription=
-2021-05-08 13:47:46.765 ERROR 36889 --- [http-nio-8087-exec-1] c.w.controller.ArticleController         : passage dans rest listArticlesByCategory : developpement
-2021-05-08 13:47:46.769 ERROR 36889 --- [http-nio-8087-exec-1] com.whiterabbit.services.ArticleService  : passage dans service article findByCategory, request parameters, category is developpement
-2021-05-08 13:47:46.769 ERROR 36889 --- [http-nio-8087-exec-1] com.whiterabbit.services.ArticleService  : category to string : DEVELOPPEMENT
-2021-05-08 14:54:25.177 ERROR 37849 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : START JOB ........
-2021-05-08 14:54:25.429 ERROR 37849 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.news.humancoders.com/t/java
-2021-05-08 14:54:25.478 ERROR 37849 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : JOB nom-du-job finished .... with status exitCode=COMPLETED;exitDescription=
-2021-05-08 14:55:54.392 ERROR 37940 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : START JOB ........
-2021-05-08 14:55:54.620 ERROR 37940 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.news.humancoders.com/t/java
-2021-05-08 14:55:54.686 ERROR 37940 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : JOB nom-du-job finished .... with status exitCode=COMPLETED;exitDescription=
-2021-05-08 15:33:58.154 ERROR 39837 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : START JOB ........
-2021-05-08 15:33:58.304 ERROR 39837 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.journaldugeek.com/articles/
-2021-05-08 15:34:07.707 ERROR 39837 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.lesnumeriques.com/actualites
-2021-05-08 15:34:07.758 ERROR 39837 --- [scheduling-1] com.whiterabbit.utils.HtmlReaderLesNum   : Les NUMS - No web page found for url : https://www.lesnumeriques.com/actualites
-2021-05-08 15:34:07.762 ERROR 39837 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.01net.com/actualites/
-2021-05-08 15:34:10.217 ERROR 39837 --- [scheduling-1] com.whiterabbit.utils.HtmlReader01Net    : https://www.01net.com/actualites/bon-plan-xiaomi-effectue-jusqu-a-150-euros-de-remise-sur-une-selection-de-televiseurs-hd-et-4k-2042444.html - page resume not found
-2021-05-08 15:34:14.827 ERROR 39837 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.mac4ever.com/dossiers
-2021-05-08 15:34:15.368 ERROR 39837 --- [scheduling-1] c.whiterabbit.utils.HtmlReaderMac4Ever   : mac4ever.com - No web page found for url : https://www.mac4ever.com/dossiers
-2021-05-08 15:34:15.372 ERROR 39837 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.frandroid.com/actualites
-2021-05-08 15:34:15.926 ERROR 39837 --- [scheduling-1] c.whiterabbit.utils.HtmlReaderFRAndroid  : frandroid - No division found ! 
-2021-05-08 15:34:15.929 ERROR 39837 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.macg.co/
-2021-05-08 15:34:18.692 ERROR 39837 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : news.humancoders.com/t/java
-2021-05-08 15:34:19.390 ERROR 39837 --- [scheduling-1] c.w.utils.HtmlReaderHumanCoders          : HumanCoders - articles found ! 
-2021-05-08 15:34:19.428 ERROR 39837 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : JOB nom-du-job finished .... with status exitCode=COMPLETED;exitDescription=
-2021-05-08 15:35:54.949 ERROR 39837 --- [http-nio-8087-exec-1] c.w.controller.ArticleController         : passage dans rest listArticlesByCategory : developpement
-2021-05-08 15:35:54.954 ERROR 39837 --- [http-nio-8087-exec-1] com.whiterabbit.services.ArticleService  : passage dans service article findByCategory, request parameters, category is developpement
-2021-05-08 15:35:54.955 ERROR 39837 --- [http-nio-8087-exec-1] com.whiterabbit.services.ArticleService  : category to string : DEVELOPPEMENT
-2021-05-08 15:42:28.271 ERROR 39837 --- [http-nio-8087-exec-9] c.w.controller.ArticleController         : passage dans rest listArticlesByCategory : developpement
-2021-05-08 15:42:28.274 ERROR 39837 --- [http-nio-8087-exec-9] com.whiterabbit.services.ArticleService  : passage dans service article findByCategory, request parameters, category is developpement
-2021-05-08 15:42:28.274 ERROR 39837 --- [http-nio-8087-exec-9] com.whiterabbit.services.ArticleService  : category to string : DEVELOPPEMENT
-2021-05-08 16:10:04.792 ERROR 41233 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : START JOB ........
-2021-05-08 16:10:05.163 ERROR 41233 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.journaldugeek.com/articles/
-2021-05-08 16:10:13.830 ERROR 41233 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.lesnumeriques.com/actualites
-2021-05-08 16:10:13.868 ERROR 41233 --- [scheduling-1] com.whiterabbit.utils.HtmlReaderLesNum   : Les NUMS - No web page found for url : https://www.lesnumeriques.com/actualites
-2021-05-08 16:10:13.886 ERROR 41233 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.01net.com/actualites/
-2021-05-08 16:10:17.745 ERROR 41233 --- [scheduling-1] com.whiterabbit.utils.HtmlReader01Net    : https://www.01net.com/actualites/bon-plan-xiaomi-effectue-jusqu-a-150-euros-de-remise-sur-une-selection-de-televiseurs-hd-et-4k-2042444.html - page resume not found
-2021-05-08 16:10:21.962 ERROR 41233 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.mac4ever.com/dossiers
-2021-05-08 16:10:21.999 ERROR 41233 --- [scheduling-1] c.whiterabbit.utils.HtmlReaderMac4Ever   : mac4ever.com - No web page found for url : https://www.mac4ever.com/dossiers
-2021-05-08 16:10:22.003 ERROR 41233 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.frandroid.com/actualites
-2021-05-08 16:10:22.391 ERROR 41233 --- [scheduling-1] c.whiterabbit.utils.HtmlReaderFRAndroid  : frandroid - No division found ! 
-2021-05-08 16:10:22.394 ERROR 41233 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.macg.co/
-2021-05-08 16:10:24.664 ERROR 41233 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : news.humancoders.com/t/java
-2021-05-08 16:10:25.387 ERROR 41233 --- [scheduling-1] c.w.utils.HtmlReaderHumanCoders          : HumanCoders - articles found ! 
-2021-05-08 16:10:25.425 ERROR 41233 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : JOB nom-du-job finished .... with status exitCode=COMPLETED;exitDescription=
-2021-05-08 16:10:41.510 ERROR 41233 --- [http-nio-8087-exec-4] c.w.controller.ArticleController         : passage dans rest listArticlesByCategory : developpement
-2021-05-08 16:10:41.511 ERROR 41233 --- [http-nio-8087-exec-4] com.whiterabbit.services.ArticleService  : passage dans service article findByCategory, request parameters, category is developpement
-2021-05-08 16:10:41.512 ERROR 41233 --- [http-nio-8087-exec-4] com.whiterabbit.services.ArticleService  : category to string : DEVELOPPEMENT
-2021-05-08 16:27:09.756 ERROR 41233 --- [http-nio-8087-exec-8] c.w.controller.ArticleController         : passage dans rest listArticlesByCategory : developpement
-2021-05-08 16:27:09.757 ERROR 41233 --- [http-nio-8087-exec-8] com.whiterabbit.services.ArticleService  : passage dans service article findByCategory, request parameters, category is developpement
-2021-05-08 16:27:09.758 ERROR 41233 --- [http-nio-8087-exec-8] com.whiterabbit.services.ArticleService  : category to string : DEVELOPPEMENT
-2021-05-08 16:27:17.677 ERROR 41233 --- [http-nio-8087-exec-1] c.w.controller.ArticleController         : passage dans rest listArticlesByCategory : developpement
-2021-05-08 16:27:17.678 ERROR 41233 --- [http-nio-8087-exec-1] com.whiterabbit.services.ArticleService  : passage dans service article findByCategory, request parameters, category is developpement
-2021-05-08 16:27:17.678 ERROR 41233 --- [http-nio-8087-exec-1] com.whiterabbit.services.ArticleService  : category to string : DEVELOPPEMENT
-2021-05-08 16:39:47.952 ERROR 41233 --- [http-nio-8087-exec-4] c.w.controller.ArticleController         : passage dans rest listArticlesByCategory : developpement
-2021-05-08 16:39:47.954 ERROR 41233 --- [http-nio-8087-exec-4] com.whiterabbit.services.ArticleService  : passage dans service article findByCategory, request parameters, category is developpement
-2021-05-08 16:39:47.954 ERROR 41233 --- [http-nio-8087-exec-4] com.whiterabbit.services.ArticleService  : category to string : DEVELOPPEMENT
-2021-05-08 16:40:07.083 ERROR 41233 --- [http-nio-8087-exec-6] c.w.controller.ArticleController         : passage dans rest listArticlesByCategory : developpement
-2021-05-08 16:40:07.084 ERROR 41233 --- [http-nio-8087-exec-6] com.whiterabbit.services.ArticleService  : passage dans service article findByCategory, request parameters, category is developpement
-2021-05-08 16:40:07.084 ERROR 41233 --- [http-nio-8087-exec-6] com.whiterabbit.services.ArticleService  : category to string : DEVELOPPEMENT
-2021-05-08 16:40:51.268 ERROR 41233 --- [http-nio-8087-exec-8] c.w.controller.ArticleController         : passage dans rest listArticlesByCategory : developpement
-2021-05-08 16:40:51.269 ERROR 41233 --- [http-nio-8087-exec-8] com.whiterabbit.services.ArticleService  : passage dans service article findByCategory, request parameters, category is developpement
-2021-05-08 16:40:51.270 ERROR 41233 --- [http-nio-8087-exec-8] com.whiterabbit.services.ArticleService  : category to string : DEVELOPPEMENT
-2021-05-08 16:41:33.547 ERROR 41233 --- [http-nio-8087-exec-10] c.w.controller.ArticleController         : passage dans rest listArticlesByCategory : developpement
-2021-05-08 16:41:33.549 ERROR 41233 --- [http-nio-8087-exec-10] com.whiterabbit.services.ArticleService  : passage dans service article findByCategory, request parameters, category is developpement
-2021-05-08 16:41:33.549 ERROR 41233 --- [http-nio-8087-exec-10] com.whiterabbit.services.ArticleService  : category to string : DEVELOPPEMENT
-2021-05-08 16:42:33.475 ERROR 41233 --- [http-nio-8087-exec-2] c.w.controller.ArticleController         : passage dans rest listArticlesByCategory : developpement
-2021-05-08 16:42:33.476 ERROR 41233 --- [http-nio-8087-exec-2] com.whiterabbit.services.ArticleService  : passage dans service article findByCategory, request parameters, category is developpement
-2021-05-08 16:42:33.476 ERROR 41233 --- [http-nio-8087-exec-2] com.whiterabbit.services.ArticleService  : category to string : DEVELOPPEMENT
-2021-05-08 16:42:51.917 ERROR 41233 --- [http-nio-8087-exec-5] c.w.controller.ArticleController         : passage dans rest listArticlesByCategory : developpement
-2021-05-08 16:42:51.919 ERROR 41233 --- [http-nio-8087-exec-5] com.whiterabbit.services.ArticleService  : passage dans service article findByCategory, request parameters, category is developpement
-2021-05-08 16:42:51.919 ERROR 41233 --- [http-nio-8087-exec-5] com.whiterabbit.services.ArticleService  : category to string : DEVELOPPEMENT
-2021-05-08 19:25:13.291 ERROR 41233 --- [http-nio-8087-exec-1] c.w.controller.ArticleController         : passage dans rest listArticlesByCategory : developpement
-2021-05-08 19:25:13.293 ERROR 41233 --- [http-nio-8087-exec-1] com.whiterabbit.services.ArticleService  : passage dans service article findByCategory, request parameters, category is developpement
-2021-05-08 19:25:13.293 ERROR 41233 --- [http-nio-8087-exec-1] com.whiterabbit.services.ArticleService  : category to string : DEVELOPPEMENT
-2021-05-08 19:34:11.159 ERROR 41233 --- [http-nio-8087-exec-6] c.w.controller.ArticleController         : passage dans rest listArticlesByCategory : developpement
-2021-05-08 19:34:11.160 ERROR 41233 --- [http-nio-8087-exec-6] com.whiterabbit.services.ArticleService  : passage dans service article findByCategory, request parameters, category is developpement
-2021-05-08 19:34:11.160 ERROR 41233 --- [http-nio-8087-exec-6] com.whiterabbit.services.ArticleService  : category to string : DEVELOPPEMENT
-2021-05-08 20:18:11.218 ERROR 41233 --- [http-nio-8087-exec-10] c.w.controller.ArticleController         : passage dans rest listArticlesByCategory : developpement
-2021-05-08 20:18:11.221 ERROR 41233 --- [http-nio-8087-exec-10] com.whiterabbit.services.ArticleService  : passage dans service article findByCategory, request parameters, category is developpement
-2021-05-08 20:18:11.221 ERROR 41233 --- [http-nio-8087-exec-10] com.whiterabbit.services.ArticleService  : category to string : DEVELOPPEMENT
-2021-05-08 20:18:19.555 ERROR 41233 --- [http-nio-8087-exec-4] c.w.controller.ArticleController         : passage dans rest listArticlesByCategory : developpement
-2021-05-08 20:18:19.558 ERROR 41233 --- [http-nio-8087-exec-4] com.whiterabbit.services.ArticleService  : passage dans service article findByCategory, request parameters, category is developpement
-2021-05-08 20:18:19.559 ERROR 41233 --- [http-nio-8087-exec-4] com.whiterabbit.services.ArticleService  : category to string : DEVELOPPEMENT
-2021-05-08 20:18:24.931 ERROR 41233 --- [http-nio-8087-exec-7] c.w.controller.ArticleController         : passage dans rest listArticlesByCategory : developpement
-2021-05-08 20:18:24.932 ERROR 41233 --- [http-nio-8087-exec-7] com.whiterabbit.services.ArticleService  : passage dans service article findByCategory, request parameters, category is developpement
-2021-05-08 20:18:24.932 ERROR 41233 --- [http-nio-8087-exec-7] com.whiterabbit.services.ArticleService  : category to string : DEVELOPPEMENT
-2021-05-08 20:18:48.271 ERROR 41233 --- [http-nio-8087-exec-10] c.w.controller.ArticleController         : passage dans rest listArticlesByCategory : general
-2021-05-08 20:18:48.272 ERROR 41233 --- [http-nio-8087-exec-10] com.whiterabbit.services.ArticleService  : passage dans service article findByCategory, request parameters, category is general
-2021-05-08 20:18:48.273 ERROR 41233 --- [http-nio-8087-exec-10] com.whiterabbit.services.ArticleService  : category to string : GENERAL
-2021-05-08 20:18:52.736 ERROR 41233 --- [http-nio-8087-exec-1] c.w.controller.ArticleController         : passage dans rest listArticlesByCategory : general
-2021-05-08 20:18:52.737 ERROR 41233 --- [http-nio-8087-exec-1] com.whiterabbit.services.ArticleService  : passage dans service article findByCategory, request parameters, category is general
-2021-05-08 20:18:52.737 ERROR 41233 --- [http-nio-8087-exec-1] com.whiterabbit.services.ArticleService  : category to string : GENERAL
-2021-05-08 20:19:36.005 ERROR 41233 --- [http-nio-8087-exec-3] c.w.controller.ArticleController         : passage dans rest listArticlesByCategory : developpement
-2021-05-08 20:19:36.006 ERROR 41233 --- [http-nio-8087-exec-3] com.whiterabbit.services.ArticleService  : passage dans service article findByCategory, request parameters, category is developpement
-2021-05-08 20:19:36.006 ERROR 41233 --- [http-nio-8087-exec-3] com.whiterabbit.services.ArticleService  : category to string : DEVELOPPEMENT
+2021-05-09 09:51:18.399 ERROR 50856 --- [http-nio-8087-exec-4] c.w.controller.ArticleController         : passage dans rest listArticlesByCategory : general
+2021-05-09 09:51:18.474 ERROR 50856 --- [http-nio-8087-exec-4] com.whiterabbit.services.ArticleService  : passage dans service article findByCategory, request parameters, category is general
+2021-05-09 09:51:18.474 ERROR 50856 --- [http-nio-8087-exec-4] com.whiterabbit.services.ArticleService  : category to string : GENERAL
+2021-05-09 09:51:27.415 ERROR 50856 --- [http-nio-8087-exec-6] c.w.controller.ArticleController         : passage dans rest listArticlesByCategory : developpement
+2021-05-09 09:51:27.463 ERROR 50856 --- [http-nio-8087-exec-6] com.whiterabbit.services.ArticleService  : passage dans service article findByCategory, request parameters, category is developpement
+2021-05-09 09:51:27.463 ERROR 50856 --- [http-nio-8087-exec-6] com.whiterabbit.services.ArticleService  : category to string : DEVELOPPEMENT
+2021-05-09 09:52:36.298 ERROR 50856 --- [http-nio-8087-exec-10] c.w.controller.ArticleController         : passage dans rest listArticlesByCategory : developpement
+2021-05-09 09:52:36.300 ERROR 50856 --- [http-nio-8087-exec-10] com.whiterabbit.services.ArticleService  : passage dans service article findByCategory, request parameters, category is developpement
+2021-05-09 09:52:36.300 ERROR 50856 --- [http-nio-8087-exec-10] com.whiterabbit.services.ArticleService  : category to string : DEVELOPPEMENT
+2021-05-09 09:52:45.260 ERROR 50856 --- [http-nio-8087-exec-3] c.w.controller.ArticleController         : passage dans rest listArticlesByCategory : general
+2021-05-09 09:52:45.261 ERROR 50856 --- [http-nio-8087-exec-3] com.whiterabbit.services.ArticleService  : passage dans service article findByCategory, request parameters, category is general
+2021-05-09 09:52:45.261 ERROR 50856 --- [http-nio-8087-exec-3] com.whiterabbit.services.ArticleService  : category to string : GENERAL
+2021-05-09 09:52:50.455 ERROR 50856 --- [http-nio-8087-exec-5] c.w.controller.ArticleController         : passage dans rest listArticlesByCategory : developpement
+2021-05-09 09:52:50.457 ERROR 50856 --- [http-nio-8087-exec-5] com.whiterabbit.services.ArticleService  : passage dans service article findByCategory, request parameters, category is developpement
+2021-05-09 09:52:50.457 ERROR 50856 --- [http-nio-8087-exec-5] com.whiterabbit.services.ArticleService  : category to string : DEVELOPPEMENT
+2021-05-09 09:57:25.503 ERROR 51439 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : START JOB ........
+2021-05-09 09:57:25.870 ERROR 51439 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.journaldugeek.com/articles/
+2021-05-09 09:57:34.922 ERROR 51439 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.lesnumeriques.com/actualites
+2021-05-09 09:57:37.617 ERROR 51439 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.01net.com/actualites/
+2021-05-09 09:57:39.566 ERROR 51439 --- [scheduling-1] com.whiterabbit.utils.HtmlReader01Net    : https://www.01net.com/actualites/bon-plan-xiaomi-effectue-jusqu-a-150-euros-de-remise-sur-une-selection-de-televiseurs-hd-et-4k-2042444.html - page resume not found
+2021-05-09 09:57:43.274 ERROR 51439 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.mac4ever.com/dossiers
+2021-05-09 09:57:43.864 ERROR 51439 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.frandroid.com/actualites
+2021-05-09 09:57:44.222 ERROR 51439 --- [scheduling-1] c.whiterabbit.utils.HtmlReaderFRAndroid  : frandroid - No division found ! 
+2021-05-09 09:57:44.225 ERROR 51439 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.macg.co/
+2021-05-09 09:57:46.946 ERROR 51439 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : news.humancoders.com/t/java
+2021-05-09 09:57:48.107 ERROR 51439 --- [scheduling-1] c.w.utils.HtmlReaderHumanCoders          : HumanCoders - articles found ! 
+2021-05-09 09:57:48.155 ERROR 51439 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : java.developpez.com
+2021-05-09 09:57:48.432 ERROR 51439 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : JOB nom-du-job finished .... with status exitCode=COMPLETED;exitDescription=
+2021-05-09 09:58:01.472 ERROR 51439 --- [http-nio-8087-exec-2] c.w.controller.ArticleController         : passage dans rest listArticlesByCategory : developpement
+2021-05-09 09:58:01.477 ERROR 51439 --- [http-nio-8087-exec-2] com.whiterabbit.services.ArticleService  : passage dans service article findByCategory, request parameters, category is developpement
+2021-05-09 09:58:01.477 ERROR 51439 --- [http-nio-8087-exec-2] com.whiterabbit.services.ArticleService  : category to string : DEVELOPPEMENT
+2021-05-09 09:59:37.787 ERROR 51439 --- [http-nio-8087-exec-5] c.w.controller.ArticleController         : passage dans rest listArticlesByCategory : developpement
+2021-05-09 09:59:37.787 ERROR 51439 --- [http-nio-8087-exec-5] com.whiterabbit.services.ArticleService  : passage dans service article findByCategory, request parameters, category is developpement
+2021-05-09 09:59:37.787 ERROR 51439 --- [http-nio-8087-exec-5] com.whiterabbit.services.ArticleService  : category to string : DEVELOPPEMENT
+2021-05-09 10:27:34.798 ERROR 51439 --- [http-nio-8087-exec-8] c.w.controller.ArticleController         : passage dans rest listArticlesByCategory : developpement
+2021-05-09 10:27:34.799 ERROR 51439 --- [http-nio-8087-exec-8] com.whiterabbit.services.ArticleService  : passage dans service article findByCategory, request parameters, category is developpement
+2021-05-09 10:27:34.800 ERROR 51439 --- [http-nio-8087-exec-8] com.whiterabbit.services.ArticleService  : category to string : DEVELOPPEMENT
+2021-05-09 12:11:22.241 ERROR 52848 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : START JOB ........
+2021-05-09 12:11:22.468 ERROR 52848 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.journaldugeek.com/articles/
+2021-05-09 12:11:30.383 ERROR 52848 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.lesnumeriques.com/actualites
+2021-05-09 12:11:32.305 ERROR 52848 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.01net.com/actualites/
+2021-05-09 12:11:34.173 ERROR 52848 --- [scheduling-1] com.whiterabbit.utils.HtmlReader01Net    : https://www.01net.com/actualites/bon-plan-xiaomi-effectue-jusqu-a-150-euros-de-remise-sur-une-selection-de-televiseurs-hd-et-4k-2042444.html - page resume not found
+2021-05-09 12:11:36.838 ERROR 52848 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.mac4ever.com/dossiers
+2021-05-09 12:11:37.461 ERROR 52848 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.frandroid.com/actualites
+2021-05-09 12:11:37.917 ERROR 52848 --- [scheduling-1] c.whiterabbit.utils.HtmlReaderFRAndroid  : frandroid - No division found ! 
+2021-05-09 12:11:37.922 ERROR 52848 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.macg.co/
+2021-05-09 12:11:40.434 ERROR 52848 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : news.humancoders.com/t/java
+2021-05-09 12:11:40.884 ERROR 52848 --- [scheduling-1] c.w.utils.HtmlReaderHumanCoders          : HumanCoders - articles found ! 
+2021-05-09 12:11:40.912 ERROR 52848 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : java.developpez.com
+2021-05-09 12:11:41.139 ERROR 52848 --- [scheduling-1] o.s.batch.core.step.AbstractStep         : Encountered an error executing step nom-du-step in job nom-du-job
+
+java.lang.ClassCastException: java.util.ArrayList cannot be cast to com.gargoylesoftware.htmlunit.html.HtmlArticle
+	at com.whiterabbit.utils.HtmlReaderDeveloppez.lambda$readHtmlPage$0(HtmlReaderDeveloppez.java:36) ~[classes/:na]
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193) ~[na:1.8.0_72]
+	at java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1374) ~[na:1.8.0_72]
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:481) ~[na:1.8.0_72]
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:471) ~[na:1.8.0_72]
+	at java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:708) ~[na:1.8.0_72]
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234) ~[na:1.8.0_72]
+	at java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:499) ~[na:1.8.0_72]
+	at com.whiterabbit.utils.HtmlReaderDeveloppez.readHtmlPage(HtmlReaderDeveloppez.java:36) ~[classes/:na]
+	at com.whiterabbit.services.HtmlReaderServiceImpl.readHtmlPage(HtmlReaderServiceImpl.java:64) ~[classes/:na]
+	at com.whiterabbit.batchutils.HtmlPageItemReader.read(HtmlPageItemReader.java:88) ~[classes/:na]
+	at com.whiterabbit.batchutils.HtmlPageItemReader.read(HtmlPageItemReader.java:24) ~[classes/:na]
+	at com.whiterabbit.batchutils.HtmlPageItemReader$$EnhancerBySpringCGLIB$$7782826b.read(<generated>) ~[classes/:na]
+	at com.whiterabbit.batchutils.HtmlPageItemReader$$FastClassBySpringCGLIB$$5295a48f.invoke(<generated>) ~[classes/:na]
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218) ~[spring-core-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:769) ~[spring-aop-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) [spring-aop-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747) ~[spring-aop-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.aop.support.DelegatingIntroductionInterceptor.doProceed(DelegatingIntroductionInterceptor.java:136) ~[spring-aop-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.aop.support.DelegatingIntroductionInterceptor.invoke(DelegatingIntroductionInterceptor.java:124) ~[spring-aop-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) [spring-aop-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747) ~[spring-aop-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:689) ~[spring-aop-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at com.whiterabbit.batchutils.HtmlPageItemReader$$EnhancerBySpringCGLIB$$5571ceaa.read(<generated>) ~[classes/:na]
+	at org.springframework.batch.core.step.item.SimpleChunkProvider.doRead(SimpleChunkProvider.java:99) ~[spring-batch-core-4.2.0.RELEASE.jar:4.2.0.RELEASE]
+	at org.springframework.batch.core.step.item.SimpleChunkProvider.read(SimpleChunkProvider.java:180) ~[spring-batch-core-4.2.0.RELEASE.jar:4.2.0.RELEASE]
+	at org.springframework.batch.core.step.item.SimpleChunkProvider$1.doInIteration(SimpleChunkProvider.java:126) ~[spring-batch-core-4.2.0.RELEASE.jar:4.2.0.RELEASE]
+	at org.springframework.batch.repeat.support.RepeatTemplate.getNextResult(RepeatTemplate.java:375) ~[spring-batch-infrastructure-4.2.0.RELEASE.jar:4.2.0.RELEASE]
+	at org.springframework.batch.repeat.support.RepeatTemplate.executeInternal(RepeatTemplate.java:215) ~[spring-batch-infrastructure-4.2.0.RELEASE.jar:4.2.0.RELEASE]
+	at org.springframework.batch.repeat.support.RepeatTemplate.iterate(RepeatTemplate.java:145) ~[spring-batch-infrastructure-4.2.0.RELEASE.jar:4.2.0.RELEASE]
+	at org.springframework.batch.core.step.item.SimpleChunkProvider.provide(SimpleChunkProvider.java:118) ~[spring-batch-core-4.2.0.RELEASE.jar:4.2.0.RELEASE]
+	at org.springframework.batch.core.step.item.ChunkOrientedTasklet.execute(ChunkOrientedTasklet.java:71) ~[spring-batch-core-4.2.0.RELEASE.jar:4.2.0.RELEASE]
+	at org.springframework.batch.core.step.tasklet.TaskletStep$ChunkTransactionCallback.doInTransaction(TaskletStep.java:407) ~[spring-batch-core-4.2.0.RELEASE.jar:4.2.0.RELEASE]
+	at org.springframework.batch.core.step.tasklet.TaskletStep$ChunkTransactionCallback.doInTransaction(TaskletStep.java:331) ~[spring-batch-core-4.2.0.RELEASE.jar:4.2.0.RELEASE]
+	at org.springframework.transaction.support.TransactionTemplate.execute(TransactionTemplate.java:140) ~[spring-tx-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.batch.core.step.tasklet.TaskletStep$2.doInChunkContext(TaskletStep.java:273) ~[spring-batch-core-4.2.0.RELEASE.jar:4.2.0.RELEASE]
+	at org.springframework.batch.core.scope.context.StepContextRepeatCallback.doInIteration(StepContextRepeatCallback.java:82) ~[spring-batch-core-4.2.0.RELEASE.jar:4.2.0.RELEASE]
+	at org.springframework.batch.repeat.support.RepeatTemplate.getNextResult(RepeatTemplate.java:375) ~[spring-batch-infrastructure-4.2.0.RELEASE.jar:4.2.0.RELEASE]
+	at org.springframework.batch.repeat.support.RepeatTemplate.executeInternal(RepeatTemplate.java:215) ~[spring-batch-infrastructure-4.2.0.RELEASE.jar:4.2.0.RELEASE]
+	at org.springframework.batch.repeat.support.RepeatTemplate.iterate(RepeatTemplate.java:145) ~[spring-batch-infrastructure-4.2.0.RELEASE.jar:4.2.0.RELEASE]
+	at org.springframework.batch.core.step.tasklet.TaskletStep.doExecute(TaskletStep.java:258) ~[spring-batch-core-4.2.0.RELEASE.jar:4.2.0.RELEASE]
+	at org.springframework.batch.core.step.AbstractStep.execute(AbstractStep.java:208) ~[spring-batch-core-4.2.0.RELEASE.jar:4.2.0.RELEASE]
+	at org.springframework.batch.core.job.SimpleStepHandler.handleStep(SimpleStepHandler.java:148) [spring-batch-core-4.2.0.RELEASE.jar:4.2.0.RELEASE]
+	at org.springframework.batch.core.job.AbstractJob.handleStep(AbstractJob.java:410) [spring-batch-core-4.2.0.RELEASE.jar:4.2.0.RELEASE]
+	at org.springframework.batch.core.job.SimpleJob.doExecute(SimpleJob.java:136) [spring-batch-core-4.2.0.RELEASE.jar:4.2.0.RELEASE]
+	at org.springframework.batch.core.job.AbstractJob.execute(AbstractJob.java:319) [spring-batch-core-4.2.0.RELEASE.jar:4.2.0.RELEASE]
+	at org.springframework.batch.core.launch.support.SimpleJobLauncher$1.run(SimpleJobLauncher.java:147) [spring-batch-core-4.2.0.RELEASE.jar:4.2.0.RELEASE]
+	at org.springframework.core.task.SyncTaskExecutor.execute(SyncTaskExecutor.java:50) [spring-core-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.batch.core.launch.support.SimpleJobLauncher.run(SimpleJobLauncher.java:140) [spring-batch-core-4.2.0.RELEASE.jar:4.2.0.RELEASE]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_72]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_72]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_72]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_72]
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:344) [spring-aop-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:198) [spring-aop-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) [spring-aop-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.batch.core.configuration.annotation.SimpleBatchConfiguration$PassthruAdvice.invoke(SimpleBatchConfiguration.java:127) [spring-batch-core-4.2.0.RELEASE.jar:4.2.0.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) [spring-aop-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:212) [spring-aop-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at com.sun.proxy.$Proxy97.run(Unknown Source) [na:na]
+	at com.whiterabbit.batchutils.ArticleBatchScheduler.schedule(ArticleBatchScheduler.java:37) [classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_72]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_72]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_72]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_72]
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84) [spring-context-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54) [spring-context-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) [na:1.8.0_72]
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308) [na:1.8.0_72]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180) [na:1.8.0_72]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294) [na:1.8.0_72]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [na:1.8.0_72]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [na:1.8.0_72]
+	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_72]
+
+2021-05-09 12:11:41.157 ERROR 52848 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : JOB nom-du-job finished .... with status exitCode=FAILED;exitDescription=java.lang.ClassCastException: java.util.ArrayList cannot be cast to com.gargoylesoftware.htmlunit.html.HtmlArticle
+	at com.whiterabbit.utils.HtmlReaderDeveloppez.lambda$readHtmlPage$0(HtmlReaderDeveloppez.java:36)
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193)
+	at java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1374)
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:481)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:471)
+	at java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:708)
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:499)
+	at com.whiterabbit.utils.HtmlReaderDeveloppez.readHtmlPage(HtmlReaderDeveloppez.java:36)
+	at com.whiterabbit.services.HtmlReaderServiceImpl.readHtmlPage(HtmlReaderServiceImpl.java:64)
+	at com.whiterabbit.batchutils.HtmlPageItemReader.read(HtmlPageItemReader.java:88)
+	at com.whiterabbit.batchutils.HtmlPageItemReader.read(HtmlPageItemReader.java:24)
+	at com.whiterabbit.batchutils.HtmlPageItemReader$$EnhancerBySpringCGLIB$$7782826b.read(<generated>)
+	at com.whiterabbit.batchutils.HtmlPageItemReader$$FastClassBySpringCGLIB$$5295a48f.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:769)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747)
+	at org.springframework.aop.support.DelegatingIntroductionInterceptor.doProceed(DelegatingIntroductionInterceptor.java:136)
+	at org.springframework.aop.support.DelegatingIntroductionInterceptor.invoke(DelegatingIntroductionInterceptor.java:124)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:689)
+	at com.whiterabbit.batchutils.HtmlPageItemReader$$EnhancerBySpringCGLIB$$5571ceaa.read(<generated>)
+	at org.springframework.batch.core.step.item.SimpleChunkProvider.doRead(SimpleChunkProvider.java:99)
+	at org.springframework.batch.core.step.item.SimpleChunkProvider.read(SimpleChunkProvider.java:180)
+	at org.springframework.batch.core.step.item.SimpleChunkProvider$1.doInIteration(SimpleChunkProvider.java:126)
+	at org.springframework.batch.repeat.support.RepeatTemplate.getNextResult(RepeatTemplate.java:375)
+	at org.springframework.batch.repeat.support.RepeatTemplate.executeInternal(RepeatTemplate.java:215)
+	at org.springframework.batch.repeat.support.RepeatTemplate.iterate(RepeatTemplate.java:145)
+	at org.springframework.batch.core.step.item.SimpleChunkProvider.provide(SimpleChunkProvider.java:118)
+	at org.springframework.batch.core.step.item.ChunkOrientedTasklet.execute(ChunkOrientedTasklet.java:71)
+	at org.springframework.batch.core.step.tasklet.TaskletStep$ChunkTransactionCallback.doInTransaction(TaskletStep.java:407)
+	at org.springframework.batch.core.step.tasklet.TaskletStep$ChunkTransactionCallback.doInTransaction(TaskletStep.java:331)
+	at org.springframework.transaction.support.TransactionTemplate.execute(TransactionTemplate.java:140)
+	at org.springframework.batch.core.step.tasklet.TaskletStep$2.doInChunkContext(TaskletStep.java:273)
+	at org.springframework.batch.core.scope.context.StepContextRepeatCallback.doInIteration(StepContextRepeatCallback.java:82)
+	at org.springframework.batch.repeat.support.RepeatTemplate.getNextResult(RepeatTemplate.java:375)
+	at org.springframework.batch.repeat.support.RepeatTemplate.executeInternal(RepeatTemplate.java:215)
+	at org.springframework.batch.repeat.support.RepeatTemplate.iterate(RepeatTemplate.java:145)
+	at org.springframework.batch.core.step.tasklet.TaskletStep.doExecute(TaskletStep.java:258)
+	at org.springframework.batch.core.step.AbstractStep.execute(AbstractStep.java:208)
+	at org.springframework.batch.core.job.SimpleStepHandler.handleStep(SimpleStepHandler.java:148)
+	at org.springframework.batch.core.job.AbstractJob.handleStep(AbstractJob.java:410)
+	at org.springframework.batch.core.job.SimpleJob.doExecute(SimpleJob.java:136)
+	at org.springframework.batch.core.job.AbstractJob.execute(AbstractJob.java:319)
+	at org.springframework.batch.core.launch.support.SimpleJobLauncher$1.run(SimpleJobLauncher.java:147)
+	at org.springframework.core.task.SyncTaskExecutor.execute(SyncTaskExecutor.java:50)
+	at org.springframework.batch.core.launch.support.SimpleJobLauncher.run(SimpleJobLauncher.java:140)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:344)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:198)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.batch.core.configuration.annotation.SimpleBatchConfiguration$PassthruAdvice.invoke(SimpleBatchConfiguration.java:127)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:212)
+	at com.sun.proxy.$Proxy97.run(Unknown Source)
+	at com.whiterabbit.batchutils.ArticleBatchScheduler.schedule(ArticleBatchScheduler.java:37)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+2021-05-09 12:13:54.280 ERROR 52942 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : START JOB ........
+2021-05-09 12:13:54.611 ERROR 52942 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.journaldugeek.com/articles/
+2021-05-09 12:14:02.557 ERROR 52942 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.lesnumeriques.com/actualites
+2021-05-09 12:14:04.469 ERROR 52942 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.01net.com/actualites/
+2021-05-09 12:14:06.329 ERROR 52942 --- [scheduling-1] com.whiterabbit.utils.HtmlReader01Net    : https://www.01net.com/actualites/bon-plan-xiaomi-effectue-jusqu-a-150-euros-de-remise-sur-une-selection-de-televiseurs-hd-et-4k-2042444.html - page resume not found
+2021-05-09 12:14:09.120 ERROR 52942 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.mac4ever.com/dossiers
+2021-05-09 12:14:09.555 ERROR 52942 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.frandroid.com/actualites
+2021-05-09 12:14:10.008 ERROR 52942 --- [scheduling-1] c.whiterabbit.utils.HtmlReaderFRAndroid  : frandroid - No division found ! 
+2021-05-09 12:14:10.011 ERROR 52942 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.macg.co/
+2021-05-09 12:14:13.010 ERROR 52942 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : news.humancoders.com/t/java
+2021-05-09 12:14:13.645 ERROR 52942 --- [scheduling-1] c.w.utils.HtmlReaderHumanCoders          : HumanCoders - articles found ! 
+2021-05-09 12:14:13.676 ERROR 52942 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : java.developpez.com
+2021-05-09 12:14:13.893 ERROR 52942 --- [scheduling-1] o.s.batch.core.step.AbstractStep         : Encountered an error executing step nom-du-step in job nom-du-job
+
+java.lang.ClassCastException: java.util.ArrayList cannot be cast to com.gargoylesoftware.htmlunit.html.HtmlArticle
+	at com.whiterabbit.utils.HtmlReaderDeveloppez.lambda$readHtmlPage$1(HtmlReaderDeveloppez.java:36) ~[classes/:na]
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193) ~[na:1.8.0_72]
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193) ~[na:1.8.0_72]
+	at java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1374) ~[na:1.8.0_72]
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:481) ~[na:1.8.0_72]
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:471) ~[na:1.8.0_72]
+	at java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:708) ~[na:1.8.0_72]
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234) ~[na:1.8.0_72]
+	at java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:499) ~[na:1.8.0_72]
+	at com.whiterabbit.utils.HtmlReaderDeveloppez.readHtmlPage(HtmlReaderDeveloppez.java:36) ~[classes/:na]
+	at com.whiterabbit.services.HtmlReaderServiceImpl.readHtmlPage(HtmlReaderServiceImpl.java:64) ~[classes/:na]
+	at com.whiterabbit.batchutils.HtmlPageItemReader.read(HtmlPageItemReader.java:88) ~[classes/:na]
+	at com.whiterabbit.batchutils.HtmlPageItemReader.read(HtmlPageItemReader.java:24) ~[classes/:na]
+	at com.whiterabbit.batchutils.HtmlPageItemReader$$EnhancerBySpringCGLIB$$4a5d299e.read(<generated>) ~[classes/:na]
+	at com.whiterabbit.batchutils.HtmlPageItemReader$$FastClassBySpringCGLIB$$5295a48f.invoke(<generated>) ~[classes/:na]
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218) ~[spring-core-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:769) ~[spring-aop-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) [spring-aop-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747) ~[spring-aop-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.aop.support.DelegatingIntroductionInterceptor.doProceed(DelegatingIntroductionInterceptor.java:136) ~[spring-aop-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.aop.support.DelegatingIntroductionInterceptor.invoke(DelegatingIntroductionInterceptor.java:124) ~[spring-aop-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) [spring-aop-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747) ~[spring-aop-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:689) ~[spring-aop-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at com.whiterabbit.batchutils.HtmlPageItemReader$$EnhancerBySpringCGLIB$$7cff083e.read(<generated>) ~[classes/:na]
+	at org.springframework.batch.core.step.item.SimpleChunkProvider.doRead(SimpleChunkProvider.java:99) ~[spring-batch-core-4.2.0.RELEASE.jar:4.2.0.RELEASE]
+	at org.springframework.batch.core.step.item.SimpleChunkProvider.read(SimpleChunkProvider.java:180) ~[spring-batch-core-4.2.0.RELEASE.jar:4.2.0.RELEASE]
+	at org.springframework.batch.core.step.item.SimpleChunkProvider$1.doInIteration(SimpleChunkProvider.java:126) ~[spring-batch-core-4.2.0.RELEASE.jar:4.2.0.RELEASE]
+	at org.springframework.batch.repeat.support.RepeatTemplate.getNextResult(RepeatTemplate.java:375) ~[spring-batch-infrastructure-4.2.0.RELEASE.jar:4.2.0.RELEASE]
+	at org.springframework.batch.repeat.support.RepeatTemplate.executeInternal(RepeatTemplate.java:215) ~[spring-batch-infrastructure-4.2.0.RELEASE.jar:4.2.0.RELEASE]
+	at org.springframework.batch.repeat.support.RepeatTemplate.iterate(RepeatTemplate.java:145) ~[spring-batch-infrastructure-4.2.0.RELEASE.jar:4.2.0.RELEASE]
+	at org.springframework.batch.core.step.item.SimpleChunkProvider.provide(SimpleChunkProvider.java:118) ~[spring-batch-core-4.2.0.RELEASE.jar:4.2.0.RELEASE]
+	at org.springframework.batch.core.step.item.ChunkOrientedTasklet.execute(ChunkOrientedTasklet.java:71) ~[spring-batch-core-4.2.0.RELEASE.jar:4.2.0.RELEASE]
+	at org.springframework.batch.core.step.tasklet.TaskletStep$ChunkTransactionCallback.doInTransaction(TaskletStep.java:407) ~[spring-batch-core-4.2.0.RELEASE.jar:4.2.0.RELEASE]
+	at org.springframework.batch.core.step.tasklet.TaskletStep$ChunkTransactionCallback.doInTransaction(TaskletStep.java:331) ~[spring-batch-core-4.2.0.RELEASE.jar:4.2.0.RELEASE]
+	at org.springframework.transaction.support.TransactionTemplate.execute(TransactionTemplate.java:140) ~[spring-tx-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.batch.core.step.tasklet.TaskletStep$2.doInChunkContext(TaskletStep.java:273) ~[spring-batch-core-4.2.0.RELEASE.jar:4.2.0.RELEASE]
+	at org.springframework.batch.core.scope.context.StepContextRepeatCallback.doInIteration(StepContextRepeatCallback.java:82) ~[spring-batch-core-4.2.0.RELEASE.jar:4.2.0.RELEASE]
+	at org.springframework.batch.repeat.support.RepeatTemplate.getNextResult(RepeatTemplate.java:375) ~[spring-batch-infrastructure-4.2.0.RELEASE.jar:4.2.0.RELEASE]
+	at org.springframework.batch.repeat.support.RepeatTemplate.executeInternal(RepeatTemplate.java:215) ~[spring-batch-infrastructure-4.2.0.RELEASE.jar:4.2.0.RELEASE]
+	at org.springframework.batch.repeat.support.RepeatTemplate.iterate(RepeatTemplate.java:145) ~[spring-batch-infrastructure-4.2.0.RELEASE.jar:4.2.0.RELEASE]
+	at org.springframework.batch.core.step.tasklet.TaskletStep.doExecute(TaskletStep.java:258) ~[spring-batch-core-4.2.0.RELEASE.jar:4.2.0.RELEASE]
+	at org.springframework.batch.core.step.AbstractStep.execute(AbstractStep.java:208) ~[spring-batch-core-4.2.0.RELEASE.jar:4.2.0.RELEASE]
+	at org.springframework.batch.core.job.SimpleStepHandler.handleStep(SimpleStepHandler.java:148) [spring-batch-core-4.2.0.RELEASE.jar:4.2.0.RELEASE]
+	at org.springframework.batch.core.job.AbstractJob.handleStep(AbstractJob.java:410) [spring-batch-core-4.2.0.RELEASE.jar:4.2.0.RELEASE]
+	at org.springframework.batch.core.job.SimpleJob.doExecute(SimpleJob.java:136) [spring-batch-core-4.2.0.RELEASE.jar:4.2.0.RELEASE]
+	at org.springframework.batch.core.job.AbstractJob.execute(AbstractJob.java:319) [spring-batch-core-4.2.0.RELEASE.jar:4.2.0.RELEASE]
+	at org.springframework.batch.core.launch.support.SimpleJobLauncher$1.run(SimpleJobLauncher.java:147) [spring-batch-core-4.2.0.RELEASE.jar:4.2.0.RELEASE]
+	at org.springframework.core.task.SyncTaskExecutor.execute(SyncTaskExecutor.java:50) [spring-core-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.batch.core.launch.support.SimpleJobLauncher.run(SimpleJobLauncher.java:140) [spring-batch-core-4.2.0.RELEASE.jar:4.2.0.RELEASE]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_72]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_72]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_72]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_72]
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:344) [spring-aop-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:198) [spring-aop-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) [spring-aop-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.batch.core.configuration.annotation.SimpleBatchConfiguration$PassthruAdvice.invoke(SimpleBatchConfiguration.java:127) [spring-batch-core-4.2.0.RELEASE.jar:4.2.0.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) [spring-aop-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:212) [spring-aop-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at com.sun.proxy.$Proxy97.run(Unknown Source) [na:na]
+	at com.whiterabbit.batchutils.ArticleBatchScheduler.schedule(ArticleBatchScheduler.java:37) [classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_72]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_72]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_72]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_72]
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84) [spring-context-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54) [spring-context-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) [na:1.8.0_72]
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308) [na:1.8.0_72]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180) [na:1.8.0_72]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294) [na:1.8.0_72]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [na:1.8.0_72]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [na:1.8.0_72]
+	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_72]
+
+2021-05-09 12:14:13.903 ERROR 52942 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : JOB nom-du-job finished .... with status exitCode=FAILED;exitDescription=java.lang.ClassCastException: java.util.ArrayList cannot be cast to com.gargoylesoftware.htmlunit.html.HtmlArticle
+	at com.whiterabbit.utils.HtmlReaderDeveloppez.lambda$readHtmlPage$1(HtmlReaderDeveloppez.java:36)
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193)
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193)
+	at java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1374)
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:481)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:471)
+	at java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:708)
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:499)
+	at com.whiterabbit.utils.HtmlReaderDeveloppez.readHtmlPage(HtmlReaderDeveloppez.java:36)
+	at com.whiterabbit.services.HtmlReaderServiceImpl.readHtmlPage(HtmlReaderServiceImpl.java:64)
+	at com.whiterabbit.batchutils.HtmlPageItemReader.read(HtmlPageItemReader.java:88)
+	at com.whiterabbit.batchutils.HtmlPageItemReader.read(HtmlPageItemReader.java:24)
+	at com.whiterabbit.batchutils.HtmlPageItemReader$$EnhancerBySpringCGLIB$$4a5d299e.read(<generated>)
+	at com.whiterabbit.batchutils.HtmlPageItemReader$$FastClassBySpringCGLIB$$5295a48f.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:769)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747)
+	at org.springframework.aop.support.DelegatingIntroductionInterceptor.doProceed(DelegatingIntroductionInterceptor.java:136)
+	at org.springframework.aop.support.DelegatingIntroductionInterceptor.invoke(DelegatingIntroductionInterceptor.java:124)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:689)
+	at com.whiterabbit.batchutils.HtmlPageItemReader$$EnhancerBySpringCGLIB$$7cff083e.read(<generated>)
+	at org.springframework.batch.core.step.item.SimpleChunkProvider.doRead(SimpleChunkProvider.java:99)
+	at org.springframework.batch.core.step.item.SimpleChunkProvider.read(SimpleChunkProvider.java:180)
+	at org.springframework.batch.core.step.item.SimpleChunkProvider$1.doInIteration(SimpleChunkProvider.java:126)
+	at org.springframework.batch.repeat.support.RepeatTemplate.getNextResult(RepeatTemplate.java:375)
+	at org.springframework.batch.repeat.support.RepeatTemplate.executeInternal(RepeatTemplate.java:215)
+	at org.springframework.batch.repeat.support.RepeatTemplate.iterate(RepeatTemplate.java:145)
+	at org.springframework.batch.core.step.item.SimpleChunkProvider.provide(SimpleChunkProvider.java:118)
+	at org.springframework.batch.core.step.item.ChunkOrientedTasklet.execute(ChunkOrientedTasklet.java:71)
+	at org.springframework.batch.core.step.tasklet.TaskletStep$ChunkTransactionCallback.doInTransaction(TaskletStep.java:407)
+	at org.springframework.batch.core.step.tasklet.TaskletStep$ChunkTransactionCallback.doInTransaction(TaskletStep.java:331)
+	at org.springframework.transaction.support.TransactionTemplate.execute(TransactionTemplate.java:140)
+	at org.springframework.batch.core.step.tasklet.TaskletStep$2.doInChunkContext(TaskletStep.java:273)
+	at org.springframework.batch.core.scope.context.StepContextRepeatCallback.doInIteration(StepContextRepeatCallback.java:82)
+	at org.springframework.batch.repeat.support.RepeatTemplate.getNextResult(RepeatTemplate.java:375)
+	at org.springframework.batch.repeat.support.RepeatTemplate.executeInternal(RepeatTemplate.java:215)
+	at org.springframework.batch.repeat.support.RepeatTemplate.iterate(RepeatTemplate.java:145)
+	at org.springframework.batch.core.step.tasklet.TaskletStep.doExecute(TaskletStep.java:258)
+	at org.springframework.batch.core.step.AbstractStep.execute(AbstractStep.java:208)
+	at org.springframework.batch.core.job.SimpleStepHandler.handleStep(SimpleStepHandler.java:148)
+	at org.springframework.batch.core.job.AbstractJob.handleStep(AbstractJob.java:410)
+	at org.springframework.batch.core.job.SimpleJob.doExecute(SimpleJob.java:136)
+	at org.springframework.batch.core.job.AbstractJob.execute(AbstractJob.java:319)
+	at org.springframework.batch.core.launch.support.SimpleJobLauncher$1.run(SimpleJobLauncher.java:147)
+	at org.springframework.core.task.SyncTaskExecutor.execute(SyncTaskExecutor.java:50)
+	at org.springframework.batch.core.launch.support.SimpleJobLauncher.run(SimpleJobLauncher.java:140)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:344)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:198)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.batch.core.configuration.annotation.SimpleBatchConfiguration$PassthruAdvice.invoke(SimpleBatchConfiguration.java:127)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:212)
+	at com.sun.proxy.$Proxy97.run(Unknown Source)
+	at com.whiterabbit.batchutils.ArticleBatchScheduler.schedule(ArticleBatchScheduler.java:37)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+2021-05-09 12:23:32.551 ERROR 53275 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : START JOB ........
+2021-05-09 12:23:32.876 ERROR 53275 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.journaldugeek.com/articles/
+2021-05-09 12:23:40.403 ERROR 53275 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.lesnumeriques.com/actualites
+2021-05-09 12:23:42.381 ERROR 53275 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.01net.com/actualites/
+2021-05-09 12:23:44.159 ERROR 53275 --- [scheduling-1] com.whiterabbit.utils.HtmlReader01Net    : https://www.01net.com/actualites/bon-plan-xiaomi-effectue-jusqu-a-150-euros-de-remise-sur-une-selection-de-televiseurs-hd-et-4k-2042444.html - page resume not found
+2021-05-09 12:23:46.761 ERROR 53275 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.mac4ever.com/dossiers
+2021-05-09 12:23:47.178 ERROR 53275 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.frandroid.com/actualites
+2021-05-09 12:23:47.631 ERROR 53275 --- [scheduling-1] c.whiterabbit.utils.HtmlReaderFRAndroid  : frandroid - No division found ! 
+2021-05-09 12:23:47.635 ERROR 53275 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.macg.co/
+2021-05-09 12:23:50.224 ERROR 53275 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : news.humancoders.com/t/java
+2021-05-09 12:23:50.926 ERROR 53275 --- [scheduling-1] c.w.utils.HtmlReaderHumanCoders          : HumanCoders - articles found ! 
+2021-05-09 12:23:50.954 ERROR 53275 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : java.developpez.com
+2021-05-09 12:23:51.242 ERROR 53275 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : JOB nom-du-job finished .... with status exitCode=COMPLETED;exitDescription=
+2021-05-09 12:24:12.754 ERROR 53275 --- [http-nio-8087-exec-2] c.w.controller.ArticleController         : passage dans rest listArticlesByCategory : developpement
+2021-05-09 12:24:12.759 ERROR 53275 --- [http-nio-8087-exec-2] com.whiterabbit.services.ArticleService  : passage dans service article findByCategory, request parameters, category is developpement
+2021-05-09 12:24:12.759 ERROR 53275 --- [http-nio-8087-exec-2] com.whiterabbit.services.ArticleService  : category to string : DEVELOPPEMENT
+2021-05-09 12:31:02.180 ERROR 53552 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : START JOB ........
+2021-05-09 12:31:02.476 ERROR 53552 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.journaldugeek.com/articles/
+2021-05-09 12:31:10.190 ERROR 53552 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.lesnumeriques.com/actualites
+2021-05-09 12:31:12.105 ERROR 53552 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.01net.com/actualites/
+2021-05-09 12:31:13.924 ERROR 53552 --- [scheduling-1] com.whiterabbit.utils.HtmlReader01Net    : https://www.01net.com/actualites/bon-plan-xiaomi-effectue-jusqu-a-150-euros-de-remise-sur-une-selection-de-televiseurs-hd-et-4k-2042444.html - page resume not found
+2021-05-09 12:31:16.596 ERROR 53552 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.mac4ever.com/dossiers
+2021-05-09 12:31:17.004 ERROR 53552 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.frandroid.com/actualites
+2021-05-09 12:31:17.432 ERROR 53552 --- [scheduling-1] c.whiterabbit.utils.HtmlReaderFRAndroid  : frandroid - No division found ! 
+2021-05-09 12:31:17.435 ERROR 53552 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.macg.co/
+2021-05-09 12:31:19.590 ERROR 53552 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : news.humancoders.com/t/java
+2021-05-09 12:31:20.256 ERROR 53552 --- [scheduling-1] c.w.utils.HtmlReaderHumanCoders          : HumanCoders - articles found ! 
+2021-05-09 12:31:20.281 ERROR 53552 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : java.developpez.com
+2021-05-09 12:31:20.567 ERROR 53552 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : JOB nom-du-job finished .... with status exitCode=COMPLETED;exitDescription=
+2021-05-09 12:31:32.037 ERROR 53552 --- [http-nio-8087-exec-4] c.w.controller.ArticleController         : passage dans rest listArticlesByCategory : general
+2021-05-09 12:31:32.038 ERROR 53552 --- [http-nio-8087-exec-4] com.whiterabbit.services.ArticleService  : passage dans service article findByCategory, request parameters, category is general
+2021-05-09 12:31:32.038 ERROR 53552 --- [http-nio-8087-exec-4] com.whiterabbit.services.ArticleService  : category to string : GENERAL
+2021-05-09 12:31:36.218 ERROR 53552 --- [http-nio-8087-exec-6] c.w.controller.ArticleController         : passage dans rest listArticlesByCategory : developpement
+2021-05-09 12:31:36.219 ERROR 53552 --- [http-nio-8087-exec-6] com.whiterabbit.services.ArticleService  : passage dans service article findByCategory, request parameters, category is developpement
+2021-05-09 12:31:36.219 ERROR 53552 --- [http-nio-8087-exec-6] com.whiterabbit.services.ArticleService  : category to string : DEVELOPPEMENT
+2021-05-09 13:12:18.225 ERROR 53552 --- [http-nio-8087-exec-10] c.w.controller.ArticleController         : passage dans rest listArticlesByCategory : developpement
+2021-05-09 13:12:18.226 ERROR 53552 --- [http-nio-8087-exec-10] com.whiterabbit.services.ArticleService  : passage dans service article findByCategory, request parameters, category is developpement
+2021-05-09 13:12:18.226 ERROR 53552 --- [http-nio-8087-exec-10] com.whiterabbit.services.ArticleService  : category to string : DEVELOPPEMENT
+2021-05-09 13:26:05.438 ERROR 55033 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : START JOB ........
+2021-05-09 13:26:05.736 ERROR 55033 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.journaldugeek.com/articles/
+2021-05-09 13:26:14.319 ERROR 55033 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.lesnumeriques.com/actualites
+2021-05-09 13:26:16.893 ERROR 55033 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.01net.com/actualites/
+2021-05-09 13:26:19.192 ERROR 55033 --- [scheduling-1] com.whiterabbit.utils.HtmlReader01Net    : https://www.01net.com/actualites/bon-plan-xiaomi-effectue-jusqu-a-150-euros-de-remise-sur-une-selection-de-televiseurs-hd-et-4k-2042444.html - page resume not found
+2021-05-09 13:26:22.402 ERROR 55033 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.mac4ever.com/dossiers
+2021-05-09 13:26:23.256 ERROR 55033 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.frandroid.com/actualites
+2021-05-09 13:26:23.815 ERROR 55033 --- [scheduling-1] c.whiterabbit.utils.HtmlReaderFRAndroid  : frandroid - No division found ! 
+2021-05-09 13:26:23.820 ERROR 55033 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.macg.co/
+2021-05-09 13:26:26.530 ERROR 55033 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : news.humancoders.com/t/java
+2021-05-09 13:26:27.194 ERROR 55033 --- [scheduling-1] c.w.utils.HtmlReaderHumanCoders          : HumanCoders - articles found ! 
+2021-05-09 13:26:27.222 ERROR 55033 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : java.developpez.com
+2021-05-09 13:26:27.526 ERROR 55033 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : JOB nom-du-job finished .... with status exitCode=COMPLETED;exitDescription=
+2021-05-09 13:26:36.891 ERROR 55033 --- [http-nio-8087-exec-2] c.w.controller.ArticleController         : passage dans rest listArticlesByCategory : developpement
+2021-05-09 13:26:36.895 ERROR 55033 --- [http-nio-8087-exec-2] com.whiterabbit.services.ArticleService  : passage dans service article findByCategory, request parameters, category is developpement
+2021-05-09 13:26:36.896 ERROR 55033 --- [http-nio-8087-exec-2] com.whiterabbit.services.ArticleService  : category to string : DEVELOPPEMENT
+2021-05-09 13:34:01.097 ERROR 55272 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : START JOB ........
+2021-05-09 13:34:01.397 ERROR 55272 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.journaldugeek.com/articles/
+2021-05-09 13:34:10.902 ERROR 55272 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.lesnumeriques.com/actualites
+2021-05-09 13:34:13.724 ERROR 55272 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.01net.com/actualites/
+2021-05-09 13:34:15.907 ERROR 55272 --- [scheduling-1] com.whiterabbit.utils.HtmlReader01Net    : https://www.01net.com/actualites/bon-plan-xiaomi-effectue-jusqu-a-150-euros-de-remise-sur-une-selection-de-televiseurs-hd-et-4k-2042444.html - page resume not found
+2021-05-09 13:34:19.136 ERROR 55272 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.mac4ever.com/dossiers
+2021-05-09 13:34:19.700 ERROR 55272 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.frandroid.com/actualites
+2021-05-09 13:34:20.293 ERROR 55272 --- [scheduling-1] c.whiterabbit.utils.HtmlReaderFRAndroid  : frandroid - No division found ! 
+2021-05-09 13:34:20.296 ERROR 55272 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.macg.co/
+2021-05-09 13:34:22.952 ERROR 55272 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : news.humancoders.com/t/java
+2021-05-09 13:34:23.656 ERROR 55272 --- [scheduling-1] c.w.utils.HtmlReaderHumanCoders          : HumanCoders - articles found ! 
+2021-05-09 13:34:23.684 ERROR 55272 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : java.developpez.com
+2021-05-09 13:34:23.985 ERROR 55272 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : JOB nom-du-job finished .... with status exitCode=COMPLETED;exitDescription=
+2021-05-09 13:34:33.978 ERROR 55272 --- [http-nio-8087-exec-3] c.w.controller.ArticleController         : passage dans rest listArticlesByCategory : general
+2021-05-09 13:34:33.979 ERROR 55272 --- [http-nio-8087-exec-3] com.whiterabbit.services.ArticleService  : passage dans service article findByCategory, request parameters, category is general
+2021-05-09 13:34:33.979 ERROR 55272 --- [http-nio-8087-exec-3] com.whiterabbit.services.ArticleService  : category to string : GENERAL
+2021-05-09 13:35:04.956 ERROR 55272 --- [http-nio-8087-exec-6] c.w.controller.ArticleController         : passage dans rest listArticlesByCategory : developpement
+2021-05-09 13:35:04.956 ERROR 55272 --- [http-nio-8087-exec-6] com.whiterabbit.services.ArticleService  : passage dans service article findByCategory, request parameters, category is developpement
+2021-05-09 13:35:04.956 ERROR 55272 --- [http-nio-8087-exec-6] com.whiterabbit.services.ArticleService  : category to string : DEVELOPPEMENT
+2021-05-09 13:37:18.936 ERROR 55272 --- [http-nio-8087-exec-10] c.w.controller.ArticleController         : passage dans rest listArticlesByCategory : developpement
+2021-05-09 13:37:18.937 ERROR 55272 --- [http-nio-8087-exec-10] com.whiterabbit.services.ArticleService  : passage dans service article findByCategory, request parameters, category is developpement
+2021-05-09 13:37:18.937 ERROR 55272 --- [http-nio-8087-exec-10] com.whiterabbit.services.ArticleService  : category to string : DEVELOPPEMENT
+2021-05-09 14:02:39.673 ERROR 55272 --- [http-nio-8087-exec-3] c.w.controller.ArticleController         : passage dans rest listArticlesByCategory : general
+2021-05-09 14:02:39.674 ERROR 55272 --- [http-nio-8087-exec-3] com.whiterabbit.services.ArticleService  : passage dans service article findByCategory, request parameters, category is general
+2021-05-09 14:02:39.674 ERROR 55272 --- [http-nio-8087-exec-3] com.whiterabbit.services.ArticleService  : category to string : GENERAL
+2021-05-09 14:03:18.736 ERROR 55272 --- [http-nio-8087-exec-6] c.w.controller.ArticleController         : passage dans rest listArticlesByCategory : developpement
+2021-05-09 14:03:18.738 ERROR 55272 --- [http-nio-8087-exec-6] com.whiterabbit.services.ArticleService  : passage dans service article findByCategory, request parameters, category is developpement
+2021-05-09 14:03:18.738 ERROR 55272 --- [http-nio-8087-exec-6] com.whiterabbit.services.ArticleService  : category to string : DEVELOPPEMENT
+2021-05-09 14:08:02.279 ERROR 55895 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : START JOB ........
+2021-05-09 14:08:02.575 ERROR 55895 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.journaldugeek.com/articles/
+2021-05-09 14:08:11.351 ERROR 55895 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.lesnumeriques.com/actualites
+2021-05-09 14:08:13.945 ERROR 55895 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.01net.com/actualites/
+2021-05-09 14:08:16.290 ERROR 55895 --- [scheduling-1] com.whiterabbit.utils.HtmlReader01Net    : https://www.01net.com/actualites/bon-plan-xiaomi-effectue-jusqu-a-150-euros-de-remise-sur-une-selection-de-televiseurs-hd-et-4k-2042444.html - page resume not found
+2021-05-09 14:08:19.544 ERROR 55895 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.mac4ever.com/dossiers
+2021-05-09 14:08:20.807 ERROR 55895 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.frandroid.com/actualites
+2021-05-09 14:08:21.175 ERROR 55895 --- [scheduling-1] c.whiterabbit.utils.HtmlReaderFRAndroid  : frandroid - No division found ! 
+2021-05-09 14:08:21.178 ERROR 55895 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.macg.co/
+2021-05-09 14:08:23.460 ERROR 55895 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : news.humancoders.com/t/java
+2021-05-09 14:08:24.145 ERROR 55895 --- [scheduling-1] c.w.utils.HtmlReaderHumanCoders          : HumanCoders - articles found ! 
+2021-05-09 14:08:24.167 ERROR 55895 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : java.developpez.com
+2021-05-09 14:08:24.476 ERROR 55895 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : JOB nom-du-job finished .... with status exitCode=COMPLETED;exitDescription=
+2021-05-09 14:08:35.409 ERROR 55895 --- [http-nio-8087-exec-3] c.w.controller.ArticleController         : passage dans rest listArticlesByCategory : general
+2021-05-09 14:08:35.410 ERROR 55895 --- [http-nio-8087-exec-3] com.whiterabbit.services.ArticleService  : passage dans service article findByCategory, request parameters, category is general
+2021-05-09 14:08:35.411 ERROR 55895 --- [http-nio-8087-exec-3] com.whiterabbit.services.ArticleService  : category to string : GENERAL
+2021-05-09 14:08:38.365 ERROR 55895 --- [http-nio-8087-exec-5] c.w.controller.ArticleController         : passage dans rest listArticlesByCategory : developpement
+2021-05-09 14:08:38.367 ERROR 55895 --- [http-nio-8087-exec-5] com.whiterabbit.services.ArticleService  : passage dans service article findByCategory, request parameters, category is developpement
+2021-05-09 14:08:38.368 ERROR 55895 --- [http-nio-8087-exec-5] com.whiterabbit.services.ArticleService  : category to string : DEVELOPPEMENT
+2021-05-09 14:10:05.064 ERROR 55895 --- [http-nio-8087-exec-2] c.w.controller.ArticleController         : passage dans rest listArticlesByCategory : developpement
+2021-05-09 14:10:05.065 ERROR 55895 --- [http-nio-8087-exec-2] com.whiterabbit.services.ArticleService  : passage dans service article findByCategory, request parameters, category is developpement
+2021-05-09 14:10:05.065 ERROR 55895 --- [http-nio-8087-exec-2] com.whiterabbit.services.ArticleService  : category to string : DEVELOPPEMENT
+2021-05-09 14:12:41.668 ERROR 55895 --- [http-nio-8087-exec-5] c.w.controller.ArticleController         : passage dans rest listArticlesByCategory : developpement
+2021-05-09 14:12:41.670 ERROR 55895 --- [http-nio-8087-exec-5] com.whiterabbit.services.ArticleService  : passage dans service article findByCategory, request parameters, category is developpement
+2021-05-09 14:12:41.670 ERROR 55895 --- [http-nio-8087-exec-5] com.whiterabbit.services.ArticleService  : category to string : DEVELOPPEMENT
+2021-05-09 14:12:48.934 ERROR 55895 --- [http-nio-8087-exec-7] c.w.controller.ArticleController         : passage dans rest listArticlesByCategory : developpement
+2021-05-09 14:12:48.935 ERROR 55895 --- [http-nio-8087-exec-7] com.whiterabbit.services.ArticleService  : passage dans service article findByCategory, request parameters, category is developpement
+2021-05-09 14:12:48.935 ERROR 55895 --- [http-nio-8087-exec-7] com.whiterabbit.services.ArticleService  : category to string : DEVELOPPEMENT
+2021-05-09 14:13:07.381 ERROR 55895 --- [http-nio-8087-exec-9] c.w.controller.ArticleController         : passage dans rest listArticlesByCategory : general
+2021-05-09 14:13:07.382 ERROR 55895 --- [http-nio-8087-exec-9] com.whiterabbit.services.ArticleService  : passage dans service article findByCategory, request parameters, category is general
+2021-05-09 14:13:07.382 ERROR 55895 --- [http-nio-8087-exec-9] com.whiterabbit.services.ArticleService  : category to string : GENERAL
+2021-05-09 14:13:19.065 ERROR 55895 --- [http-nio-8087-exec-1] c.w.controller.ArticleController         : passage dans rest listArticlesByCategory : developpement
+2021-05-09 14:13:19.067 ERROR 55895 --- [http-nio-8087-exec-1] com.whiterabbit.services.ArticleService  : passage dans service article findByCategory, request parameters, category is developpement
+2021-05-09 14:13:19.067 ERROR 55895 --- [http-nio-8087-exec-1] com.whiterabbit.services.ArticleService  : category to string : DEVELOPPEMENT
+2021-05-09 14:40:27.456 ERROR 55895 --- [http-nio-8087-exec-6] c.w.controller.ArticleController         : passage dans rest listArticlesByCategory : developpement
+2021-05-09 14:40:27.458 ERROR 55895 --- [http-nio-8087-exec-6] com.whiterabbit.services.ArticleService  : passage dans service article findByCategory, request parameters, category is developpement
+2021-05-09 14:40:27.458 ERROR 55895 --- [http-nio-8087-exec-6] com.whiterabbit.services.ArticleService  : category to string : DEVELOPPEMENT
+2021-05-09 15:01:04.979 ERROR 57478 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : START JOB ........
+2021-05-09 15:01:05.314 ERROR 57478 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.journaldugeek.com/articles/
+2021-05-09 15:01:15.411 ERROR 57478 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.lesnumeriques.com/actualites
+2021-05-09 15:01:18.361 ERROR 57478 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.01net.com/actualites/
+2021-05-09 15:01:21.140 ERROR 57478 --- [scheduling-1] com.whiterabbit.utils.HtmlReader01Net    : https://www.01net.com/actualites/bon-plan-xiaomi-effectue-jusqu-a-150-euros-de-remise-sur-une-selection-de-televiseurs-hd-et-4k-2042444.html - page resume not found
+2021-05-09 15:01:24.425 ERROR 57478 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.mac4ever.com/dossiers
+2021-05-09 15:01:25.964 ERROR 57478 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.frandroid.com/actualites
+2021-05-09 15:01:27.479 ERROR 57478 --- [scheduling-1] c.whiterabbit.utils.HtmlReaderFRAndroid  : frandroid - No division found ! 
+2021-05-09 15:01:27.483 ERROR 57478 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.macg.co/
+2021-05-09 15:01:29.684 ERROR 57478 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : news.humancoders.com/t/java
+2021-05-09 15:01:30.668 ERROR 57478 --- [scheduling-1] c.w.utils.HtmlReaderHumanCoders          : HumanCoders - articles found ! 
+2021-05-09 15:01:30.695 ERROR 57478 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : java.developpez.com
+2021-05-09 15:01:52.097 ERROR 57478 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : JOB nom-du-job finished .... with status exitCode=COMPLETED;exitDescription=
+2021-05-09 15:02:04.691 ERROR 57478 --- [http-nio-8087-exec-2] c.w.controller.ArticleController         : passage dans rest listArticlesByCategory : developpement
+2021-05-09 15:02:04.696 ERROR 57478 --- [http-nio-8087-exec-2] com.whiterabbit.services.ArticleService  : passage dans service article findByCategory, request parameters, category is developpement
+2021-05-09 15:02:04.696 ERROR 57478 --- [http-nio-8087-exec-2] com.whiterabbit.services.ArticleService  : category to string : DEVELOPPEMENT
+2021-05-09 15:14:09.930 ERROR 58066 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : START JOB ........
+2021-05-09 15:14:10.270 ERROR 58066 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.journaldugeek.com/articles/
+2021-05-09 15:14:18.839 ERROR 58066 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.lesnumeriques.com/actualites
+2021-05-09 15:14:21.411 ERROR 58066 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.01net.com/actualites/
+2021-05-09 15:14:23.688 ERROR 58066 --- [scheduling-1] com.whiterabbit.utils.HtmlReader01Net    : https://www.01net.com/actualites/bon-plan-xiaomi-effectue-jusqu-a-150-euros-de-remise-sur-une-selection-de-televiseurs-hd-et-4k-2042444.html - page resume not found
+2021-05-09 15:14:26.841 ERROR 58066 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.mac4ever.com/dossiers
+2021-05-09 15:14:27.964 ERROR 58066 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.frandroid.com/actualites
+2021-05-09 15:14:28.324 ERROR 58066 --- [scheduling-1] c.whiterabbit.utils.HtmlReaderFRAndroid  : frandroid - No division found ! 
+2021-05-09 15:14:28.328 ERROR 58066 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.macg.co/
+2021-05-09 15:14:30.490 ERROR 58066 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : news.humancoders.com/t/java
+2021-05-09 15:14:31.374 ERROR 58066 --- [scheduling-1] c.w.utils.HtmlReaderHumanCoders          : HumanCoders - articles found ! 
+2021-05-09 15:14:31.400 ERROR 58066 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : java.developpez.com
+2021-05-09 15:14:45.538 ERROR 58066 --- [scheduling-1] o.s.batch.core.step.AbstractStep         : Encountered an error executing step nom-du-step in job nom-du-job
+
+java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
+	at java.util.ArrayList.rangeCheck(ArrayList.java:653) ~[na:1.8.0_72]
+	at java.util.ArrayList.get(ArrayList.java:429) ~[na:1.8.0_72]
+	at com.whiterabbit.utils.HtmlReaderDeveloppez.readHtmlPageResume(HtmlReaderDeveloppez.java:108) ~[classes/:na]
+	at com.whiterabbit.utils.HtmlReaderDeveloppez.readHtmlPage(HtmlReaderDeveloppez.java:81) ~[classes/:na]
+	at com.whiterabbit.services.HtmlReaderServiceImpl.readHtmlPage(HtmlReaderServiceImpl.java:64) ~[classes/:na]
+	at com.whiterabbit.batchutils.HtmlPageItemReader.read(HtmlPageItemReader.java:88) ~[classes/:na]
+	at com.whiterabbit.batchutils.HtmlPageItemReader.read(HtmlPageItemReader.java:24) ~[classes/:na]
+	at com.whiterabbit.batchutils.HtmlPageItemReader$$EnhancerBySpringCGLIB$$932300cd.read(<generated>) ~[classes/:na]
+	at com.whiterabbit.batchutils.HtmlPageItemReader$$FastClassBySpringCGLIB$$5295a48f.invoke(<generated>) ~[classes/:na]
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218) ~[spring-core-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:769) ~[spring-aop-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) [spring-aop-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747) ~[spring-aop-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.aop.support.DelegatingIntroductionInterceptor.doProceed(DelegatingIntroductionInterceptor.java:136) ~[spring-aop-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.aop.support.DelegatingIntroductionInterceptor.invoke(DelegatingIntroductionInterceptor.java:124) ~[spring-aop-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) [spring-aop-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747) ~[spring-aop-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:689) ~[spring-aop-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at com.whiterabbit.batchutils.HtmlPageItemReader$$EnhancerBySpringCGLIB$$fa629096.read(<generated>) ~[classes/:na]
+	at org.springframework.batch.core.step.item.SimpleChunkProvider.doRead(SimpleChunkProvider.java:99) ~[spring-batch-core-4.2.0.RELEASE.jar:4.2.0.RELEASE]
+	at org.springframework.batch.core.step.item.SimpleChunkProvider.read(SimpleChunkProvider.java:180) ~[spring-batch-core-4.2.0.RELEASE.jar:4.2.0.RELEASE]
+	at org.springframework.batch.core.step.item.SimpleChunkProvider$1.doInIteration(SimpleChunkProvider.java:126) ~[spring-batch-core-4.2.0.RELEASE.jar:4.2.0.RELEASE]
+	at org.springframework.batch.repeat.support.RepeatTemplate.getNextResult(RepeatTemplate.java:375) ~[spring-batch-infrastructure-4.2.0.RELEASE.jar:4.2.0.RELEASE]
+	at org.springframework.batch.repeat.support.RepeatTemplate.executeInternal(RepeatTemplate.java:215) ~[spring-batch-infrastructure-4.2.0.RELEASE.jar:4.2.0.RELEASE]
+	at org.springframework.batch.repeat.support.RepeatTemplate.iterate(RepeatTemplate.java:145) ~[spring-batch-infrastructure-4.2.0.RELEASE.jar:4.2.0.RELEASE]
+	at org.springframework.batch.core.step.item.SimpleChunkProvider.provide(SimpleChunkProvider.java:118) ~[spring-batch-core-4.2.0.RELEASE.jar:4.2.0.RELEASE]
+	at org.springframework.batch.core.step.item.ChunkOrientedTasklet.execute(ChunkOrientedTasklet.java:71) ~[spring-batch-core-4.2.0.RELEASE.jar:4.2.0.RELEASE]
+	at org.springframework.batch.core.step.tasklet.TaskletStep$ChunkTransactionCallback.doInTransaction(TaskletStep.java:407) ~[spring-batch-core-4.2.0.RELEASE.jar:4.2.0.RELEASE]
+	at org.springframework.batch.core.step.tasklet.TaskletStep$ChunkTransactionCallback.doInTransaction(TaskletStep.java:331) ~[spring-batch-core-4.2.0.RELEASE.jar:4.2.0.RELEASE]
+	at org.springframework.transaction.support.TransactionTemplate.execute(TransactionTemplate.java:140) ~[spring-tx-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.batch.core.step.tasklet.TaskletStep$2.doInChunkContext(TaskletStep.java:273) ~[spring-batch-core-4.2.0.RELEASE.jar:4.2.0.RELEASE]
+	at org.springframework.batch.core.scope.context.StepContextRepeatCallback.doInIteration(StepContextRepeatCallback.java:82) ~[spring-batch-core-4.2.0.RELEASE.jar:4.2.0.RELEASE]
+	at org.springframework.batch.repeat.support.RepeatTemplate.getNextResult(RepeatTemplate.java:375) ~[spring-batch-infrastructure-4.2.0.RELEASE.jar:4.2.0.RELEASE]
+	at org.springframework.batch.repeat.support.RepeatTemplate.executeInternal(RepeatTemplate.java:215) ~[spring-batch-infrastructure-4.2.0.RELEASE.jar:4.2.0.RELEASE]
+	at org.springframework.batch.repeat.support.RepeatTemplate.iterate(RepeatTemplate.java:145) ~[spring-batch-infrastructure-4.2.0.RELEASE.jar:4.2.0.RELEASE]
+	at org.springframework.batch.core.step.tasklet.TaskletStep.doExecute(TaskletStep.java:258) ~[spring-batch-core-4.2.0.RELEASE.jar:4.2.0.RELEASE]
+	at org.springframework.batch.core.step.AbstractStep.execute(AbstractStep.java:208) ~[spring-batch-core-4.2.0.RELEASE.jar:4.2.0.RELEASE]
+	at org.springframework.batch.core.job.SimpleStepHandler.handleStep(SimpleStepHandler.java:148) [spring-batch-core-4.2.0.RELEASE.jar:4.2.0.RELEASE]
+	at org.springframework.batch.core.job.AbstractJob.handleStep(AbstractJob.java:410) [spring-batch-core-4.2.0.RELEASE.jar:4.2.0.RELEASE]
+	at org.springframework.batch.core.job.SimpleJob.doExecute(SimpleJob.java:136) [spring-batch-core-4.2.0.RELEASE.jar:4.2.0.RELEASE]
+	at org.springframework.batch.core.job.AbstractJob.execute(AbstractJob.java:319) [spring-batch-core-4.2.0.RELEASE.jar:4.2.0.RELEASE]
+	at org.springframework.batch.core.launch.support.SimpleJobLauncher$1.run(SimpleJobLauncher.java:147) [spring-batch-core-4.2.0.RELEASE.jar:4.2.0.RELEASE]
+	at org.springframework.core.task.SyncTaskExecutor.execute(SyncTaskExecutor.java:50) [spring-core-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.batch.core.launch.support.SimpleJobLauncher.run(SimpleJobLauncher.java:140) [spring-batch-core-4.2.0.RELEASE.jar:4.2.0.RELEASE]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_72]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_72]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_72]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_72]
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:344) [spring-aop-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:198) [spring-aop-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) [spring-aop-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.batch.core.configuration.annotation.SimpleBatchConfiguration$PassthruAdvice.invoke(SimpleBatchConfiguration.java:127) [spring-batch-core-4.2.0.RELEASE.jar:4.2.0.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) [spring-aop-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:212) [spring-aop-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at com.sun.proxy.$Proxy97.run(Unknown Source) [na:na]
+	at com.whiterabbit.batchutils.ArticleBatchScheduler.schedule(ArticleBatchScheduler.java:37) [classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_72]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_72]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_72]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_72]
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84) [spring-context-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54) [spring-context-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) [na:1.8.0_72]
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308) [na:1.8.0_72]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180) [na:1.8.0_72]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294) [na:1.8.0_72]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [na:1.8.0_72]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [na:1.8.0_72]
+	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_72]
+
+2021-05-09 15:14:45.546 ERROR 58066 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : JOB nom-du-job finished .... with status exitCode=FAILED;exitDescription=java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
+	at java.util.ArrayList.rangeCheck(ArrayList.java:653)
+	at java.util.ArrayList.get(ArrayList.java:429)
+	at com.whiterabbit.utils.HtmlReaderDeveloppez.readHtmlPageResume(HtmlReaderDeveloppez.java:108)
+	at com.whiterabbit.utils.HtmlReaderDeveloppez.readHtmlPage(HtmlReaderDeveloppez.java:81)
+	at com.whiterabbit.services.HtmlReaderServiceImpl.readHtmlPage(HtmlReaderServiceImpl.java:64)
+	at com.whiterabbit.batchutils.HtmlPageItemReader.read(HtmlPageItemReader.java:88)
+	at com.whiterabbit.batchutils.HtmlPageItemReader.read(HtmlPageItemReader.java:24)
+	at com.whiterabbit.batchutils.HtmlPageItemReader$$EnhancerBySpringCGLIB$$932300cd.read(<generated>)
+	at com.whiterabbit.batchutils.HtmlPageItemReader$$FastClassBySpringCGLIB$$5295a48f.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:769)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747)
+	at org.springframework.aop.support.DelegatingIntroductionInterceptor.doProceed(DelegatingIntroductionInterceptor.java:136)
+	at org.springframework.aop.support.DelegatingIntroductionInterceptor.invoke(DelegatingIntroductionInterceptor.java:124)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:689)
+	at com.whiterabbit.batchutils.HtmlPageItemReader$$EnhancerBySpringCGLIB$$fa629096.read(<generated>)
+	at org.springframework.batch.core.step.item.SimpleChunkProvider.doRead(SimpleChunkProvider.java:99)
+	at org.springframework.batch.core.step.item.SimpleChunkProvider.read(SimpleChunkProvider.java:180)
+	at org.springframework.batch.core.step.item.SimpleChunkProvider$1.doInIteration(SimpleChunkProvider.java:126)
+	at org.springframework.batch.repeat.support.RepeatTemplate.getNextResult(RepeatTemplate.java:375)
+	at org.springframework.batch.repeat.support.RepeatTemplate.executeInternal(RepeatTemplate.java:215)
+	at org.springframework.batch.repeat.support.RepeatTemplate.iterate(RepeatTemplate.java:145)
+	at org.springframework.batch.core.step.item.SimpleChunkProvider.provide(SimpleChunkProvider.java:118)
+	at org.springframework.batch.core.step.item.ChunkOrientedTasklet.execute(ChunkOrientedTasklet.java:71)
+	at org.springframework.batch.core.step.tasklet.TaskletStep$ChunkTransactionCallback.doInTransaction(TaskletStep.java:407)
+	at org.springframework.batch.core.step.tasklet.TaskletStep$ChunkTransactionCallback.doInTransaction(TaskletStep.java:331)
+	at org.springframework.transaction.support.TransactionTemplate.execute(TransactionTemplate.java:140)
+	at org.springframework.batch.core.step.tasklet.TaskletStep$2.doInChunkContext(TaskletStep.java:273)
+	at org.springframework.batch.core.scope.context.StepContextRepeatCallback.doInIteration(StepContextRepeatCallback.java:82)
+	at org.springframework.batch.repeat.support.RepeatTemplate.getNextResult(RepeatTemplate.java:375)
+	at org.springframework.batch.repeat.support.RepeatTemplate.executeInternal(RepeatTemplate.java:215)
+	at org.springframework.batch.repeat.support.RepeatTemplate.iterate(RepeatTemplate.java:145)
+	at org.springframework.batch.core.step.tasklet.TaskletStep.doExecute(TaskletStep.java:258)
+	at org.springframework.batch.core.step.AbstractStep.execute(AbstractStep.java:208)
+	at org.springframework.batch.core.job.SimpleStepHandler.handleStep(SimpleStepHandler.java:148)
+	at org.springframework.batch.core.job.AbstractJob.handleStep(AbstractJob.java:410)
+	at org.springframework.batch.core.job.SimpleJob.doExecute(SimpleJob.java:136)
+	at org.springframework.batch.core.job.AbstractJob.execute(AbstractJob.java:319)
+	at org.springframework.batch.core.launch.support.SimpleJobLauncher$1.run(SimpleJobLauncher.java:147)
+	at org.springframework.core.task.SyncTaskExecutor.execute(SyncTaskExecutor.java:50)
+	at org.springframework.batch.core.launch.support.SimpleJobLauncher.run(SimpleJobLauncher.java:140)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:344)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:198)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.batch.core.configuration.annotation.SimpleBatchConfiguration$PassthruAdvice.invoke(SimpleBatchConfiguration.java:127)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:212)
+	at com.sun.proxy.$Proxy97.run(Unknown Source)
+	at com.whiterabbit.batchutils.ArticleBatchScheduler.schedule(ArticleBatchScheduler.java:37)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+2021-05-09 15:16:17.431 ERROR 58066 --- [http-nio-8087-exec-2] c.w.controller.ArticleController         : passage dans rest listArticlesByCategory : developpement
+2021-05-09 15:16:17.436 ERROR 58066 --- [http-nio-8087-exec-2] com.whiterabbit.services.ArticleService  : passage dans service article findByCategory, request parameters, category is developpement
+2021-05-09 15:16:17.436 ERROR 58066 --- [http-nio-8087-exec-2] com.whiterabbit.services.ArticleService  : category to string : DEVELOPPEMENT
+2021-05-09 19:50:29.690 ERROR 58421 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : START JOB ........
+2021-05-09 19:50:30.077 ERROR 58421 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.journaldugeek.com/articles/
+2021-05-09 19:50:39.952 ERROR 58421 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.lesnumeriques.com/actualites
+2021-05-09 19:50:42.564 ERROR 58421 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.01net.com/actualites/
+2021-05-09 19:50:45.101 ERROR 58421 --- [scheduling-1] com.whiterabbit.utils.HtmlReader01Net    : https://www.01net.com/actualites/bon-plan-xiaomi-effectue-jusqu-a-150-euros-de-remise-sur-une-selection-de-televiseurs-hd-et-4k-2042444.html - page resume not found
+2021-05-09 19:50:47.941 ERROR 58421 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.mac4ever.com/dossiers
+2021-05-09 19:50:48.979 ERROR 58421 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.frandroid.com/actualites
+2021-05-09 19:50:49.360 ERROR 58421 --- [scheduling-1] c.whiterabbit.utils.HtmlReaderFRAndroid  : frandroid - No division found ! 
+2021-05-09 19:50:49.364 ERROR 58421 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.macg.co/
+2021-05-09 19:50:52.691 ERROR 58421 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : news.humancoders.com/t/java
+2021-05-09 19:50:53.390 ERROR 58421 --- [scheduling-1] c.w.utils.HtmlReaderHumanCoders          : HumanCoders - articles found ! 
+2021-05-09 19:50:53.417 ERROR 58421 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : java.developpez.com
+2021-05-09 19:51:12.949 ERROR 58421 --- [scheduling-1] o.s.batch.core.step.AbstractStep         : Encountered an error executing step nom-du-step in job nom-du-job
+
+java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
+	at java.util.ArrayList.rangeCheck(ArrayList.java:653) ~[na:1.8.0_72]
+	at java.util.ArrayList.get(ArrayList.java:429) ~[na:1.8.0_72]
+	at com.whiterabbit.utils.HtmlReaderDeveloppez.readHtmlPageResume(HtmlReaderDeveloppez.java:108) ~[classes/:na]
+	at com.whiterabbit.utils.HtmlReaderDeveloppez.readHtmlPage(HtmlReaderDeveloppez.java:81) ~[classes/:na]
+	at com.whiterabbit.services.HtmlReaderServiceImpl.readHtmlPage(HtmlReaderServiceImpl.java:64) ~[classes/:na]
+	at com.whiterabbit.batchutils.HtmlPageItemReader.read(HtmlPageItemReader.java:88) ~[classes/:na]
+	at com.whiterabbit.batchutils.HtmlPageItemReader.read(HtmlPageItemReader.java:24) ~[classes/:na]
+	at com.whiterabbit.batchutils.HtmlPageItemReader$$EnhancerBySpringCGLIB$$6a913bed.read(<generated>) ~[classes/:na]
+	at com.whiterabbit.batchutils.HtmlPageItemReader$$FastClassBySpringCGLIB$$5295a48f.invoke(<generated>) ~[classes/:na]
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218) ~[spring-core-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:769) ~[spring-aop-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) [spring-aop-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747) ~[spring-aop-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.aop.support.DelegatingIntroductionInterceptor.doProceed(DelegatingIntroductionInterceptor.java:136) ~[spring-aop-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.aop.support.DelegatingIntroductionInterceptor.invoke(DelegatingIntroductionInterceptor.java:124) ~[spring-aop-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) [spring-aop-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747) ~[spring-aop-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:689) ~[spring-aop-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at com.whiterabbit.batchutils.HtmlPageItemReader$$EnhancerBySpringCGLIB$$f67fa867.read(<generated>) ~[classes/:na]
+	at org.springframework.batch.core.step.item.SimpleChunkProvider.doRead(SimpleChunkProvider.java:99) ~[spring-batch-core-4.2.0.RELEASE.jar:4.2.0.RELEASE]
+	at org.springframework.batch.core.step.item.SimpleChunkProvider.read(SimpleChunkProvider.java:180) ~[spring-batch-core-4.2.0.RELEASE.jar:4.2.0.RELEASE]
+	at org.springframework.batch.core.step.item.SimpleChunkProvider$1.doInIteration(SimpleChunkProvider.java:126) ~[spring-batch-core-4.2.0.RELEASE.jar:4.2.0.RELEASE]
+	at org.springframework.batch.repeat.support.RepeatTemplate.getNextResult(RepeatTemplate.java:375) ~[spring-batch-infrastructure-4.2.0.RELEASE.jar:4.2.0.RELEASE]
+	at org.springframework.batch.repeat.support.RepeatTemplate.executeInternal(RepeatTemplate.java:215) ~[spring-batch-infrastructure-4.2.0.RELEASE.jar:4.2.0.RELEASE]
+	at org.springframework.batch.repeat.support.RepeatTemplate.iterate(RepeatTemplate.java:145) ~[spring-batch-infrastructure-4.2.0.RELEASE.jar:4.2.0.RELEASE]
+	at org.springframework.batch.core.step.item.SimpleChunkProvider.provide(SimpleChunkProvider.java:118) ~[spring-batch-core-4.2.0.RELEASE.jar:4.2.0.RELEASE]
+	at org.springframework.batch.core.step.item.ChunkOrientedTasklet.execute(ChunkOrientedTasklet.java:71) ~[spring-batch-core-4.2.0.RELEASE.jar:4.2.0.RELEASE]
+	at org.springframework.batch.core.step.tasklet.TaskletStep$ChunkTransactionCallback.doInTransaction(TaskletStep.java:407) ~[spring-batch-core-4.2.0.RELEASE.jar:4.2.0.RELEASE]
+	at org.springframework.batch.core.step.tasklet.TaskletStep$ChunkTransactionCallback.doInTransaction(TaskletStep.java:331) ~[spring-batch-core-4.2.0.RELEASE.jar:4.2.0.RELEASE]
+	at org.springframework.transaction.support.TransactionTemplate.execute(TransactionTemplate.java:140) ~[spring-tx-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.batch.core.step.tasklet.TaskletStep$2.doInChunkContext(TaskletStep.java:273) ~[spring-batch-core-4.2.0.RELEASE.jar:4.2.0.RELEASE]
+	at org.springframework.batch.core.scope.context.StepContextRepeatCallback.doInIteration(StepContextRepeatCallback.java:82) ~[spring-batch-core-4.2.0.RELEASE.jar:4.2.0.RELEASE]
+	at org.springframework.batch.repeat.support.RepeatTemplate.getNextResult(RepeatTemplate.java:375) ~[spring-batch-infrastructure-4.2.0.RELEASE.jar:4.2.0.RELEASE]
+	at org.springframework.batch.repeat.support.RepeatTemplate.executeInternal(RepeatTemplate.java:215) ~[spring-batch-infrastructure-4.2.0.RELEASE.jar:4.2.0.RELEASE]
+	at org.springframework.batch.repeat.support.RepeatTemplate.iterate(RepeatTemplate.java:145) ~[spring-batch-infrastructure-4.2.0.RELEASE.jar:4.2.0.RELEASE]
+	at org.springframework.batch.core.step.tasklet.TaskletStep.doExecute(TaskletStep.java:258) ~[spring-batch-core-4.2.0.RELEASE.jar:4.2.0.RELEASE]
+	at org.springframework.batch.core.step.AbstractStep.execute(AbstractStep.java:208) ~[spring-batch-core-4.2.0.RELEASE.jar:4.2.0.RELEASE]
+	at org.springframework.batch.core.job.SimpleStepHandler.handleStep(SimpleStepHandler.java:148) [spring-batch-core-4.2.0.RELEASE.jar:4.2.0.RELEASE]
+	at org.springframework.batch.core.job.AbstractJob.handleStep(AbstractJob.java:410) [spring-batch-core-4.2.0.RELEASE.jar:4.2.0.RELEASE]
+	at org.springframework.batch.core.job.SimpleJob.doExecute(SimpleJob.java:136) [spring-batch-core-4.2.0.RELEASE.jar:4.2.0.RELEASE]
+	at org.springframework.batch.core.job.AbstractJob.execute(AbstractJob.java:319) [spring-batch-core-4.2.0.RELEASE.jar:4.2.0.RELEASE]
+	at org.springframework.batch.core.launch.support.SimpleJobLauncher$1.run(SimpleJobLauncher.java:147) [spring-batch-core-4.2.0.RELEASE.jar:4.2.0.RELEASE]
+	at org.springframework.core.task.SyncTaskExecutor.execute(SyncTaskExecutor.java:50) [spring-core-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.batch.core.launch.support.SimpleJobLauncher.run(SimpleJobLauncher.java:140) [spring-batch-core-4.2.0.RELEASE.jar:4.2.0.RELEASE]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_72]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_72]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_72]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_72]
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:344) [spring-aop-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:198) [spring-aop-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) [spring-aop-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.batch.core.configuration.annotation.SimpleBatchConfiguration$PassthruAdvice.invoke(SimpleBatchConfiguration.java:127) [spring-batch-core-4.2.0.RELEASE.jar:4.2.0.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) [spring-aop-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:212) [spring-aop-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at com.sun.proxy.$Proxy97.run(Unknown Source) [na:na]
+	at com.whiterabbit.batchutils.ArticleBatchScheduler.schedule(ArticleBatchScheduler.java:37) [classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_72]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_72]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_72]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_72]
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84) [spring-context-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54) [spring-context-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) [na:1.8.0_72]
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308) [na:1.8.0_72]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180) [na:1.8.0_72]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294) [na:1.8.0_72]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [na:1.8.0_72]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [na:1.8.0_72]
+	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_72]
+
+2021-05-09 19:51:12.959 ERROR 58421 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : JOB nom-du-job finished .... with status exitCode=FAILED;exitDescription=java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
+	at java.util.ArrayList.rangeCheck(ArrayList.java:653)
+	at java.util.ArrayList.get(ArrayList.java:429)
+	at com.whiterabbit.utils.HtmlReaderDeveloppez.readHtmlPageResume(HtmlReaderDeveloppez.java:108)
+	at com.whiterabbit.utils.HtmlReaderDeveloppez.readHtmlPage(HtmlReaderDeveloppez.java:81)
+	at com.whiterabbit.services.HtmlReaderServiceImpl.readHtmlPage(HtmlReaderServiceImpl.java:64)
+	at com.whiterabbit.batchutils.HtmlPageItemReader.read(HtmlPageItemReader.java:88)
+	at com.whiterabbit.batchutils.HtmlPageItemReader.read(HtmlPageItemReader.java:24)
+	at com.whiterabbit.batchutils.HtmlPageItemReader$$EnhancerBySpringCGLIB$$6a913bed.read(<generated>)
+	at com.whiterabbit.batchutils.HtmlPageItemReader$$FastClassBySpringCGLIB$$5295a48f.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:769)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747)
+	at org.springframework.aop.support.DelegatingIntroductionInterceptor.doProceed(DelegatingIntroductionInterceptor.java:136)
+	at org.springframework.aop.support.DelegatingIntroductionInterceptor.invoke(DelegatingIntroductionInterceptor.java:124)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:689)
+	at com.whiterabbit.batchutils.HtmlPageItemReader$$EnhancerBySpringCGLIB$$f67fa867.read(<generated>)
+	at org.springframework.batch.core.step.item.SimpleChunkProvider.doRead(SimpleChunkProvider.java:99)
+	at org.springframework.batch.core.step.item.SimpleChunkProvider.read(SimpleChunkProvider.java:180)
+	at org.springframework.batch.core.step.item.SimpleChunkProvider$1.doInIteration(SimpleChunkProvider.java:126)
+	at org.springframework.batch.repeat.support.RepeatTemplate.getNextResult(RepeatTemplate.java:375)
+	at org.springframework.batch.repeat.support.RepeatTemplate.executeInternal(RepeatTemplate.java:215)
+	at org.springframework.batch.repeat.support.RepeatTemplate.iterate(RepeatTemplate.java:145)
+	at org.springframework.batch.core.step.item.SimpleChunkProvider.provide(SimpleChunkProvider.java:118)
+	at org.springframework.batch.core.step.item.ChunkOrientedTasklet.execute(ChunkOrientedTasklet.java:71)
+	at org.springframework.batch.core.step.tasklet.TaskletStep$ChunkTransactionCallback.doInTransaction(TaskletStep.java:407)
+	at org.springframework.batch.core.step.tasklet.TaskletStep$ChunkTransactionCallback.doInTransaction(TaskletStep.java:331)
+	at org.springframework.transaction.support.TransactionTemplate.execute(TransactionTemplate.java:140)
+	at org.springframework.batch.core.step.tasklet.TaskletStep$2.doInChunkContext(TaskletStep.java:273)
+	at org.springframework.batch.core.scope.context.StepContextRepeatCallback.doInIteration(StepContextRepeatCallback.java:82)
+	at org.springframework.batch.repeat.support.RepeatTemplate.getNextResult(RepeatTemplate.java:375)
+	at org.springframework.batch.repeat.support.RepeatTemplate.executeInternal(RepeatTemplate.java:215)
+	at org.springframework.batch.repeat.support.RepeatTemplate.iterate(RepeatTemplate.java:145)
+	at org.springframework.batch.core.step.tasklet.TaskletStep.doExecute(TaskletStep.java:258)
+	at org.springframework.batch.core.step.AbstractStep.execute(AbstractStep.java:208)
+	at org.springframework.batch.core.job.SimpleStepHandler.handleStep(SimpleStepHandler.java:148)
+	at org.springframework.batch.core.job.AbstractJob.handleStep(AbstractJob.java:410)
+	at org.springframework.batch.core.job.SimpleJob.doExecute(SimpleJob.java:136)
+	at org.springframework.batch.core.job.AbstractJob.execute(AbstractJob.java:319)
+	at org.springframework.batch.core.launch.support.SimpleJobLauncher$1.run(SimpleJobLauncher.java:147)
+	at org.springframework.core.task.SyncTaskExecutor.execute(SyncTaskExecutor.java:50)
+	at org.springframework.batch.core.launch.support.SimpleJobLauncher.run(SimpleJobLauncher.java:140)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:344)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:198)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.batch.core.configuration.annotation.SimpleBatchConfiguration$PassthruAdvice.invoke(SimpleBatchConfiguration.java:127)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:212)
+	at com.sun.proxy.$Proxy97.run(Unknown Source)
+	at com.whiterabbit.batchutils.ArticleBatchScheduler.schedule(ArticleBatchScheduler.java:37)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+2021-05-09 20:00:05.005 ERROR 58747 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : START JOB ........
+2021-05-09 20:00:05.357 ERROR 58747 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.journaldugeek.com/articles/
+2021-05-09 20:00:14.070 ERROR 58747 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.lesnumeriques.com/actualites
+2021-05-09 20:00:16.946 ERROR 58747 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.01net.com/actualites/
+2021-05-09 20:00:19.604 ERROR 58747 --- [scheduling-1] com.whiterabbit.utils.HtmlReader01Net    : https://www.01net.com/actualites/bon-plan-xiaomi-effectue-jusqu-a-150-euros-de-remise-sur-une-selection-de-televiseurs-hd-et-4k-2042444.html - page resume not found
+2021-05-09 20:00:22.508 ERROR 58747 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.mac4ever.com/dossiers
+2021-05-09 20:00:23.366 ERROR 58747 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.frandroid.com/actualites
+2021-05-09 20:00:23.742 ERROR 58747 --- [scheduling-1] c.whiterabbit.utils.HtmlReaderFRAndroid  : frandroid - No division found ! 
+2021-05-09 20:00:23.745 ERROR 58747 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.macg.co/
+2021-05-09 20:00:25.906 ERROR 58747 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : news.humancoders.com/t/java
+2021-05-09 20:00:26.819 ERROR 58747 --- [scheduling-1] c.w.utils.HtmlReaderHumanCoders          : HumanCoders - articles found ! 
+2021-05-09 20:00:26.850 ERROR 58747 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : java.developpez.com
+2021-05-09 20:00:49.161 ERROR 58747 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : JOB nom-du-job finished .... with status exitCode=COMPLETED;exitDescription=
+2021-05-09 20:01:03.221 ERROR 58747 --- [http-nio-8087-exec-2] c.w.controller.ArticleController         : passage dans rest listArticlesByCategory : developpement
+2021-05-09 20:01:03.225 ERROR 58747 --- [http-nio-8087-exec-2] com.whiterabbit.services.ArticleService  : passage dans service article findByCategory, request parameters, category is developpement
+2021-05-09 20:01:03.225 ERROR 58747 --- [http-nio-8087-exec-2] com.whiterabbit.services.ArticleService  : category to string : DEVELOPPEMENT
+2021-05-09 20:15:25.344 ERROR 59243 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : START JOB ........
+2021-05-09 20:15:25.692 ERROR 59243 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.journaldugeek.com/articles/
+2021-05-09 20:15:34.157 ERROR 59243 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.lesnumeriques.com/actualites
+2021-05-09 20:15:36.783 ERROR 59243 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.01net.com/actualites/
+2021-05-09 20:15:39.319 ERROR 59243 --- [scheduling-1] com.whiterabbit.utils.HtmlReader01Net    : https://www.01net.com/actualites/bon-plan-xiaomi-effectue-jusqu-a-150-euros-de-remise-sur-une-selection-de-televiseurs-hd-et-4k-2042444.html - page resume not found
+2021-05-09 20:15:42.475 ERROR 59243 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.mac4ever.com/dossiers
+2021-05-09 20:15:43.111 ERROR 59243 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.frandroid.com/actualites
+2021-05-09 20:15:43.484 ERROR 59243 --- [scheduling-1] c.whiterabbit.utils.HtmlReaderFRAndroid  : frandroid - No division found ! 
+2021-05-09 20:15:43.489 ERROR 59243 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : www.macg.co/
+2021-05-09 20:15:45.696 ERROR 59243 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : news.humancoders.com/t/java
+2021-05-09 20:15:46.402 ERROR 59243 --- [scheduling-1] c.w.utils.HtmlReaderHumanCoders          : HumanCoders - articles found ! 
+2021-05-09 20:15:46.429 ERROR 59243 --- [scheduling-1] c.w.batchutils.HtmlPageItemReader        : ----->ItemReader : java.developpez.com
+2021-05-09 20:16:16.341 ERROR 59243 --- [scheduling-1] c.w.batchutils.ArticleBatchScheduler     : JOB nom-du-job finished .... with status exitCode=COMPLETED;exitDescription=
+2021-05-09 20:16:22.170 ERROR 59243 --- [http-nio-8087-exec-2] c.w.controller.ArticleController         : passage dans rest listArticlesByCategory : developpement
+2021-05-09 20:16:22.175 ERROR 59243 --- [http-nio-8087-exec-2] com.whiterabbit.services.ArticleService  : passage dans service article findByCategory, request parameters, category is developpement
+2021-05-09 20:16:22.175 ERROR 59243 --- [http-nio-8087-exec-2] com.whiterabbit.services.ArticleService  : category to string : DEVELOPPEMENT

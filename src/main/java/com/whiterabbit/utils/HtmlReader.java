@@ -15,6 +15,7 @@ public interface HtmlReader {
         WebClient client = new WebClient();
         client.getOptions().setCssEnabled(false);
         client.getOptions().setJavaScriptEnabled(false);
+        client.getOptions().setUseInsecureSSL(true);
 
         try {
             String searchUrl = url;

@@ -9,7 +9,14 @@ import static org.junit.jupiter.api.Assertions.*;
 class HtmlReaderServiceImplTest {
 
     @Test
-    void readHtmlPage() {
+    void readHtmlPage_Developpez_com() {
+        HtmlReaderService htmlReaderService = new HtmlReaderServiceImpl();
+        InputDataLot inputDataLot = htmlReaderService.readHtmlPage("https://java.developpez.com");
+        Assertions.assertNotNull(inputDataLot);
+    }
+
+    @Test
+    void readHtmlPage_Human_Coders_com() {
         HtmlReaderService htmlReaderService = new HtmlReaderServiceImpl();
         InputDataLot inputDataLot = htmlReaderService.readHtmlPage("https://news.humancoders.com/t/java");
         Assertions.assertNotNull(inputDataLot);
