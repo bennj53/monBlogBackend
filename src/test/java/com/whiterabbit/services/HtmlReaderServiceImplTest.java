@@ -21,4 +21,11 @@ class HtmlReaderServiceImplTest {
         InputDataLot inputDataLot = htmlReaderService.readHtmlPage("https://news.humancoders.com/t/java");
         Assertions.assertNotNull(inputDataLot);
     }
+
+    @Test
+    void readHtmlPage_Medium_com() {
+        HtmlReaderService htmlReaderService = new HtmlReaderServiceImpl();
+        InputDataLot inputDataLot = htmlReaderService.readHtmlPage("https://medium.com/topic/programming");
+        Assertions.assertNotNull(inputDataLot);
+    }
 }

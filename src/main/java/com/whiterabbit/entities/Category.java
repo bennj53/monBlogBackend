@@ -1,7 +1,7 @@
 package com.whiterabbit.entities;
 
 public enum Category {
-    GENERAL(new String[]{"technology", "international"}),DEVELOPPEMENT(new String[]{"java"});
+    GENERAL(new String[]{"technology", "international"}),DEVELOPPEMENT(new String[]{"java", "general"});
 
     private String[] sousCategory;
 
