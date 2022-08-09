@@ -44,7 +44,7 @@ public class CatalogueServiceApplication {
 //////////
 
 
-	@Bean
+//	@Bean
 	CommandLineRunner start(CategoryRepository categoryRepository, ArticleRepository articleRepository){
 
 		log.info("*****************************************************");

@@ -25,7 +25,7 @@ public class HtmlReaderFRAndroid implements HtmlReader {
             HtmlPage page = this.getHtmlPage(url);
             InputDataLot inputDataLot = new InputDataLot();
             if(page != null) {
-                List<HtmlDivision> divisions = page.getByXPath("//div[@class='columns is-vcentered is-mobile is-relative']");
+                List<HtmlDivision> divisions = page.getByXPath("//div[@class='columns is-vcentered is-mobile is-relative m-0']");
                 if (divisions.isEmpty()) {
                     log.error("frandroid - No division found ! ");
                 } else {
@@ -43,7 +43,7 @@ public class HtmlReaderFRAndroid implements HtmlReader {
                         articleUrl = anchorArticle != null && anchorArticle.size() >= 1 ? anchorArticle.get(0).getHrefAttribute() : null;
                         //get article img
                         List<HtmlImage> img = division.getByXPath(".//img");
-                        pathImg = img != null && img.size() >= 1 ? img.get(0).getAttribute("data-srcset") : null;
+                        pathImg = img != null && img.size() >= 1 ? img.get(0).getAttribute("src") : null;
                         if (pathImg != null && pathImg.split(",").length > 2) {
                             pathImg = pathImg.split(",")[2];
                         }
