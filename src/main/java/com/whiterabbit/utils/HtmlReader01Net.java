@@ -28,7 +28,7 @@ public class HtmlReader01Net implements HtmlReader {
             InputDataLot inputDataLot = new InputDataLot();
 
             if(page != null) {
-                List<HtmlArticle> articles = page.getByXPath("//article[@class='timeline-panel bg-color-1 row no-margin']");
+                List<HtmlArticle> articles = page.getByXPath("//article[@class='bg-white dark:bg-gray-900 border flex flex-col md:flex-row mb-4 left-arrow md:ml-8']");
                 if (articles.isEmpty()) {
                     log.error("01Net - No article found ! ");
                 } else {
@@ -46,7 +46,7 @@ public class HtmlReader01Net implements HtmlReader {
                         if (!articleUrl.contains("http"))
                             articleUrl = "https:" + articleUrl;
                         List<HtmlImage> itemImgs = article.getByXPath(".//img");
-                        pathImg = itemImgs != null && itemImgs.size() >= 1 ? itemImgs.get(0).getAttribute("data-original") : null;
+                        pathImg = itemImgs != null && itemImgs.size() >= 1 ? itemImgs.get(0).getAttribute("src") : null;
                         log.info(String.format("01Net - Article %s --> Titre : %s // Url : %s", ++cpt, articleTextContent, articleUrl));
                         log.info(String.format("01Net - Img : %s", pathImg));
 
@@ -82,13 +82,14 @@ public class HtmlReader01Net implements HtmlReader {
         String resume = null;
 
         if(page != null){
-            List<HtmlHeading2> heading2s = page.getByXPath("//h2[@class='title-large padding-bottomx2 blocx3 border-b-s']");
-            if(heading2s == null || heading2s.isEmpty()){
-                log.error("01Net - No h2 found ! ");
-            }else{
-                for(HtmlElement heading2 : heading2s) {
-                    resume = heading2.getTextContent();
+            List<HtmlDivision> divisions = page.getByXPath("//div[@class='post-excerpt']");
 
+            if(divisions == null || divisions.isEmpty()){
+                log.error("01Net - No divisions found to get resume! ");
+            }else{
+                for(HtmlDivision division : divisions) {
+                    List<HtmlParagraph> paragraphsDateArticle = division.getByXPath(".//p");
+                    resume = paragraphsDateArticle != null && paragraphsDateArticle.size() >= 1 ? paragraphsDateArticle.get(0).getTextContent() : null;
                 }
             }
         }else{
