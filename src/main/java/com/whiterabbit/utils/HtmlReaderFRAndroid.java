@@ -43,10 +43,10 @@ public class HtmlReaderFRAndroid implements HtmlReader {
                         articleUrl = anchorArticle != null && anchorArticle.size() >= 1 ? anchorArticle.get(0).getHrefAttribute() : null;
                         //get article img
                         List<HtmlImage> img = division.getByXPath(".//img");
-                        pathImg = img != null && img.size() >= 1 ? img.get(0).getAttribute("src") : null;
-                        if (pathImg != null && pathImg.split(",").length > 2) {
+                        pathImg = img != null && img.size() >= 1 ? img.get(0).getAttribute("data-src") : null;
+                        /*if (pathImg != null && pathImg.split(",").length > 2) {
                             pathImg = pathImg.split(",")[2];
-                        }
+                        }*/
 
                         //get article date
                         List<HtmlParagraph> paragraphsDateArticle = division.getByXPath(".//p[@class='post-card__date has-text-right-mobile']");
