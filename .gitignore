@@ -33,3 +33,6 @@ build/
 
 ### Spring ###
 /logs/batch-datawarehouse-loader.log
+
+### Divers
+.DS_Store
